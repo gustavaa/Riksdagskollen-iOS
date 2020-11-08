@@ -1,0 +1,20 @@
+PODS:
+  - KYDrawerController (2.1.0)
+  - SideMenu (6.5.0)
+
+DEPENDENCIES:
+  - KYDrawerController
+  - SideMenu
+
+SPEC REPOS:
+  trunk:
+    - KYDrawerController
+    - SideMenu
+
+SPEC CHECKSUMS:
+  KYDrawerController: baad0e63b09c0cb564bd48f0f7f70f45d9176ebc
+  SideMenu: f583187d21c5b1dd04c72002be544b555a2627a2
+
+PODFILE CHECKSUM: 9f00f3ec02420be6b11759437f812329123c8dc6
+
+COCOAPODS: 1.10.0

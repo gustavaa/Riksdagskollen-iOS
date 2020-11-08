@@ -1,24 +1,622 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="3tx-vr-NA1">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17126"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
-        <scene sceneID="tne-QT-ifu">
+        <!--Splash Controller-->
+        <scene sceneID="ZI2-BI-jm3">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                <viewController id="Rgq-s0-V5f" customClass="SplashController" customModule="Riksdagskollen" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Cy9-0N-UV8">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <subviews>
+                            <imageView autoresizesSubviews="NO" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="riksdagskollen_splash" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jaW-aF-izI">
+                                <rect key="frame" x="57" y="303" width="300" height="300"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="300" id="Lw3-A6-eyD"/>
+                                    <constraint firstAttribute="width" constant="300" id="sNH-Pe-bFD"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="D52-FV-nv5"/>
+                        <color key="backgroundColor" name="RiksdagBlue"/>
+                        <color key="tintColor" name="RiksdagBlue"/>
+                        <constraints>
+                            <constraint firstItem="jaW-aF-izI" firstAttribute="centerX" secondItem="D52-FV-nv5" secondAttribute="centerX" id="C7E-xx-HCv"/>
+                            <constraint firstItem="jaW-aF-izI" firstAttribute="centerY" secondItem="D52-FV-nv5" secondAttribute="centerY" id="Lmk-82-rHx"/>
+                        </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="W4e-r6-rP2"/>
+                    <connections>
+                        <segue destination="3tx-vr-NA1" kind="custom" identifier="splashSegue" customClass="PushUp" customModule="Riksdagskollen" customModuleProvider="target" id="HRG-ng-5P1"/>
+                    </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="63W-yr-ZoG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="-942" y="-248"/>
+        </scene>
+        <!--Drawer View Controller-->
+        <scene sceneID="qmv-OI-Tw1">
+            <objects>
+                <viewController id="aHl-A3-abu" customClass="DrawerViewController" customModule="Riksdagskollen" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" opaque="NO" contentMode="scaleToFill" id="jC8-eg-Shv">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="40B-bq-AAY" customClass="CustomScrollView" customModule="Riksdagskollen" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="40D-cp-2zy" userLabel="Header view">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="101"/>
+                                        <subviews>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="riksdagskollen_drawer" translatesAutoresizingMaskIntoConstraints="NO" id="4rx-6c-WRy">
+                                                <rect key="frame" x="40" y="15" width="334" height="64"/>
+                                            </imageView>
+                                        </subviews>
+                                        <color key="backgroundColor" name="RiksdagBlue"/>
+                                        <constraints>
+                                            <constraint firstItem="4rx-6c-WRy" firstAttribute="centerX" secondItem="40D-cp-2zy" secondAttribute="centerX" id="6Pi-qI-4j6"/>
+                                            <constraint firstItem="4rx-6c-WRy" firstAttribute="centerY" secondItem="40D-cp-2zy" secondAttribute="centerY" constant="-3.5" id="TNv-Ok-KpG"/>
+                                            <constraint firstItem="4rx-6c-WRy" firstAttribute="leading" secondItem="40D-cp-2zy" secondAttribute="leading" constant="40" id="eZG-ma-aZ6"/>
+                                            <constraint firstItem="4rx-6c-WRy" firstAttribute="top" secondItem="40D-cp-2zy" secondAttribute="top" constant="15" id="wsN-71-Gty"/>
+                                        </constraints>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bZZ-aZ-11y" userLabel="News">
+                                        <rect key="frame" x="0.0" y="151" width="414" height="50"/>
+                                        <subviews>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="riksdagskollen_logo_small" translatesAutoresizingMaskIntoConstraints="NO" id="iXU-xT-muX">
+                                                <rect key="frame" x="16" y="10" width="30" height="30"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="30" id="3fC-1m-uIn"/>
+                                                    <constraint firstAttribute="width" constant="30" id="Pvq-1P-I4R"/>
+                                                </constraints>
+                                            </imageView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Aktuellt" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VKO-MX-tr3">
+                                                <rect key="frame" x="71" y="14" width="61" height="22"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <gestureRecognizers/>
+                                        <constraints>
+                                            <constraint firstItem="iXU-xT-muX" firstAttribute="centerY" secondItem="bZZ-aZ-11y" secondAttribute="centerY" id="3vJ-IM-08U"/>
+                                            <constraint firstItem="VKO-MX-tr3" firstAttribute="centerY" secondItem="bZZ-aZ-11y" secondAttribute="centerY" id="6bh-op-AMk"/>
+                                            <constraint firstAttribute="height" constant="50" id="C0r-CQ-1BF"/>
+                                            <constraint firstItem="VKO-MX-tr3" firstAttribute="leading" secondItem="iXU-xT-muX" secondAttribute="trailing" constant="25" id="GyC-tU-BRH"/>
+                                            <constraint firstItem="iXU-xT-muX" firstAttribute="leading" secondItem="bZZ-aZ-11y" secondAttribute="leading" constant="16" id="mty-ng-Ev4"/>
+                                        </constraints>
+                                        <connections>
+                                            <outletCollection property="gestureRecognizers" destination="3zz-Au-We0" appends="YES" id="IbJ-R1-Mw1"/>
+                                        </connections>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="r79-Ee-wIv" userLabel="Decisions">
+                                        <rect key="frame" x="0.0" y="201" width="414" height="50"/>
+                                        <subviews>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="betlogo" translatesAutoresizingMaskIntoConstraints="NO" id="rx5-6z-waT">
+                                                <rect key="frame" x="16" y="10" width="30" height="30"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="30" id="JkD-ia-8YG"/>
+                                                    <constraint firstAttribute="height" constant="30" id="qtW-ED-USd"/>
+                                                </constraints>
+                                            </imageView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Riksdagsbeslut" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rEq-Ti-h0e">
+                                                <rect key="frame" x="71" y="14" width="122" height="22"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <gestureRecognizers/>
+                                        <constraints>
+                                            <constraint firstItem="rx5-6z-waT" firstAttribute="centerY" secondItem="r79-Ee-wIv" secondAttribute="centerY" id="ADK-W6-2Tl"/>
+                                            <constraint firstItem="rEq-Ti-h0e" firstAttribute="centerY" secondItem="r79-Ee-wIv" secondAttribute="centerY" id="Oek-kf-r0W"/>
+                                            <constraint firstItem="rEq-Ti-h0e" firstAttribute="leading" secondItem="rx5-6z-waT" secondAttribute="trailing" constant="25" id="Z9n-Rx-0db"/>
+                                            <constraint firstItem="rx5-6z-waT" firstAttribute="leading" secondItem="r79-Ee-wIv" secondAttribute="leading" constant="16" id="qee-eM-yQU"/>
+                                            <constraint firstAttribute="height" constant="50" id="qwd-rh-7D4"/>
+                                        </constraints>
+                                        <connections>
+                                            <outletCollection property="gestureRecognizers" destination="jzM-Un-Vxp" appends="YES" id="50O-Sm-1eu"/>
+                                        </connections>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="olg-QC-8bC" userLabel="Debate">
+                                        <rect key="frame" x="0.0" y="251" width="414" height="50"/>
+                                        <subviews>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="protlogo" translatesAutoresizingMaskIntoConstraints="NO" id="M4E-Eh-26S">
+                                                <rect key="frame" x="16" y="10" width="30" height="30"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="30" id="Mcv-Sn-YhR"/>
+                                                    <constraint firstAttribute="height" constant="30" id="urW-Vt-sme"/>
+                                                </constraints>
+                                            </imageView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Debatt" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kvO-yH-Tl5">
+                                                <rect key="frame" x="71" y="14" width="55" height="22"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <gestureRecognizers/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="93J-re-TNw"/>
+                                            <constraint firstItem="kvO-yH-Tl5" firstAttribute="leading" secondItem="M4E-Eh-26S" secondAttribute="trailing" constant="25" id="HVL-Mz-O77"/>
+                                            <constraint firstItem="M4E-Eh-26S" firstAttribute="leading" secondItem="olg-QC-8bC" secondAttribute="leading" constant="16" id="O2k-8Q-sj8"/>
+                                            <constraint firstItem="kvO-yH-Tl5" firstAttribute="centerY" secondItem="olg-QC-8bC" secondAttribute="centerY" id="qJW-vP-Ock"/>
+                                            <constraint firstItem="M4E-Eh-26S" firstAttribute="centerY" secondItem="olg-QC-8bC" secondAttribute="centerY" id="z6v-ob-dVz"/>
+                                        </constraints>
+                                        <connections>
+                                            <outletCollection property="gestureRecognizers" destination="luv-Wb-bBC" appends="YES" id="S33-zf-QSq"/>
+                                        </connections>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GC5-ll-XNd" userLabel="Votes">
+                                        <rect key="frame" x="0.0" y="301" width="414" height="50"/>
+                                        <subviews>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="votlogo" translatesAutoresizingMaskIntoConstraints="NO" id="CC8-dF-71y">
+                                                <rect key="frame" x="16" y="10" width="30" height="30"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="30" id="BYx-1e-er8"/>
+                                                    <constraint firstAttribute="width" constant="30" id="L5P-hx-eKk"/>
+                                                </constraints>
+                                            </imageView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Voteringar" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GmF-TC-87e">
+                                                <rect key="frame" x="71" y="14" width="84" height="22"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <gestureRecognizers/>
+                                        <constraints>
+                                            <constraint firstItem="GmF-TC-87e" firstAttribute="leading" secondItem="CC8-dF-71y" secondAttribute="trailing" constant="25" id="EzM-Ev-CSM"/>
+                                            <constraint firstItem="CC8-dF-71y" firstAttribute="leading" secondItem="GC5-ll-XNd" secondAttribute="leading" constant="16" id="Ihy-RE-8UP"/>
+                                            <constraint firstAttribute="height" constant="50" id="JMp-I5-nnN"/>
+                                            <constraint firstItem="GmF-TC-87e" firstAttribute="centerY" secondItem="GC5-ll-XNd" secondAttribute="centerY" id="mwn-tR-67f"/>
+                                            <constraint firstItem="CC8-dF-71y" firstAttribute="centerY" secondItem="GC5-ll-XNd" secondAttribute="centerY" id="puO-Bv-CdC"/>
+                                        </constraints>
+                                        <connections>
+                                            <outletCollection property="gestureRecognizers" destination="wJy-9a-SSw" appends="YES" id="BtC-k5-FbL"/>
+                                        </connections>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ymp-Bu-Zq8" userLabel="Representatives">
+                                        <rect key="frame" x="0.0" y="351" width="414" height="50"/>
+                                        <subviews>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="replogo" translatesAutoresizingMaskIntoConstraints="NO" id="mPZ-Es-vu3">
+                                                <rect key="frame" x="16" y="10" width="30" height="30"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="30" id="55z-kj-wYy"/>
+                                                    <constraint firstAttribute="width" constant="30" id="N5l-5y-whI"/>
+                                                </constraints>
+                                            </imageView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ledamöter" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="u7u-YY-H8L">
+                                                <rect key="frame" x="71" y="14" width="87" height="22"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <gestureRecognizers/>
+                                        <constraints>
+                                            <constraint firstItem="mPZ-Es-vu3" firstAttribute="centerY" secondItem="ymp-Bu-Zq8" secondAttribute="centerY" id="VBS-jB-uDz"/>
+                                            <constraint firstItem="mPZ-Es-vu3" firstAttribute="leading" secondItem="ymp-Bu-Zq8" secondAttribute="leading" constant="16" id="avv-lp-JnR"/>
+                                            <constraint firstAttribute="height" constant="50" id="eQa-c7-SNu"/>
+                                            <constraint firstItem="u7u-YY-H8L" firstAttribute="centerY" secondItem="ymp-Bu-Zq8" secondAttribute="centerY" id="jU5-hx-J96"/>
+                                            <constraint firstItem="u7u-YY-H8L" firstAttribute="leading" secondItem="mPZ-Es-vu3" secondAttribute="trailing" constant="25" id="sQ7-gU-s0p"/>
+                                        </constraints>
+                                        <connections>
+                                            <outletCollection property="gestureRecognizers" destination="Alq-Pd-Pad" appends="YES" id="9zv-tH-cha"/>
+                                        </connections>
+                                    </view>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="I Riksdagen" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7bN-lU-nwx">
+                                        <rect key="frame" x="16" y="101" width="93" height="50"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="YGe-Mr-dqJ"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8HX-eU-GiA" userLabel="Protocols">
+                                        <rect key="frame" x="0.0" y="401" width="414" height="50"/>
+                                        <subviews>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="riksdagskollen_logo_small" translatesAutoresizingMaskIntoConstraints="NO" id="esj-iN-f0g">
+                                                <rect key="frame" x="16" y="10" width="30" height="30"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="30" id="167-4g-Bmj"/>
+                                                    <constraint firstAttribute="height" constant="30" id="wOr-8J-wSD"/>
+                                                </constraints>
+                                            </imageView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Kammarprotokoll" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9od-bG-d8h">
+                                                <rect key="frame" x="71" y="14" width="137" height="22"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <gestureRecognizers/>
+                                        <constraints>
+                                            <constraint firstItem="9od-bG-d8h" firstAttribute="leading" secondItem="esj-iN-f0g" secondAttribute="trailing" constant="25" id="480-Bn-6LF"/>
+                                            <constraint firstItem="9od-bG-d8h" firstAttribute="centerY" secondItem="8HX-eU-GiA" secondAttribute="centerY" id="C6G-r4-olt"/>
+                                            <constraint firstItem="esj-iN-f0g" firstAttribute="centerY" secondItem="8HX-eU-GiA" secondAttribute="centerY" id="DGn-EL-VCg"/>
+                                            <constraint firstItem="esj-iN-f0g" firstAttribute="leading" secondItem="8HX-eU-GiA" secondAttribute="leading" constant="16" id="Hkr-rU-2T0"/>
+                                            <constraint firstAttribute="height" constant="50" id="iQm-sX-eb9"/>
+                                        </constraints>
+                                        <connections>
+                                            <outletCollection property="gestureRecognizers" destination="7qT-eO-Hzw" appends="YES" id="sby-FJ-Ld5"/>
+                                        </connections>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xxz-Iw-jG9" userLabel="Protocols">
+                                        <rect key="frame" x="0.0" y="451" width="414" height="50"/>
+                                        <subviews>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="riksdagskollen_logo_small" translatesAutoresizingMaskIntoConstraints="NO" id="B7o-cW-9ji">
+                                                <rect key="frame" x="16" y="10" width="30" height="30"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="30" id="Z7L-sv-rMl"/>
+                                                    <constraint firstAttribute="height" constant="30" id="dJ5-sa-0gq"/>
+                                                </constraints>
+                                            </imageView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Kammarprotokoll" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8A6-9F-Lsr">
+                                                <rect key="frame" x="71" y="14" width="137" height="22"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <gestureRecognizers/>
+                                        <constraints>
+                                            <constraint firstItem="8A6-9F-Lsr" firstAttribute="centerY" secondItem="xxz-Iw-jG9" secondAttribute="centerY" id="CU9-Pr-HON"/>
+                                            <constraint firstItem="8A6-9F-Lsr" firstAttribute="leading" secondItem="B7o-cW-9ji" secondAttribute="trailing" constant="25" id="I42-t9-TWt"/>
+                                            <constraint firstItem="B7o-cW-9ji" firstAttribute="centerY" secondItem="xxz-Iw-jG9" secondAttribute="centerY" id="MRe-Ba-A88"/>
+                                            <constraint firstItem="B7o-cW-9ji" firstAttribute="leading" secondItem="xxz-Iw-jG9" secondAttribute="leading" constant="16" id="e4C-dQ-oHi"/>
+                                            <constraint firstAttribute="height" constant="50" id="qOp-UR-WdE"/>
+                                        </constraints>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="exq-Jn-zCP" userLabel="Protocols">
+                                        <rect key="frame" x="0.0" y="501" width="414" height="50"/>
+                                        <subviews>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="riksdagskollen_logo_small" translatesAutoresizingMaskIntoConstraints="NO" id="zu5-PW-Hyc">
+                                                <rect key="frame" x="16" y="10" width="30" height="30"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="30" id="cT6-7u-4l3"/>
+                                                    <constraint firstAttribute="width" constant="30" id="h10-Dl-dcU"/>
+                                                </constraints>
+                                            </imageView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Kammarprotokoll" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x6S-yB-80U">
+                                                <rect key="frame" x="71" y="14" width="137" height="22"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <gestureRecognizers/>
+                                        <constraints>
+                                            <constraint firstItem="x6S-yB-80U" firstAttribute="leading" secondItem="zu5-PW-Hyc" secondAttribute="trailing" constant="25" id="4TY-v9-8Ug"/>
+                                            <constraint firstItem="zu5-PW-Hyc" firstAttribute="centerY" secondItem="exq-Jn-zCP" secondAttribute="centerY" id="8Ff-A1-QkP"/>
+                                            <constraint firstAttribute="height" constant="50" id="Uwy-bF-pYW"/>
+                                            <constraint firstItem="zu5-PW-Hyc" firstAttribute="leading" secondItem="exq-Jn-zCP" secondAttribute="leading" constant="16" id="bgx-wk-Tah"/>
+                                            <constraint firstItem="x6S-yB-80U" firstAttribute="centerY" secondItem="exq-Jn-zCP" secondAttribute="centerY" id="jQQ-q9-HK8"/>
+                                        </constraints>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Bg0-Si-Wxy" userLabel="Protocols">
+                                        <rect key="frame" x="0.0" y="551" width="414" height="50"/>
+                                        <subviews>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="riksdagskollen_logo_small" translatesAutoresizingMaskIntoConstraints="NO" id="yuS-d7-CqF">
+                                                <rect key="frame" x="16" y="10" width="30" height="30"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="30" id="gIi-lj-8Py"/>
+                                                    <constraint firstAttribute="width" constant="30" id="utH-nT-0Pc"/>
+                                                </constraints>
+                                            </imageView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Kammarprotokoll" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k6K-p7-Z1P">
+                                                <rect key="frame" x="71" y="14" width="137" height="22"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <gestureRecognizers/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="1bF-no-zrb"/>
+                                            <constraint firstItem="k6K-p7-Z1P" firstAttribute="leading" secondItem="yuS-d7-CqF" secondAttribute="trailing" constant="25" id="B2m-Ao-DYQ"/>
+                                            <constraint firstItem="yuS-d7-CqF" firstAttribute="leading" secondItem="Bg0-Si-Wxy" secondAttribute="leading" constant="16" id="PdR-fc-ACq"/>
+                                            <constraint firstItem="k6K-p7-Z1P" firstAttribute="centerY" secondItem="Bg0-Si-Wxy" secondAttribute="centerY" id="am3-tX-FEx"/>
+                                            <constraint firstItem="yuS-d7-CqF" firstAttribute="centerY" secondItem="Bg0-Si-Wxy" secondAttribute="centerY" id="nYx-Sw-aeK"/>
+                                        </constraints>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sxk-vc-uDF" userLabel="Protocols">
+                                        <rect key="frame" x="0.0" y="601" width="414" height="50"/>
+                                        <subviews>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="riksdagskollen_logo_small" translatesAutoresizingMaskIntoConstraints="NO" id="Nq5-7K-GI8">
+                                                <rect key="frame" x="16" y="10" width="30" height="30"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="30" id="4Ka-8Z-tDf"/>
+                                                    <constraint firstAttribute="width" constant="30" id="U6d-85-cP4"/>
+                                                </constraints>
+                                            </imageView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Kammarprotokoll" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aB0-Xs-PUE">
+                                                <rect key="frame" x="71" y="14" width="137" height="22"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <gestureRecognizers/>
+                                        <constraints>
+                                            <constraint firstItem="Nq5-7K-GI8" firstAttribute="leading" secondItem="sxk-vc-uDF" secondAttribute="leading" constant="16" id="P78-Yf-aHX"/>
+                                            <constraint firstAttribute="height" constant="50" id="UJA-cK-XAw"/>
+                                            <constraint firstItem="Nq5-7K-GI8" firstAttribute="centerY" secondItem="sxk-vc-uDF" secondAttribute="centerY" id="cX3-Td-FkR"/>
+                                            <constraint firstItem="aB0-Xs-PUE" firstAttribute="centerY" secondItem="sxk-vc-uDF" secondAttribute="centerY" id="mUf-yo-OrR"/>
+                                            <constraint firstItem="aB0-Xs-PUE" firstAttribute="leading" secondItem="Nq5-7K-GI8" secondAttribute="trailing" constant="25" id="zkp-Qo-fxX"/>
+                                        </constraints>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bO3-re-EDE" userLabel="Protocols">
+                                        <rect key="frame" x="0.0" y="651" width="414" height="50"/>
+                                        <subviews>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="riksdagskollen_logo_small" translatesAutoresizingMaskIntoConstraints="NO" id="P2O-7R-ldA">
+                                                <rect key="frame" x="16" y="10" width="30" height="30"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="30" id="Kuw-xH-hBL"/>
+                                                    <constraint firstAttribute="height" constant="30" id="fNb-lj-SLo"/>
+                                                </constraints>
+                                            </imageView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Kammarprotokoll" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mn4-4V-CMp">
+                                                <rect key="frame" x="71" y="14" width="137" height="22"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <gestureRecognizers/>
+                                        <constraints>
+                                            <constraint firstItem="P2O-7R-ldA" firstAttribute="leading" secondItem="bO3-re-EDE" secondAttribute="leading" constant="16" id="1Yp-19-aYc"/>
+                                            <constraint firstItem="Mn4-4V-CMp" firstAttribute="leading" secondItem="P2O-7R-ldA" secondAttribute="trailing" constant="25" id="53o-fN-1Nc"/>
+                                            <constraint firstAttribute="height" constant="50" id="86n-qE-mvr"/>
+                                            <constraint firstItem="Mn4-4V-CMp" firstAttribute="centerY" secondItem="bO3-re-EDE" secondAttribute="centerY" id="GA4-MW-pRN"/>
+                                            <constraint firstItem="P2O-7R-ldA" firstAttribute="centerY" secondItem="bO3-re-EDE" secondAttribute="centerY" id="NKZ-lg-f26"/>
+                                        </constraints>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hr9-C2-1X1" userLabel="Protocols">
+                                        <rect key="frame" x="0.0" y="701" width="414" height="50"/>
+                                        <subviews>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="riksdagskollen_logo_small" translatesAutoresizingMaskIntoConstraints="NO" id="c0A-xp-LiI">
+                                                <rect key="frame" x="16" y="10" width="30" height="30"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="30" id="72o-er-nIH"/>
+                                                    <constraint firstAttribute="width" constant="30" id="7UO-WN-FlO"/>
+                                                </constraints>
+                                            </imageView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Kammarprotokoll" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tmt-19-PJR">
+                                                <rect key="frame" x="71" y="14" width="137" height="22"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <gestureRecognizers/>
+                                        <constraints>
+                                            <constraint firstItem="tmt-19-PJR" firstAttribute="centerY" secondItem="hr9-C2-1X1" secondAttribute="centerY" id="2R7-G7-vk6"/>
+                                            <constraint firstItem="c0A-xp-LiI" firstAttribute="leading" secondItem="hr9-C2-1X1" secondAttribute="leading" constant="16" id="E8g-5x-GdI"/>
+                                            <constraint firstItem="tmt-19-PJR" firstAttribute="leading" secondItem="c0A-xp-LiI" secondAttribute="trailing" constant="25" id="KK5-BY-s14"/>
+                                            <constraint firstAttribute="height" constant="50" id="bVp-QZ-jsP"/>
+                                            <constraint firstItem="c0A-xp-LiI" firstAttribute="centerY" secondItem="hr9-C2-1X1" secondAttribute="centerY" id="toy-lA-iQ9"/>
+                                        </constraints>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UHq-5H-YzV" userLabel="Protocols">
+                                        <rect key="frame" x="0.0" y="751" width="414" height="50"/>
+                                        <subviews>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="riksdagskollen_logo_small" translatesAutoresizingMaskIntoConstraints="NO" id="u5V-Je-Bhj">
+                                                <rect key="frame" x="16" y="10" width="30" height="30"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="30" id="EFE-zm-1wy"/>
+                                                    <constraint firstAttribute="height" constant="30" id="xtJ-ND-nEp"/>
+                                                </constraints>
+                                            </imageView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Kammarprotokoll" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="H3x-zv-xwr">
+                                                <rect key="frame" x="71" y="14" width="137" height="22"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <gestureRecognizers/>
+                                        <constraints>
+                                            <constraint firstItem="H3x-zv-xwr" firstAttribute="centerY" secondItem="UHq-5H-YzV" secondAttribute="centerY" id="BKo-RR-KtI"/>
+                                            <constraint firstItem="u5V-Je-Bhj" firstAttribute="leading" secondItem="UHq-5H-YzV" secondAttribute="leading" constant="16" id="TNW-yw-n57"/>
+                                            <constraint firstItem="H3x-zv-xwr" firstAttribute="leading" secondItem="u5V-Je-Bhj" secondAttribute="trailing" constant="25" id="iYN-qI-06k"/>
+                                            <constraint firstAttribute="height" constant="50" id="pUu-Fw-ljp"/>
+                                            <constraint firstItem="u5V-Je-Bhj" firstAttribute="centerY" secondItem="UHq-5H-YzV" secondAttribute="centerY" id="z3y-zG-IWU"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="exq-Jn-zCP" secondAttribute="trailing" id="06d-uX-jwu"/>
+                                    <constraint firstItem="r79-Ee-wIv" firstAttribute="top" secondItem="bZZ-aZ-11y" secondAttribute="bottom" id="0us-1r-sG6"/>
+                                    <constraint firstItem="7bN-lU-nwx" firstAttribute="top" secondItem="40D-cp-2zy" secondAttribute="bottom" id="1fy-zh-xjI"/>
+                                    <constraint firstItem="r79-Ee-wIv" firstAttribute="leading" secondItem="40B-bq-AAY" secondAttribute="leading" id="3Gs-gc-QI4"/>
+                                    <constraint firstAttribute="trailing" secondItem="Bg0-Si-Wxy" secondAttribute="trailing" id="3qP-xw-7rS"/>
+                                    <constraint firstItem="exq-Jn-zCP" firstAttribute="leading" secondItem="40B-bq-AAY" secondAttribute="leading" id="5GT-Pn-ivw"/>
+                                    <constraint firstItem="Bg0-Si-Wxy" firstAttribute="leading" secondItem="40B-bq-AAY" secondAttribute="leading" id="6Yo-7p-WGj"/>
+                                    <constraint firstItem="40D-cp-2zy" firstAttribute="leading" secondItem="40B-bq-AAY" secondAttribute="leading" id="7f8-kw-ibB"/>
+                                    <constraint firstAttribute="trailing" secondItem="8HX-eU-GiA" secondAttribute="trailing" id="8lv-fD-WaK"/>
+                                    <constraint firstAttribute="trailing" secondItem="ymp-Bu-Zq8" secondAttribute="trailing" id="8n9-CF-thT"/>
+                                    <constraint firstItem="ymp-Bu-Zq8" firstAttribute="top" secondItem="GC5-ll-XNd" secondAttribute="bottom" id="CiP-56-gkP"/>
+                                    <constraint firstItem="7bN-lU-nwx" firstAttribute="leading" secondItem="40B-bq-AAY" secondAttribute="leading" constant="16" id="EZ3-KX-44q"/>
+                                    <constraint firstItem="40D-cp-2zy" firstAttribute="centerX" secondItem="40B-bq-AAY" secondAttribute="centerX" id="IPO-yX-JBA"/>
+                                    <constraint firstItem="sxk-vc-uDF" firstAttribute="top" secondItem="Bg0-Si-Wxy" secondAttribute="bottom" id="IX4-lB-lKu"/>
+                                    <constraint firstItem="bZZ-aZ-11y" firstAttribute="centerX" secondItem="40B-bq-AAY" secondAttribute="centerX" id="JZE-jV-RnK"/>
+                                    <constraint firstAttribute="trailing" secondItem="sxk-vc-uDF" secondAttribute="trailing" id="JzO-4e-C4k"/>
+                                    <constraint firstItem="xxz-Iw-jG9" firstAttribute="top" secondItem="8HX-eU-GiA" secondAttribute="bottom" id="MKd-lG-fwX"/>
+                                    <constraint firstItem="bZZ-aZ-11y" firstAttribute="top" secondItem="7bN-lU-nwx" secondAttribute="bottom" id="Me3-th-7IW"/>
+                                    <constraint firstItem="UHq-5H-YzV" firstAttribute="top" secondItem="hr9-C2-1X1" secondAttribute="bottom" id="MgP-kN-w1Z"/>
+                                    <constraint firstItem="bO3-re-EDE" firstAttribute="top" secondItem="sxk-vc-uDF" secondAttribute="bottom" id="O8B-DA-IuE"/>
+                                    <constraint firstItem="GC5-ll-XNd" firstAttribute="top" secondItem="olg-QC-8bC" secondAttribute="bottom" id="RF8-Cy-DIN"/>
+                                    <constraint firstItem="GC5-ll-XNd" firstAttribute="leading" secondItem="40B-bq-AAY" secondAttribute="leading" id="Sd8-ua-Hkq"/>
+                                    <constraint firstItem="xxz-Iw-jG9" firstAttribute="leading" secondItem="40B-bq-AAY" secondAttribute="leading" id="SuU-1U-nGE"/>
+                                    <constraint firstAttribute="bottom" secondItem="40D-cp-2zy" secondAttribute="bottom" constant="717" id="VAQ-lh-4zs"/>
+                                    <constraint firstAttribute="trailing" secondItem="40D-cp-2zy" secondAttribute="trailing" id="bSb-Y4-gD1"/>
+                                    <constraint firstItem="sxk-vc-uDF" firstAttribute="leading" secondItem="40B-bq-AAY" secondAttribute="leading" id="cec-UK-bIX"/>
+                                    <constraint firstItem="8HX-eU-GiA" firstAttribute="top" secondItem="ymp-Bu-Zq8" secondAttribute="bottom" id="fII-xD-m36"/>
+                                    <constraint firstAttribute="trailing" secondItem="bO3-re-EDE" secondAttribute="trailing" id="fJe-LC-SLT"/>
+                                    <constraint firstItem="8HX-eU-GiA" firstAttribute="leading" secondItem="40B-bq-AAY" secondAttribute="leading" id="h1O-FD-OQk"/>
+                                    <constraint firstAttribute="trailing" secondItem="hr9-C2-1X1" secondAttribute="trailing" id="jdO-i4-rk1"/>
+                                    <constraint firstAttribute="trailing" secondItem="r79-Ee-wIv" secondAttribute="trailing" id="ktP-0Z-eQe"/>
+                                    <constraint firstItem="olg-QC-8bC" firstAttribute="top" secondItem="r79-Ee-wIv" secondAttribute="bottom" id="l59-59-jUm"/>
+                                    <constraint firstItem="exq-Jn-zCP" firstAttribute="top" secondItem="xxz-Iw-jG9" secondAttribute="bottom" id="l6h-XW-KRN"/>
+                                    <constraint firstAttribute="trailing" secondItem="olg-QC-8bC" secondAttribute="trailing" id="laJ-9R-EpI"/>
+                                    <constraint firstItem="hr9-C2-1X1" firstAttribute="top" secondItem="bO3-re-EDE" secondAttribute="bottom" id="ovf-1F-pB5"/>
+                                    <constraint firstAttribute="trailing" secondItem="bZZ-aZ-11y" secondAttribute="trailing" id="ovr-Pi-17k"/>
+                                    <constraint firstItem="ymp-Bu-Zq8" firstAttribute="leading" secondItem="40B-bq-AAY" secondAttribute="leading" id="pYg-Jg-b0B"/>
+                                    <constraint firstItem="olg-QC-8bC" firstAttribute="leading" secondItem="40B-bq-AAY" secondAttribute="leading" id="peG-by-Kdd"/>
+                                    <constraint firstAttribute="trailing" secondItem="xxz-Iw-jG9" secondAttribute="trailing" id="thv-9H-LQh"/>
+                                    <constraint firstItem="hr9-C2-1X1" firstAttribute="leading" secondItem="40B-bq-AAY" secondAttribute="leading" id="uNw-FG-pOL"/>
+                                    <constraint firstItem="UHq-5H-YzV" firstAttribute="leading" secondItem="40B-bq-AAY" secondAttribute="leading" id="vOF-cE-ca1"/>
+                                    <constraint firstItem="bO3-re-EDE" firstAttribute="leading" secondItem="40B-bq-AAY" secondAttribute="leading" id="vSr-dN-afy"/>
+                                    <constraint firstAttribute="trailing" secondItem="GC5-ll-XNd" secondAttribute="trailing" id="w9d-nz-0sJ"/>
+                                    <constraint firstItem="Bg0-Si-Wxy" firstAttribute="top" secondItem="exq-Jn-zCP" secondAttribute="bottom" id="xEv-Q3-NiO"/>
+                                    <constraint firstAttribute="trailing" secondItem="UHq-5H-YzV" secondAttribute="trailing" id="xaH-oY-fE0"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="size" keyPath="contentSize">
+                                        <size key="value" width="200" height="6000"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="pagingEnabled" value="NO"/>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="bounces" value="NO"/>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="l2R-f9-1wC"/>
+                        <color key="backgroundColor" name="RiksdagBlue"/>
+                        <constraints>
+                            <constraint firstItem="l2R-f9-1wC" firstAttribute="trailing" secondItem="40B-bq-AAY" secondAttribute="trailing" id="AfU-j2-uCE"/>
+                            <constraint firstItem="40B-bq-AAY" firstAttribute="top" secondItem="l2R-f9-1wC" secondAttribute="top" id="OX6-AB-GBs"/>
+                            <constraint firstItem="40D-cp-2zy" firstAttribute="top" secondItem="40B-bq-AAY" secondAttribute="top" id="Vv7-1d-bgB"/>
+                            <constraint firstItem="l2R-f9-1wC" firstAttribute="bottom" secondItem="40B-bq-AAY" secondAttribute="bottom" id="afZ-ji-dXQ"/>
+                            <constraint firstItem="40B-bq-AAY" firstAttribute="leading" secondItem="l2R-f9-1wC" secondAttribute="leading" id="vsX-ke-XLQ"/>
+                        </constraints>
+                    </view>
+                    <extendedEdge key="edgesForExtendedLayout" top="YES"/>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <connections>
+                        <outlet property="newsMenuItem" destination="bZZ-aZ-11y" id="sUx-uD-fCQ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="MAL-GO-U9B" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <pongPressGestureRecognizer cancelsTouchesInView="NO" allowableMovement="10" minimumPressDuration="0.0" id="3zz-Au-We0">
+                    <connections>
+                        <action selector="newsMenuItemPressed:" destination="aHl-A3-abu" id="mS6-bN-vpR"/>
+                    </connections>
+                </pongPressGestureRecognizer>
+                <pongPressGestureRecognizer cancelsTouchesInView="NO" allowableMovement="10" minimumPressDuration="0.0" id="jzM-Un-Vxp">
+                    <connections>
+                        <action selector="decisionsMenuItemPressed:" destination="aHl-A3-abu" id="lwl-Eb-4j1"/>
+                    </connections>
+                </pongPressGestureRecognizer>
+                <pongPressGestureRecognizer cancelsTouchesInView="NO" allowableMovement="10" minimumPressDuration="0.0" id="wJy-9a-SSw">
+                    <connections>
+                        <action selector="votesMenuItemPressed:" destination="aHl-A3-abu" id="Fg9-J3-DBs"/>
+                    </connections>
+                </pongPressGestureRecognizer>
+                <pongPressGestureRecognizer cancelsTouchesInView="NO" allowableMovement="10" minimumPressDuration="0.0" id="7qT-eO-Hzw">
+                    <connections>
+                        <action selector="protocolsMenuItemPressed:" destination="aHl-A3-abu" id="ksd-CJ-FPq"/>
+                    </connections>
+                </pongPressGestureRecognizer>
+                <pongPressGestureRecognizer cancelsTouchesInView="NO" allowableMovement="10" minimumPressDuration="0.0" id="luv-Wb-bBC">
+                    <connections>
+                        <action selector="debateMenuItemPressed:" destination="aHl-A3-abu" id="MvC-hj-0jd"/>
+                    </connections>
+                </pongPressGestureRecognizer>
+                <pongPressGestureRecognizer cancelsTouchesInView="NO" allowableMovement="10" minimumPressDuration="0.0" id="Alq-Pd-Pad">
+                    <connections>
+                        <action selector="representativesMenuItemPressed:" destination="aHl-A3-abu" id="Erb-tz-Aoa"/>
+                    </connections>
+                </pongPressGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="1518.840579710145" y="596.65178571428567"/>
+        </scene>
+        <!--Side Menu Navigation Controller-->
+        <scene sceneID="OCl-r1-0pI">
+            <objects>
+                <navigationController id="3tx-vr-NA1" customClass="SideMenuNavigationController" customModule="SideMenu" sceneMemberID="viewController">
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" barStyle="black" translucent="NO" id="LL2-Dl-SB1">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" systemColor="labelColor"/>
+                        <color key="tintColor" systemColor="labelColor"/>
+                        <color key="barTintColor" name="RiksdagBlue"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" systemColor="labelColor"/>
+                            <color key="textShadowColor" systemColor="labelColor"/>
+                        </textAttributes>
+                        <textAttributes key="largeTitleTextAttributes">
+                            <color key="textColor" systemColor="labelColor"/>
+                        </textAttributes>
+                    </navigationBar>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="statusBarEndAlpha">
+                            <real key="value" value="0.0"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                    <connections>
+                        <segue destination="kDs-Ip-NSn" kind="relationship" relationship="rootViewController" id="Szm-oE-ROw"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hsT-Lg-IBm" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="481" y="-248"/>
+        </scene>
+        <!--Master View Controller-->
+        <scene sceneID="7vU-Pz-hbK">
+            <objects>
+                <viewController id="kDs-Ip-NSn" customClass="MasterViewController" customModule="Riksdagskollen" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Zmg-vm-7PT">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="KCS-7l-X76"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </view>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" id="8ax-X9-2ma">
+                        <barButtonItem key="leftBarButtonItem" title="Item" image="menu" id="P47-62-sZe">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <connections>
+                                <action selector="onMenuTap" destination="kDs-Ip-NSn" id="ZcB-7r-ZPd"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="DB6-QK-XlY" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2103" y="-248"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="betlogo" width="70" height="70"/>
+        <image name="menu" width="24" height="24"/>
+        <image name="protlogo" width="70" height="82"/>
+        <image name="replogo" width="70" height="70"/>
+        <image name="riksdagskollen_drawer" width="444" height="60"/>
+        <image name="riksdagskollen_logo_small" width="79" height="79"/>
+        <image name="riksdagskollen_splash" width="549" height="549"/>
+        <image name="votlogo" width="70" height="71"/>
+        <namedColor name="RiksdagBlue">
+            <color red="0.10588235294117647" green="0.31372549019607843" blue="0.43529411764705883" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+        </namedColor>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
 </document>

@@ -3,27 +3,53 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B655B04380982B055F7581A9 /* Pods_Riksdagskollen.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF5964062C3BFA7F2583EB4D /* Pods_Riksdagskollen.framework */; };
+		BF3FE28325555B160036AF2F /* MenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF3FE28225555B160036AF2F /* MenuController.swift */; };
+		BF3FE28A25555EAC0036AF2F /* MenuItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF3FE28925555EAC0036AF2F /* MenuItemCell.swift */; };
+		BF3FE28F255583B10036AF2F /* MenuItemCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BF3FE28E255583B10036AF2F /* MenuItemCell.xib */; };
 		BF40397A25504E7D00D766F4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF40397925504E7D00D766F4 /* AppDelegate.swift */; };
 		BF40397C25504E7D00D766F4 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF40397B25504E7D00D766F4 /* SceneDelegate.swift */; };
-		BF40397E25504E7D00D766F4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF40397D25504E7D00D766F4 /* ViewController.swift */; };
+		BF40397E25504E7D00D766F4 /* NewsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF40397D25504E7D00D766F4 /* NewsViewController.swift */; };
 		BF40398125504E7D00D766F4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BF40397F25504E7D00D766F4 /* Main.storyboard */; };
 		BF40398325504E7E00D766F4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BF40398225504E7E00D766F4 /* Assets.xcassets */; };
 		BF40398625504E7E00D766F4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BF40398425504E7E00D766F4 /* LaunchScreen.storyboard */; };
+		BF4039902550536000D766F4 /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF40398F2550536000D766F4 /* Theme.swift */; };
+		BF403993255056A200D766F4 /* ThemeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF403992255056A200D766F4 /* ThemeManager.swift */; };
+		BF40399725505CD500D766F4 /* PushUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF40399625505CD500D766F4 /* PushUp.swift */; };
+		BF40399B25505E6800D766F4 /* SplashController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF40399A25505E6800D766F4 /* SplashController.swift */; };
+		BF8BE5CA2552F9150016C85A /* DecisionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF8BE5C92552F9150016C85A /* DecisionsViewController.swift */; };
+		BF8BE5D02553143F0016C85A /* CustomScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF8BE5CF2553143F0016C85A /* CustomScrollView.swift */; };
+		BFD8B1E225554D20001CEFB2 /* MasterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFD8B1E125554D20001CEFB2 /* MasterViewController.swift */; };
+		BFE4B1592552E14500259BB2 /* RiksdagenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFE4B1582552E14500259BB2 /* RiksdagenViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		17491EBE81FDFAB40921E3B7 /* Pods-Riksdagskollen.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Riksdagskollen.debug.xcconfig"; path = "Target Support Files/Pods-Riksdagskollen/Pods-Riksdagskollen.debug.xcconfig"; sourceTree = "<group>"; };
+		9DCC515499D237EA419DBEF5 /* Pods-Riksdagskollen.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Riksdagskollen.release.xcconfig"; path = "Target Support Files/Pods-Riksdagskollen/Pods-Riksdagskollen.release.xcconfig"; sourceTree = "<group>"; };
+		BF3FE28225555B160036AF2F /* MenuController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuController.swift; sourceTree = "<group>"; };
+		BF3FE28925555EAC0036AF2F /* MenuItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuItemCell.swift; sourceTree = "<group>"; };
+		BF3FE28E255583B10036AF2F /* MenuItemCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MenuItemCell.xib; sourceTree = "<group>"; };
 		BF40397625504E7D00D766F4 /* Riksdagskollen.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Riksdagskollen.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BF40397925504E7D00D766F4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BF40397B25504E7D00D766F4 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		BF40397D25504E7D00D766F4 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		BF40397D25504E7D00D766F4 /* NewsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsViewController.swift; sourceTree = "<group>"; };
 		BF40398025504E7D00D766F4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		BF40398225504E7E00D766F4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BF40398525504E7E00D766F4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BF40398725504E7E00D766F4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BF40398F2550536000D766F4 /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
+		BF403992255056A200D766F4 /* ThemeManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeManager.swift; sourceTree = "<group>"; };
+		BF40399625505CD500D766F4 /* PushUp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PushUp.swift; sourceTree = "<group>"; };
+		BF40399A25505E6800D766F4 /* SplashController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashController.swift; sourceTree = "<group>"; };
+		BF5964062C3BFA7F2583EB4D /* Pods_Riksdagskollen.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Riksdagskollen.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		BF8BE5C92552F9150016C85A /* DecisionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DecisionsViewController.swift; sourceTree = "<group>"; };
+		BF8BE5CF2553143F0016C85A /* CustomScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomScrollView.swift; sourceTree = "<group>"; };
+		BFD8B1E125554D20001CEFB2 /* MasterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MasterViewController.swift; sourceTree = "<group>"; };
+		BFE4B1582552E14500259BB2 /* RiksdagenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RiksdagenViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,17 +57,29 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B655B04380982B055F7581A9 /* Pods_Riksdagskollen.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		47E979B9B8E31F228120D1B5 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				17491EBE81FDFAB40921E3B7 /* Pods-Riksdagskollen.debug.xcconfig */,
+				9DCC515499D237EA419DBEF5 /* Pods-Riksdagskollen.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		BF40396D25504E7D00D766F4 = {
 			isa = PBXGroup;
 			children = (
 				BF40397825504E7D00D766F4 /* Riksdagskollen */,
 				BF40397725504E7D00D766F4 /* Products */,
+				47E979B9B8E31F228120D1B5 /* Pods */,
+				D4C2B2ED704F7549323E7B9F /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -56,15 +94,82 @@
 		BF40397825504E7D00D766F4 /* Riksdagskollen */ = {
 			isa = PBXGroup;
 			children = (
+				BF8BE5C82552F8FB0016C85A /* decisions */,
+				BF8BE5C72552F8970016C85A /* news */,
+				BFE4B1532552DCC400259BB2 /* navigation */,
+				BF40398E255052A500D766F4 /* theme */,
 				BF40397925504E7D00D766F4 /* AppDelegate.swift */,
 				BF40397B25504E7D00D766F4 /* SceneDelegate.swift */,
-				BF40397D25504E7D00D766F4 /* ViewController.swift */,
 				BF40397F25504E7D00D766F4 /* Main.storyboard */,
 				BF40398225504E7E00D766F4 /* Assets.xcassets */,
 				BF40398425504E7E00D766F4 /* LaunchScreen.storyboard */,
 				BF40398725504E7E00D766F4 /* Info.plist */,
+				BFE4B1582552E14500259BB2 /* RiksdagenViewController.swift */,
+				BFD8B1E125554D20001CEFB2 /* MasterViewController.swift */,
 			);
 			path = Riksdagskollen;
+			sourceTree = "<group>";
+		};
+		BF40398E255052A500D766F4 /* theme */ = {
+			isa = PBXGroup;
+			children = (
+				BF40398F2550536000D766F4 /* Theme.swift */,
+				BF403992255056A200D766F4 /* ThemeManager.swift */,
+			);
+			path = theme;
+			sourceTree = "<group>";
+		};
+		BF40399525505CB700D766F4 /* segues */ = {
+			isa = PBXGroup;
+			children = (
+				BF40399625505CD500D766F4 /* PushUp.swift */,
+			);
+			path = segues;
+			sourceTree = "<group>";
+		};
+		BF8BE5C72552F8970016C85A /* news */ = {
+			isa = PBXGroup;
+			children = (
+				BF40397D25504E7D00D766F4 /* NewsViewController.swift */,
+			);
+			path = news;
+			sourceTree = "<group>";
+		};
+		BF8BE5C82552F8FB0016C85A /* decisions */ = {
+			isa = PBXGroup;
+			children = (
+				BF8BE5C92552F9150016C85A /* DecisionsViewController.swift */,
+			);
+			path = decisions;
+			sourceTree = "<group>";
+		};
+		BF8BE5CE2553142D0016C85A /* drawer */ = {
+			isa = PBXGroup;
+			children = (
+				BF8BE5CF2553143F0016C85A /* CustomScrollView.swift */,
+				BF3FE28225555B160036AF2F /* MenuController.swift */,
+				BF3FE28925555EAC0036AF2F /* MenuItemCell.swift */,
+				BF3FE28E255583B10036AF2F /* MenuItemCell.xib */,
+			);
+			path = drawer;
+			sourceTree = "<group>";
+		};
+		BFE4B1532552DCC400259BB2 /* navigation */ = {
+			isa = PBXGroup;
+			children = (
+				BF40399A25505E6800D766F4 /* SplashController.swift */,
+				BF8BE5CE2553142D0016C85A /* drawer */,
+				BF40399525505CB700D766F4 /* segues */,
+			);
+			path = navigation;
+			sourceTree = "<group>";
+		};
+		D4C2B2ED704F7549323E7B9F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				BF5964062C3BFA7F2583EB4D /* Pods_Riksdagskollen.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -74,9 +179,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = BF40398A25504E7E00D766F4 /* Build configuration list for PBXNativeTarget "Riksdagskollen" */;
 			buildPhases = (
+				5C9208D2733DF014E0247513 /* [CP] Check Pods Manifest.lock */,
 				BF40397225504E7D00D766F4 /* Sources */,
 				BF40397325504E7D00D766F4 /* Frameworks */,
 				BF40397425504E7D00D766F4 /* Resources */,
+				D8428222920F1C1CFA9B61F2 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -125,6 +232,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BF40398625504E7E00D766F4 /* LaunchScreen.storyboard in Resources */,
+				BF3FE28F255583B10036AF2F /* MenuItemCell.xib in Resources */,
 				BF40398325504E7E00D766F4 /* Assets.xcassets in Resources */,
 				BF40398125504E7D00D766F4 /* Main.storyboard in Resources */,
 			);
@@ -132,12 +240,64 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		5C9208D2733DF014E0247513 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Riksdagskollen-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D8428222920F1C1CFA9B61F2 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Riksdagskollen/Pods-Riksdagskollen-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Riksdagskollen/Pods-Riksdagskollen-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Riksdagskollen/Pods-Riksdagskollen-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		BF40397225504E7D00D766F4 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BF40397E25504E7D00D766F4 /* ViewController.swift in Sources */,
+				BF40399725505CD500D766F4 /* PushUp.swift in Sources */,
+				BF8BE5D02553143F0016C85A /* CustomScrollView.swift in Sources */,
+				BF40397E25504E7D00D766F4 /* NewsViewController.swift in Sources */,
+				BFD8B1E225554D20001CEFB2 /* MasterViewController.swift in Sources */,
+				BFE4B1592552E14500259BB2 /* RiksdagenViewController.swift in Sources */,
+				BF4039902550536000D766F4 /* Theme.swift in Sources */,
+				BF3FE28325555B160036AF2F /* MenuController.swift in Sources */,
+				BF403993255056A200D766F4 /* ThemeManager.swift in Sources */,
+				BF3FE28A25555EAC0036AF2F /* MenuItemCell.swift in Sources */,
+				BF8BE5CA2552F9150016C85A /* DecisionsViewController.swift in Sources */,
+				BF40399B25505E6800D766F4 /* SplashController.swift in Sources */,
 				BF40397A25504E7D00D766F4 /* AppDelegate.swift in Sources */,
 				BF40397C25504E7D00D766F4 /* SceneDelegate.swift in Sources */,
 			);
@@ -283,6 +443,7 @@
 		};
 		BF40398B25504E7E00D766F4 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 17491EBE81FDFAB40921E3B7 /* Pods-Riksdagskollen.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -301,6 +462,7 @@
 		};
 		BF40398C25504E7E00D766F4 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9DCC515499D237EA419DBEF5 /* Pods-Riksdagskollen.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;

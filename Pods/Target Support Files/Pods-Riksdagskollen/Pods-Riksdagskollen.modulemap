@@ -1,0 +1,6 @@
+framework module Pods_Riksdagskollen {
+  umbrella header "Pods-Riksdagskollen-umbrella.h"
+
+  export *
+  module * { export * }
+}
