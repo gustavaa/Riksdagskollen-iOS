@@ -6,6 +6,5 @@ target 'Riksdagskollen' do
   use_frameworks!
 
   # Pods for Riksdagskollen
-  pod 'KYDrawerController'
   pod 'SideMenu'
 end

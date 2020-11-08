@@ -24,7 +24,6 @@
 		BF8BE5CA2552F9150016C85A /* DecisionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF8BE5C92552F9150016C85A /* DecisionsViewController.swift */; };
 		BF8BE5D02553143F0016C85A /* CustomScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF8BE5CF2553143F0016C85A /* CustomScrollView.swift */; };
 		BFD8B1E225554D20001CEFB2 /* MasterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFD8B1E125554D20001CEFB2 /* MasterViewController.swift */; };
-		BFE4B1592552E14500259BB2 /* RiksdagenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFE4B1582552E14500259BB2 /* RiksdagenViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -49,7 +48,6 @@
 		BF8BE5C92552F9150016C85A /* DecisionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DecisionsViewController.swift; sourceTree = "<group>"; };
 		BF8BE5CF2553143F0016C85A /* CustomScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomScrollView.swift; sourceTree = "<group>"; };
 		BFD8B1E125554D20001CEFB2 /* MasterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MasterViewController.swift; sourceTree = "<group>"; };
-		BFE4B1582552E14500259BB2 /* RiksdagenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RiksdagenViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,7 +102,6 @@
 				BF40398225504E7E00D766F4 /* Assets.xcassets */,
 				BF40398425504E7E00D766F4 /* LaunchScreen.storyboard */,
 				BF40398725504E7E00D766F4 /* Info.plist */,
-				BFE4B1582552E14500259BB2 /* RiksdagenViewController.swift */,
 				BFD8B1E125554D20001CEFB2 /* MasterViewController.swift */,
 			);
 			path = Riksdagskollen;
@@ -291,7 +288,6 @@
 				BF8BE5D02553143F0016C85A /* CustomScrollView.swift in Sources */,
 				BF40397E25504E7D00D766F4 /* NewsViewController.swift in Sources */,
 				BFD8B1E225554D20001CEFB2 /* MasterViewController.swift in Sources */,
-				BFE4B1592552E14500259BB2 /* RiksdagenViewController.swift in Sources */,
 				BF4039902550536000D766F4 /* Theme.swift in Sources */,
 				BF3FE28325555B160036AF2F /* MenuController.swift in Sources */,
 				BF403993255056A200D766F4 /* ThemeManager.swift in Sources */,

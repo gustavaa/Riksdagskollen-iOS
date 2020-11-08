@@ -4,12 +4,11 @@
 //
 //  Created by Gustav Aaro on 2020-11-02.
 //
-import KYDrawerController
 import UIKit
 import SideMenu
 
 
-class NewsViewController: RiksdagenViewController {
+class NewsViewController: UIViewController {
         
     override func viewDidLoad() {
         super.viewDidLoad()

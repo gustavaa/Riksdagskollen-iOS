@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 
-class DecisionsViewController: RiksdagenViewController {
+class DecisionsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
