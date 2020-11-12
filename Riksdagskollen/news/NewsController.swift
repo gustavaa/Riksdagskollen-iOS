@@ -17,8 +17,9 @@ class NewsController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationItem.title = "Nyheter"
-        setupTableview()
+        self.view.backgroundColor = ThemeManager.currentTheme().mainBackgroundColor
 
+        setupTableview()
         model = NewsModel(newsController: self)
         model?.loadNextPage()
     }

@@ -25,19 +25,23 @@ class NewsItemTableViewCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        self.layoutIfNeeded()
-        self.needsUpdateConstraints()
-        // Initialization code
+        self.backgroundColor = ThemeManager.currentTheme().mainBackgroundColor
+        
+        titleLabel.textColor = ThemeManager.currentTheme().mainTitleTextColor
+        titleLabel.numberOfLines = 0
+        titleLabel.font = titleLabel.font.bold()
+
+        summaryLabel.textColor = ThemeManager.currentTheme().mainBodyTextColor
+        summaryLabel.numberOfLines = 0
+        
+        imgSourceLabel.textColor = ThemeManager.currentTheme().secondaryDarkColor
+        dateLabel.textColor = ThemeManager.currentTheme().mainBodyTextColor
     }
     
     func configure(with newsItem: NewsItem){
         titleLabel.text = newsItem.titel
-        titleLabel.numberOfLines = 0
-        titleLabel.font = titleLabel.font.bold()
-        titleLabel.textColor = ThemeManager.currentTheme().primaryColor
         summaryLabel.text = cleanupSummaryString(summary: newsItem.summary)
-        summaryLabel.numberOfLines = 0
-        
+
         if newsItem.hasImage() {
             let processor = DownsamplingImageProcessor(size: newsImageView.bounds.size)
             let url = URL(string: newsItem.getImageUrl()!)

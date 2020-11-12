@@ -28,6 +28,7 @@ class MasterViewController: UIViewController, SideMenuDelegate{
         currentViewController = newsViewController
         switchToViewControlller(viewController: newsViewController)
         navigationItem.title = "Aktuellt"
+        navigationController?.navigationBar.barTintColor = ThemeManager.currentTheme().primaryColor
     }
     
     func setupSideMenu() {

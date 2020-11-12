@@ -15,6 +15,8 @@ class MenuItemCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        self.backgroundColor = ThemeManager.currentTheme().mainBackgroundColor
+        title.textColor = ThemeManager.currentTheme().mainBodyTextColor
     }
     
 }

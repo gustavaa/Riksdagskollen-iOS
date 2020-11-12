@@ -14,7 +14,7 @@ class ThemeManager {
     
     static func currentTheme() -> Theme {
         if let storedTheme = (UserDefaults.standard.value(forKey: SELECTED_THEME_KEY) as AnyObject).integerValue {
-            return Theme(rawValue: storedTheme)!
+            return .standard // Theme(rawValue: storedTheme)!
         } else {
             return Theme.standard
         }
