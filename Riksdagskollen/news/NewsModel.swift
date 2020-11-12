@@ -10,7 +10,7 @@ import Foundation
 
 class NewsModel {
     
-    var currentPage = 2;
+    var currentPage = 1;
     var newsItems: [NewsItem] = []
     let newsController: NewsController
     

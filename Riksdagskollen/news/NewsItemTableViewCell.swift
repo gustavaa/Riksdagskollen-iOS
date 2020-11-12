@@ -42,20 +42,12 @@ class NewsItemTableViewCell: UITableViewCell {
             let processor = DownsamplingImageProcessor(size: newsImageView.bounds.size)
 
             let url = URL(string: newsItem.getImageUrl()!)
-            newsImageView.kf.setImage(with: url, options: [
+            newsImageView.kf.setImage(with: url, placeholder: UIImage(named: "placeholder_image_web"), options: [
                 .processor(processor),
+                .transition(.fade(0.2)),
                 .scaleFactor(UIScreen.main.scale),
                 .cacheOriginalImage
-            ]) { result in
-                switch result {
-                case .success( _):
-                    self.newsImageView.layoutIfNeeded()
-                    self.updateConstraints()
-                    self.layoutIfNeeded()
-                case .failure(let error):
-                    print("Error: \(error)")
-                }
-            }
+            ])
 
             newsImageView.contentMode = .scaleAspectFill
         }

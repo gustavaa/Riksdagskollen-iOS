@@ -40,7 +40,6 @@ class NewsController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: NewsItemTableViewCell.identifier, for: indexPath) as! NewsItemTableViewCell
         cell.configure(with: (model?.newsItems[indexPath.row])!)
-        cell.layoutIfNeeded()
         return cell
     }
     
