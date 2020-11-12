@@ -11,7 +11,7 @@ import SideMenu
 
 class MasterViewController: UIViewController, SideMenuDelegate{
     
-    var newsViewController = NewsViewController()
+    var newsViewController = NewsController()
     var decisionsViewController = DecisionsViewController()
     
     var menu: SideMenuNavigationController?
@@ -49,15 +49,12 @@ class MasterViewController: UIViewController, SideMenuDelegate{
     func didSelectMenuItem(menuItem: MenuItem) {
         switch menuItem.title {
         case MenuItems.news.rawValue:
-            print("News selected")
             switchToViewControlller(viewController: newsViewController)
             break
         case MenuItems.decisions.rawValue:
-            print("Decisions selected")
             switchToViewControlller(viewController: decisionsViewController)
             break
         case MenuItems.debate.rawValue:
-            print("Debate selected")
             break
         default: break
         }

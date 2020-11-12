@@ -8,12 +8,14 @@
 
 /* Begin PBXBuildFile section */
 		B655B04380982B055F7581A9 /* Pods_Riksdagskollen.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF5964062C3BFA7F2583EB4D /* Pods_Riksdagskollen.framework */; };
+		BF023D31255A889D00BF919D /* StringUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF023D30255A889D00BF919D /* StringUtils.swift */; };
+		BF023D34255C08AB00BF919D /* ImageUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF023D33255C08AB00BF919D /* ImageUtils.swift */; };
 		BF3FE28325555B160036AF2F /* MenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF3FE28225555B160036AF2F /* MenuController.swift */; };
 		BF3FE28A25555EAC0036AF2F /* MenuItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF3FE28925555EAC0036AF2F /* MenuItemCell.swift */; };
 		BF3FE28F255583B10036AF2F /* MenuItemCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BF3FE28E255583B10036AF2F /* MenuItemCell.xib */; };
 		BF40397A25504E7D00D766F4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF40397925504E7D00D766F4 /* AppDelegate.swift */; };
 		BF40397C25504E7D00D766F4 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF40397B25504E7D00D766F4 /* SceneDelegate.swift */; };
-		BF40397E25504E7D00D766F4 /* NewsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF40397D25504E7D00D766F4 /* NewsViewController.swift */; };
+		BF40397E25504E7D00D766F4 /* NewsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF40397D25504E7D00D766F4 /* NewsController.swift */; };
 		BF40398125504E7D00D766F4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BF40397F25504E7D00D766F4 /* Main.storyboard */; };
 		BF40398325504E7E00D766F4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BF40398225504E7E00D766F4 /* Assets.xcassets */; };
 		BF40398625504E7E00D766F4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BF40398425504E7E00D766F4 /* LaunchScreen.storyboard */; };
@@ -21,6 +23,13 @@
 		BF403993255056A200D766F4 /* ThemeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF403992255056A200D766F4 /* ThemeManager.swift */; };
 		BF40399725505CD500D766F4 /* PushUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF40399625505CD500D766F4 /* PushUp.swift */; };
 		BF40399B25505E6800D766F4 /* SplashController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF40399A25505E6800D766F4 /* SplashController.swift */; };
+		BF7B6C9F255C298600AD70B3 /* NewsItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF7B6C9D255C298600AD70B3 /* NewsItemTableViewCell.swift */; };
+		BF7B6CA0255C298600AD70B3 /* NewsItemTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BF7B6C9E255C298600AD70B3 /* NewsItemTableViewCell.xib */; };
+		BF7F603C255889D400D2959F /* FontUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF7F603B255889D400D2959F /* FontUtils.swift */; };
+		BF7F604025588D2100D2959F /* NewsItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF7F603F25588D2100D2959F /* NewsItem.swift */; };
+		BF7F6044255963E100D2959F /* NewsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF7F6043255963E100D2959F /* NewsModel.swift */; };
+		BF7F604B2559793900D2959F /* NewsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF7F604A2559793900D2959F /* NewsService.swift */; };
+		BF7F605425597FF300D2959F /* RiksdagenBaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF7F605325597FF300D2959F /* RiksdagenBaseService.swift */; };
 		BF8BE5CA2552F9150016C85A /* DecisionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF8BE5C92552F9150016C85A /* DecisionsViewController.swift */; };
 		BF8BE5D02553143F0016C85A /* CustomScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF8BE5CF2553143F0016C85A /* CustomScrollView.swift */; };
 		BFD8B1E225554D20001CEFB2 /* MasterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFD8B1E125554D20001CEFB2 /* MasterViewController.swift */; };
@@ -29,13 +38,15 @@
 /* Begin PBXFileReference section */
 		17491EBE81FDFAB40921E3B7 /* Pods-Riksdagskollen.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Riksdagskollen.debug.xcconfig"; path = "Target Support Files/Pods-Riksdagskollen/Pods-Riksdagskollen.debug.xcconfig"; sourceTree = "<group>"; };
 		9DCC515499D237EA419DBEF5 /* Pods-Riksdagskollen.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Riksdagskollen.release.xcconfig"; path = "Target Support Files/Pods-Riksdagskollen/Pods-Riksdagskollen.release.xcconfig"; sourceTree = "<group>"; };
+		BF023D30255A889D00BF919D /* StringUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringUtils.swift; sourceTree = "<group>"; };
+		BF023D33255C08AB00BF919D /* ImageUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageUtils.swift; sourceTree = "<group>"; };
 		BF3FE28225555B160036AF2F /* MenuController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuController.swift; sourceTree = "<group>"; };
 		BF3FE28925555EAC0036AF2F /* MenuItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuItemCell.swift; sourceTree = "<group>"; };
 		BF3FE28E255583B10036AF2F /* MenuItemCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MenuItemCell.xib; sourceTree = "<group>"; };
 		BF40397625504E7D00D766F4 /* Riksdagskollen.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Riksdagskollen.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BF40397925504E7D00D766F4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BF40397B25504E7D00D766F4 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		BF40397D25504E7D00D766F4 /* NewsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsViewController.swift; sourceTree = "<group>"; };
+		BF40397D25504E7D00D766F4 /* NewsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsController.swift; sourceTree = "<group>"; };
 		BF40398025504E7D00D766F4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		BF40398225504E7E00D766F4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BF40398525504E7E00D766F4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -45,6 +56,13 @@
 		BF40399625505CD500D766F4 /* PushUp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PushUp.swift; sourceTree = "<group>"; };
 		BF40399A25505E6800D766F4 /* SplashController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashController.swift; sourceTree = "<group>"; };
 		BF5964062C3BFA7F2583EB4D /* Pods_Riksdagskollen.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Riksdagskollen.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		BF7B6C9D255C298600AD70B3 /* NewsItemTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsItemTableViewCell.swift; sourceTree = "<group>"; };
+		BF7B6C9E255C298600AD70B3 /* NewsItemTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NewsItemTableViewCell.xib; sourceTree = "<group>"; };
+		BF7F603B255889D400D2959F /* FontUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontUtils.swift; sourceTree = "<group>"; };
+		BF7F603F25588D2100D2959F /* NewsItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsItem.swift; sourceTree = "<group>"; };
+		BF7F6043255963E100D2959F /* NewsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsModel.swift; sourceTree = "<group>"; };
+		BF7F604A2559793900D2959F /* NewsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsService.swift; sourceTree = "<group>"; };
+		BF7F605325597FF300D2959F /* RiksdagenBaseService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RiksdagenBaseService.swift; sourceTree = "<group>"; };
 		BF8BE5C92552F9150016C85A /* DecisionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DecisionsViewController.swift; sourceTree = "<group>"; };
 		BF8BE5CF2553143F0016C85A /* CustomScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomScrollView.swift; sourceTree = "<group>"; };
 		BFD8B1E125554D20001CEFB2 /* MasterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MasterViewController.swift; sourceTree = "<group>"; };
@@ -92,6 +110,8 @@
 		BF40397825504E7D00D766F4 /* Riksdagskollen */ = {
 			isa = PBXGroup;
 			children = (
+				BF7F605125597FCA00D2959F /* networking */,
+				BF7F603A255889C600D2959F /* utils */,
 				BF8BE5C82552F8FB0016C85A /* decisions */,
 				BF8BE5C72552F8970016C85A /* news */,
 				BFE4B1532552DCC400259BB2 /* navigation */,
@@ -124,10 +144,49 @@
 			path = segues;
 			sourceTree = "<group>";
 		};
+		BF7F603A255889C600D2959F /* utils */ = {
+			isa = PBXGroup;
+			children = (
+				BF7F603B255889D400D2959F /* FontUtils.swift */,
+				BF023D30255A889D00BF919D /* StringUtils.swift */,
+				BF023D33255C08AB00BF919D /* ImageUtils.swift */,
+			);
+			path = utils;
+			sourceTree = "<group>";
+		};
+		BF7F603E25588CA700D2959F /* data */ = {
+			isa = PBXGroup;
+			children = (
+				BF7F603F25588D2100D2959F /* NewsItem.swift */,
+			);
+			path = data;
+			sourceTree = "<group>";
+		};
+		BF7F605125597FCA00D2959F /* networking */ = {
+			isa = PBXGroup;
+			children = (
+				BF7F605225597FD600D2959F /* service */,
+			);
+			path = networking;
+			sourceTree = "<group>";
+		};
+		BF7F605225597FD600D2959F /* service */ = {
+			isa = PBXGroup;
+			children = (
+				BF7F605325597FF300D2959F /* RiksdagenBaseService.swift */,
+				BF7F604A2559793900D2959F /* NewsService.swift */,
+			);
+			path = service;
+			sourceTree = "<group>";
+		};
 		BF8BE5C72552F8970016C85A /* news */ = {
 			isa = PBXGroup;
 			children = (
-				BF40397D25504E7D00D766F4 /* NewsViewController.swift */,
+				BF7F603E25588CA700D2959F /* data */,
+				BF40397D25504E7D00D766F4 /* NewsController.swift */,
+				BF7F6043255963E100D2959F /* NewsModel.swift */,
+				BF7B6C9D255C298600AD70B3 /* NewsItemTableViewCell.swift */,
+				BF7B6C9E255C298600AD70B3 /* NewsItemTableViewCell.xib */,
 			);
 			path = news;
 			sourceTree = "<group>";
@@ -232,6 +291,7 @@
 				BF3FE28F255583B10036AF2F /* MenuItemCell.xib in Resources */,
 				BF40398325504E7E00D766F4 /* Assets.xcassets in Resources */,
 				BF40398125504E7D00D766F4 /* Main.storyboard in Resources */,
+				BF7B6CA0255C298600AD70B3 /* NewsItemTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -285,15 +345,23 @@
 			buildActionMask = 2147483647;
 			files = (
 				BF40399725505CD500D766F4 /* PushUp.swift in Sources */,
+				BF7F604B2559793900D2959F /* NewsService.swift in Sources */,
+				BF7F604025588D2100D2959F /* NewsItem.swift in Sources */,
+				BF7B6C9F255C298600AD70B3 /* NewsItemTableViewCell.swift in Sources */,
+				BF023D34255C08AB00BF919D /* ImageUtils.swift in Sources */,
 				BF8BE5D02553143F0016C85A /* CustomScrollView.swift in Sources */,
-				BF40397E25504E7D00D766F4 /* NewsViewController.swift in Sources */,
+				BF7F603C255889D400D2959F /* FontUtils.swift in Sources */,
+				BF40397E25504E7D00D766F4 /* NewsController.swift in Sources */,
 				BFD8B1E225554D20001CEFB2 /* MasterViewController.swift in Sources */,
+				BF023D31255A889D00BF919D /* StringUtils.swift in Sources */,
 				BF4039902550536000D766F4 /* Theme.swift in Sources */,
+				BF7F6044255963E100D2959F /* NewsModel.swift in Sources */,
 				BF3FE28325555B160036AF2F /* MenuController.swift in Sources */,
 				BF403993255056A200D766F4 /* ThemeManager.swift in Sources */,
 				BF3FE28A25555EAC0036AF2F /* MenuItemCell.swift in Sources */,
 				BF8BE5CA2552F9150016C85A /* DecisionsViewController.swift in Sources */,
 				BF40399B25505E6800D766F4 /* SplashController.swift in Sources */,
+				BF7F605425597FF300D2959F /* RiksdagenBaseService.swift in Sources */,
 				BF40397A25504E7D00D766F4 /* AppDelegate.swift in Sources */,
 				BF40397C25504E7D00D766F4 /* SceneDelegate.swift in Sources */,
 			);
