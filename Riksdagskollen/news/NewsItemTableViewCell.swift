@@ -40,7 +40,6 @@ class NewsItemTableViewCell: UITableViewCell {
         
         if newsItem.hasImage() {
             let processor = DownsamplingImageProcessor(size: newsImageView.bounds.size)
-
             let url = URL(string: newsItem.getImageUrl()!)
             newsImageView.kf.setImage(with: url, placeholder: UIImage(named: "placeholder_image_web"), options: [
                 .processor(processor),
@@ -48,7 +47,6 @@ class NewsItemTableViewCell: UITableViewCell {
                 .scaleFactor(UIScreen.main.scale),
                 .cacheOriginalImage
             ])
-
             newsImageView.contentMode = .scaleAspectFill
         }
         imgSourceLabel.text = newsItem.img_fotograf

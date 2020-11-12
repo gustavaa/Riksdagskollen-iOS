@@ -6,6 +6,7 @@
 //
 import UIKit
 import SideMenu
+import SafariServices
 
 
 class NewsController: UITableViewController {
@@ -49,9 +50,16 @@ class NewsController: UITableViewController {
         }
     }
     
-    
- 
-    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let newsItem = (model?.newsItems[indexPath.row])!
+        let url = URL(string: newsItem.getNewsUrl())
+        let vc = SFSafariViewController(url: url!)
+        vc.preferredBarTintColor = ThemeManager.currentTheme().primaryColor
+        vc.preferredControlTintColor = UIColor.white
+        
+        navigationController?.present(vc, animated: true)
+
+    }
     
 }
 
