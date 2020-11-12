@@ -24,18 +24,10 @@ class NewsItemTableViewCell: UITableViewCell {
     }
     
     override func awakeFromNib() {
-        super.awakeFromNib()
-        self.backgroundColor = ThemeManager.currentTheme().mainBackgroundColor
-        
-        titleLabel.textColor = ThemeManager.currentTheme().mainTitleTextColor
+        super.awakeFromNib()        
         titleLabel.numberOfLines = 0
         titleLabel.font = titleLabel.font.bold()
-
-        summaryLabel.textColor = ThemeManager.currentTheme().mainBodyTextColor
         summaryLabel.numberOfLines = 0
-        
-        imgSourceLabel.textColor = ThemeManager.currentTheme().secondaryDarkColor
-        dateLabel.textColor = ThemeManager.currentTheme().mainBodyTextColor
     }
     
     func configure(with newsItem: NewsItem){

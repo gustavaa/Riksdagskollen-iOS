@@ -12,16 +12,16 @@ import SafariServices
 class NewsController: UITableViewController {
     
     private var model: NewsModel? = nil
-    
         
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationItem.title = "Nyheter"
-        self.view.backgroundColor = ThemeManager.currentTheme().mainBackgroundColor
 
         setupTableview()
         model = NewsModel(newsController: self)
         model?.loadNextPage()
+        
+        UIApplication.shared.statusBarView!.backgroundColor = ThemeManager.shared.theme?.primaryColor
     }
     
     func setupTableview () {
@@ -55,9 +55,9 @@ class NewsController: UITableViewController {
         let newsItem = (model?.newsItems[indexPath.row])!
         let url = URL(string: newsItem.getNewsUrl())
         let vc = SFSafariViewController(url: url!)
-        vc.preferredBarTintColor = ThemeManager.currentTheme().primaryColor
+        vc.preferredBarTintColor = ThemeManager.shared.theme?.primaryColor
         vc.preferredControlTintColor = UIColor.white
-        
+        vc.modalPresentationCapturesStatusBarAppearance = false
         navigationController?.present(vc, animated: true)
 
     }

@@ -78,7 +78,6 @@ class MenuController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        UIApplication.shared.statusBarView?.backgroundColor = ThemeManager.currentTheme().primaryColor
         setupTableView()
     }
     
@@ -89,7 +88,6 @@ class MenuController: UITableViewController {
         let bundle = Bundle(for: MenuItemCell.self)
         let nib = UINib(nibName: "MenuItemCell", bundle: bundle)
         tableView.register(nib, forCellReuseIdentifier: "cell")
-        tableView.backgroundColor = ThemeManager.currentTheme().mainBackgroundColor
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -134,8 +132,7 @@ class MenuController: UITableViewController {
         let imageView = UIImageView()
         imageView.image = UIImage(named: "riksdagskollen_drawer")
         
-        let headerView = UIView()
-        headerView.backgroundColor = ThemeManager.currentTheme().primaryColor
+        let headerView = DrawerHeaderView()
         headerView.addSubview(imageView)
         
         imageView.translatesAutoresizingMaskIntoConstraints = false

@@ -41,7 +41,7 @@
     <resources>
         <image name="riksdagskollen_splash" width="549" height="549"/>
         <namedColor name="RiksdagBlue">
-            <color red="0.10588235294117647" green="0.31372549019607843" blue="0.43529411764705883" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+            <color red="0.10588235294117647" green="0.31372549019607843" blue="0.43529411764705883" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
     </resources>
 </document>

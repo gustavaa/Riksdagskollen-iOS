@@ -28,7 +28,6 @@ class MasterViewController: UIViewController, SideMenuDelegate{
         currentViewController = newsViewController
         switchToViewControlller(viewController: newsViewController)
         navigationItem.title = "Aktuellt"
-        navigationController?.navigationBar.barTintColor = ThemeManager.currentTheme().primaryColor
     }
     
     func setupSideMenu() {
@@ -36,6 +35,7 @@ class MasterViewController: UIViewController, SideMenuDelegate{
         menuController.delegate = self
         menu = SideMenuNavigationController(rootViewController: menuController)
         menu?.leftSide = true
+        menu?.menuWidth = 300
         menu?.setNavigationBarHidden(true, animated: false)
         SideMenuManager.default.leftMenuNavigationController = menu
         SideMenuManager.default.rightMenuNavigationController = nil
