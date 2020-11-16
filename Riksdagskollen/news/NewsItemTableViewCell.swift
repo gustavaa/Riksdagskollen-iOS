@@ -30,9 +30,9 @@ class NewsItemTableViewCell: UITableViewCell {
         summaryLabel.numberOfLines = 0
     }
     
-    func configure(with newsItem: NewsItem){
+    func configure(with newsItem: NewsDocument){
         titleLabel.text = newsItem.titel
-        summaryLabel.text = cleanupSummaryString(summary: newsItem.summary)
+        summaryLabel.text = newsItem.summary.htmlToString
 
         if newsItem.hasImage() {
             let processor = DownsamplingImageProcessor(size: newsImageView.bounds.size)
@@ -54,18 +54,16 @@ class NewsItemTableViewCell: UITableViewCell {
         newsImageView.kf.cancelDownloadTask()
         newsImageView.image = nil
     }
-    
-    func cleanupSummaryString(summary: String) -> String {
-        let tmp = summary.htmlToAttributedString
-        var  result = tmp?.string.replacingOccurrences(of: "<[^>]+>", with: "", options: String.CompareOptions.regularExpression, range: nil)
-        result = result?.replacingOccurrences(of: "&[a-z]+;", with: " ", options: String.CompareOptions.regularExpression, range: nil)
-        return result!
-    }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state
+    }
+    
+    
+    override func pressesBegan(_ presses: Set<UIPress>, with event: UIPressesEvent?) {
+        
     }
     
 }

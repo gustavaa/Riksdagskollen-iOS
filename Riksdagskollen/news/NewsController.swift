@@ -11,18 +11,27 @@ import SafariServices
 
 class NewsController: UITableViewController {
     
-    private var model: NewsModel? = nil
+    private let model: NewsModel
+    
+    init() {
+        model = NewsModel()
+        super.init(style: .plain)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
         
     override func viewDidLoad() {
         super.viewDidLoad()
-        navigationItem.title = "Nyheter"
-
         setupTableview()
-        model = NewsModel(newsController: self)
-        model?.loadNextPage()
-        
         UIApplication.shared.statusBarView!.backgroundColor = ThemeManager.shared.theme?.primaryColor
     }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        requestMoreData()
+    }
+    
     
     func setupTableview () {
     
@@ -31,35 +40,38 @@ class NewsController: UITableViewController {
         tableView.estimatedRowHeight = 400
     }
     
-    public func onDataUpdated(){
-        tableView.reloadData()
+    func requestMoreData () {
+        model.loadNextPage(){
+            self.tableView.reloadData()
+        } onError: {error in
+            // TODO: Handle error
+        }
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return model?.newsItems.count ?? 0
+        return model.newsItems.count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: NewsItemTableViewCell.identifier, for: indexPath) as! NewsItemTableViewCell
-        cell.configure(with: (model?.newsItems[indexPath.row])!)
+        cell.configure(with: model.newsItems[indexPath.row])
         return cell
     }
     
     override func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-        if indexPath.row + 1 == model?.newsItems.count {
-            model?.loadNextPage()
+        if indexPath.row + 1 == model.newsItems.count {
+            requestMoreData()
         }
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let newsItem = (model?.newsItems[indexPath.row])!
+        let newsItem = model.newsItems[indexPath.row]
         let url = URL(string: newsItem.getNewsUrl())
         let vc = SFSafariViewController(url: url!)
         vc.preferredBarTintColor = ThemeManager.shared.theme?.primaryColor
         vc.preferredControlTintColor = UIColor.white
         vc.modalPresentationCapturesStatusBarAppearance = false
         navigationController?.present(vc, animated: true)
-
     }
     
 }

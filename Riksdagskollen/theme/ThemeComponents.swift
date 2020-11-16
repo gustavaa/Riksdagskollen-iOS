@@ -22,3 +22,44 @@ class ThemedView: UIView{}
 
 // Wrapper view for the drawer header
 class DrawerHeaderView: UIView{}
+
+class AccentIcon: UIImageView{
+    @objc dynamic var fillColor: UIColor? {
+          get { return self.tintColor }
+          set { self.setImageColor(color: newValue!) }
+      }
+}
+
+class CardView: UIView {
+    override var bounds: CGRect {
+        didSet {
+            setupView()
+        }
+    }
+    
+    private func setupView() {
+        self.layer.cornerRadius = 16
+        self.layer.masksToBounds = true
+    }
+}
+
+class ShadowView: UIView {
+    override var bounds: CGRect {
+        didSet {
+            setupShadow()
+        }
+    }
+
+    private func setupShadow() {
+        self.layer.cornerRadius = 16
+        self.layer.shadowOffset = CGSize(width: 0, height: 3)
+        self.layer.shadowRadius = 3
+        self.layer.shadowOpacity = 0.3
+        self.layer.shadowPath = UIBezierPath(roundedRect: self.bounds, byRoundingCorners: .allCorners, cornerRadii: CGSize(width: 16, height: 8)).cgPath
+        self.layer.shouldRasterize = true
+        self.layer.rasterizationScale = UIScreen.main.scale
+    }
+}
+
+
+

@@ -37,7 +37,7 @@ class ThemeManager {
         UINavigationBar.appearance().titleTextAttributes = [NSAttributedString.Key.foregroundColor: theme.statusBarTitleTextColor]
 
         UITableView.appearance().backgroundColor = theme.mainBackgroundColor
-        UITableViewCell.appearance().backgroundColor = theme.cellBackgroundColor
+        UITableViewCell.appearance().backgroundColor = UIColor.clear
         
         UISegmentedControl.appearance().tintColor = theme.colorAccent
         UISegmentedControl.appearance().backgroundColor = theme.mainBackgroundColor
@@ -49,6 +49,10 @@ class ThemeManager {
         TitleLabel.appearance().textColor = theme.mainTitleTextColor
         BodyLabel.appearance().textColor = theme.mainBodyTextColor
         SubtitleLabel.appearance().textColor = theme.secondaryDarkColor
+        AccentIcon.appearance().fillColor = theme.colorAccent
+        CardView.appearance().backgroundColor = theme.cellBackgroundColor
+        
+        
         
         refreshAllView()
     }

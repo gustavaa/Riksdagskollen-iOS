@@ -12,7 +12,7 @@ import SideMenu
 class MasterViewController: UIViewController, SideMenuDelegate{
     
     var newsViewController = NewsController()
-    var decisionsViewController = DecisionsViewController()
+    var decisionsViewController = DecisionsController()
     
     var menu: SideMenuNavigationController?
     

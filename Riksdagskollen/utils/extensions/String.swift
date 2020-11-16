@@ -16,7 +16,12 @@ extension String {
             return nil
         }
     }
+    
     var htmlToString: String {
-        return htmlToAttributedString?.string ?? ""
+        let tmp = htmlToAttributedString?.string ?? ""
+        var  result = tmp.replacingOccurrences(of: "<[^>]+>", with: "", options: String.CompareOptions.regularExpression, range: nil)
+        result = result.replacingOccurrences(of: "&[a-z]+;", with: " ", options: String.CompareOptions.regularExpression, range: nil)
+        return result
     }
+
 }

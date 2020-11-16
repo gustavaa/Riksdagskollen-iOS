@@ -7,15 +7,7 @@
 
 import Foundation
 
-struct NewsResult: Codable {
-    public var dokumentlista: NewsResponse
-    
-    struct NewsResponse: Codable {
-        public var dokument: [NewsItem]
-    }
-}
-
-struct NewsItem: Codable {
+struct NewsDocument: Codable {
     public var id: String
     public var titel: String
     public var publicerad: String

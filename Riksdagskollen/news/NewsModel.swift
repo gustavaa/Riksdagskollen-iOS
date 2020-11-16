@@ -11,21 +11,18 @@ import Foundation
 class NewsModel {
     
     var currentPage = 1;
-    var newsItems: [NewsItem] = []
-    let newsController: NewsController
+    var newsItems: [NewsDocument] = []
     
-    init(newsController: NewsController) {
-        self.newsController = newsController
-    }
-    
-    public func loadNextPage(){
+    public func loadNextPage(_ onDataFetched: @escaping(() -> ()), onError: @escaping((String) -> ()) ){
         
-        NewsService.getNews(page: currentPage) { (newsResult) in
-            self.newsItems.append(contentsOf: newsResult!)
+        NewsService.fetchNews(page: currentPage)
+        { newsResult in
+            self.newsItems.append(contentsOf: newsResult)
             self.currentPage += 1
-            self.newsController.onDataUpdated()
-        } failure: { error in
-            print("Error getting news: \(error)")
+            onDataFetched()
+        }
+        failure: { error in
+            onError(error)
         }
     }
     
