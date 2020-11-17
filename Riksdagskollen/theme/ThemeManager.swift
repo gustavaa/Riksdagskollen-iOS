@@ -15,8 +15,11 @@ let SELECTED_THEME_KEY = "SELECTED_THEME_KEY"
 class ThemeManager {
     
     var theme: Theme?
+    static let dark = DarkTheme()
+    static let standard = StandardTheme()
+    static let light = LightTheme()
     
-    static var themes: [Theme] = [StandardTheme(), DarkTheme(), LightTheme()]
+    static var themes: [Theme] = [standard, dark, light]
     
     static var shared: ThemeManager = {
         let themesManager = ThemeManager()
@@ -51,6 +54,7 @@ class ThemeManager {
         SubtitleLabel.appearance().textColor = theme.secondaryDarkColor
         AccentIcon.appearance().fillColor = theme.colorAccent
         CardView.appearance().backgroundColor = theme.cellBackgroundColor
+        ShadowView.appearance().backgroundColor = theme.mainBackgroundColor
         
         
         

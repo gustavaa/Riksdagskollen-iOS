@@ -49,13 +49,13 @@ class DecisionsTableViewCell: UITableViewCell {
         debateDateLabel.text = decisionDocument.debattdag
         decisionDateLabel.text = decisionDocument.beslutsdag
         detailsLabel.text = decisionDocument.notis.htmlToString
-
+        
         heightConstraint?.isActive = !decisionDocument.isExpanded
         let rotationAngle = decisionDocument.isExpanded ? CGFloat(Double.pi) : 0
         self.toggleIcon.transform = CGAffineTransform(rotationAngle: rotationAngle)
-        
+
         let decisionCategory = DecisionCategories.getCategoryFromBet(bet: decisionDocument.beteckning)
-        categoryBanner.backgroundColor = decisionCategory?.categoryColor
+        categoryBanner.backgroundColor = ThemeManager.shared.theme?.name == ThemeManager.dark.name ? UIColor.black : decisionCategory?.categoryColor
         categoryLabel.text = decisionCategory?.categoryName
     }
     
@@ -85,6 +85,7 @@ class DecisionsTableViewCell: UITableViewCell {
     
     override func prepareForReuse() {
         self.toggleIcon.transform = CGAffineTransform(rotationAngle: 0)
+        self.bodyStackView.alpha = 1
     }
     
 
