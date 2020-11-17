@@ -34,7 +34,7 @@ class NewsController: UITableViewController {
     
     
     func setupTableview () {
-    
+        tableView.separatorStyle = .none
         tableView.register(NewsItemTableViewCell.nib(), forCellReuseIdentifier: NewsItemTableViewCell.identifier)
         tableView.rowHeight = UITableView.automaticDimension
         tableView.estimatedRowHeight = 400
