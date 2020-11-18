@@ -67,7 +67,8 @@ class DebateFeedController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-
+        let replayVc = DebateReplayViewController()
+        show(replayVc, sender: self)
     }
     
     
