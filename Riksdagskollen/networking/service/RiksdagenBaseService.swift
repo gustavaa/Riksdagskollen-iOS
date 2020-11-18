@@ -12,7 +12,7 @@ class RiksdagenBaseService {
     
     public static let HOST = "https://data.riksdagen.se"
     
-    struct APIResponse<T:Codable>: Codable {
+    struct DocumentListResponse<T:Codable>: Codable {
         public var dokumentlista: DocumentList
         
         struct DocumentList: Codable {
@@ -20,20 +20,58 @@ class RiksdagenBaseService {
         }
     }
     
+    struct RepresentativeListResponse: Codable {
+        public var personlista: PersonList
+        
+    }
+    
+    class PersonList: Codable {
+        public var person: [Representative]?
+        
+        enum CodingKeys: CodingKey {
+            case person
+        }
+
+        required init(from decoder: Decoder) throws {
+            let container = try decoder.container(keyedBy: CodingKeys.self)
+            person = try? container.decodeIfPresent([Representative].self, forKey: .person)
+            if person == nil {
+                if let rep = try? container.decodeIfPresent(Representative.self, forKey: .person) {
+                    person = [rep]
+                }
+            }
+        }
+    }
+    
+   
+    
     static func makeDocumentListJSONRequest<T>(subUrl: String, documentType: T.Type, success: @escaping(([T]) -> Void), failure: @escaping((String) -> Void)) where T : Codable{
-        let url = URL(string: HOST + subUrl)
+        let url = URL(string: "\(HOST)/dokumentlista/\(subUrl)")
         if url == nil {
             failure("Could not parse URL")
             return
         }
-        
-        AF.request(url!).responseString { response in
+        makeJSONRequest(url: url!, responseType: DocumentListResponse<T>.self, success: {response in success(response.dokumentlista.dokument)}, failure: failure);
+    }
+    
+    static func makeRepresentativelistJSONRequest(subUrl: String, success: @escaping(([Representative]?) -> Void), failure: @escaping((String) -> Void)){
+        let url = URL(string: "\(HOST)/personlista/\(subUrl)")
+        if url == nil {
+            failure("Could not parse URL")
+            return
+        }
+        makeJSONRequest(url: url!, responseType: RepresentativeListResponse.self, success: {response in success(response.personlista.person)}, failure: failure)
+    }
+    
+    private static func makeJSONRequest<T>(url: URL, responseType: T.Type, success: @escaping((T) -> Void), failure: @escaping((String) -> Void)) where T : Codable{
+        print("Making request to: \(String(describing: url.absoluteString))")
+        AF.request(url).responseString { response in
             switch response.result {
                 case .success(let value):
                     let json = value.data(using: .utf8)!
                     do {
-                        let decodedResponse = try JSONDecoder().decode(APIResponse<T>.self, from: json)
-                        success(decodedResponse.dokumentlista.dokument)
+                        let decodedResponse = try JSONDecoder().decode(T.self, from: json)
+                        success(decodedResponse)
                         break
                     } catch {
                         print(error)

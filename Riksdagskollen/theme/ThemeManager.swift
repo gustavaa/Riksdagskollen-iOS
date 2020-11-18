@@ -80,7 +80,6 @@ class ThemeManager {
                 }
             }
         }
-        print("Default theme")
         return themes[0]
     }
     

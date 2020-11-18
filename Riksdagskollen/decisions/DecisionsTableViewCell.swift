@@ -74,11 +74,9 @@ class DecisionsTableViewCell: UITableViewCell {
                            initialSpringVelocity: 0.5,
                            animations: {
                             self.bodyStackView.alpha = expanded ? 1 : 0
-                            //self.bodyStackView.isHidden = !expanded
                             self.heightConstraint?.isActive = !expanded
                             self.toggleIcon.transform = CGAffineTransform(rotationAngle: rotationAngle)
                             self.layoutIfNeeded()
-//                            self.superview?.layoutIfNeeded()
                             },
                            completion: nil)
     }

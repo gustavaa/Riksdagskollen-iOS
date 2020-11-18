@@ -10,7 +10,7 @@ import Foundation
 class DecisionService {
     
     static func fetchDecisions(page: Int, success: @escaping((_ result: [DecisionDocument]) -> () ), failure: @escaping((_ error: String) -> ())) {
-        var urlComponents = URLComponents(string: "/dokumentlista/")!
+        var urlComponents = URLComponents()
         let queryItems = [
             URLQueryItem(name: "doktyp", value: "bet"),
             URLQueryItem(name: "sort", value: "datum"),

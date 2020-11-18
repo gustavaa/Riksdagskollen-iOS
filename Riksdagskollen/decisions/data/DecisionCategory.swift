@@ -43,7 +43,6 @@ struct DecisionCategories {
     
     static func getCategoryFromBet(bet: String) -> DecisionCategory? {
         var id = bet.trimmingCharacters(in: .decimalDigits)
-        print(id)
         return allCategories.first(where: { $0.id == id })
     }
 }

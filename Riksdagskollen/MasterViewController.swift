@@ -13,7 +13,7 @@ class MasterViewController: UIViewController, SideMenuDelegate{
     
     var newsViewController = NewsController()
     var decisionsViewController = DecisionsController()
-    
+    var debateViewController = DebateFeedController()
     var menu: SideMenuNavigationController?
     
     var currentViewController: UIViewController?
@@ -24,7 +24,8 @@ class MasterViewController: UIViewController, SideMenuDelegate{
         setupSideMenu()
         setupViewController(viewController: newsViewController)
         setupViewController(viewController: decisionsViewController)
-        
+        setupViewController(viewController: debateViewController)
+
         currentViewController = newsViewController
         switchToViewControlller(viewController: newsViewController)
         navigationItem.title = "Aktuellt"
@@ -56,6 +57,7 @@ class MasterViewController: UIViewController, SideMenuDelegate{
             switchToViewControlller(viewController: decisionsViewController)
             break
         case MenuItems.debate.rawValue:
+            switchToViewControlller(viewController: debateViewController)
             break
         default: break
         }

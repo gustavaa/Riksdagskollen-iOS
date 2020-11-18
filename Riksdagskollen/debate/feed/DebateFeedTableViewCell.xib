@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17126"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="DebateFeedTableViewCell" rowHeight="564" id="KGk-i7-Jjw" customClass="DebateFeedTableViewCell" customModule="Riksdagskollen" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="365" height="564"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="365" height="564"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wZJ-u8-dGf" customClass="ShadowView" customModule="Riksdagskollen" customModuleProvider="target">
+                        <rect key="frame" x="16" y="8" width="333" height="548"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MKU-vq-mML" customClass="CardView" customModule="Riksdagskollen" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="333" height="548"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="HCi-2x-N7A">
+                                        <rect key="frame" x="0.0" y="0.0" width="333" height="548"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="v3q-lJ-7di">
+                                                <rect key="frame" x="20" y="203" width="213" height="142.5"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="249" text="Betänkande" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dde-bA-QLY" customClass="BodyLabel" customModule="Riksdagskollen" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="0.0" width="77" height="17"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Titel" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nIx-Yu-h6Z" customClass="TitleLabel" customModule="Riksdagskollen" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="21" width="34.5" height="19.5"/>
+                                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fyr-o2-tfd" userLabel="Author" customClass="BodyLabel" customModule="Riksdagskollen" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="44.5" width="37.5" height="18"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="249" translatesAutoresizingMaskIntoConstraints="NO" id="JMZ-wh-6d6">
+                                                        <rect key="frame" x="0.0" y="66.5" width="50" height="55"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="55" id="CiE-i1-uTt"/>
+                                                        </constraints>
+                                                    </stackView>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Debattdag: 2020-11-11" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3yH-Lw-AAv">
+                                                        <rect key="frame" x="0.0" y="125.5" width="148.5" height="17"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                                <edgeInsets key="layoutMargins" top="0.0" left="0.0" bottom="0.0" right="0.0"/>
+                                            </stackView>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="BZN-UZ-dVp" customClass="PartyProfileImage" customModule="Riksdagskollen" customModuleProvider="target">
+                                                <rect key="frame" x="233" y="234" width="80" height="80"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="BZN-UZ-dVp" secondAttribute="height" multiplier="1:1" id="Ofe-Hi-6sh"/>
+                                                    <constraint firstAttribute="width" constant="80" id="npF-pN-l45"/>
+                                                </constraints>
+                                            </imageView>
+                                        </subviews>
+                                        <edgeInsets key="layoutMargins" top="8" left="20" bottom="8" right="20"/>
+                                    </stackView>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstItem="HCi-2x-N7A" firstAttribute="leading" secondItem="MKU-vq-mML" secondAttribute="leading" id="GkV-Pq-GYv"/>
+                                    <constraint firstAttribute="bottom" secondItem="HCi-2x-N7A" secondAttribute="bottom" id="NVP-PI-m9E"/>
+                                    <constraint firstItem="HCi-2x-N7A" firstAttribute="top" secondItem="MKU-vq-mML" secondAttribute="top" id="ebn-Ij-fdf"/>
+                                    <constraint firstAttribute="trailing" secondItem="HCi-2x-N7A" secondAttribute="trailing" id="sGI-HX-kgl"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="MKU-vq-mML" secondAttribute="trailing" id="0DO-Rq-6G8"/>
+                            <constraint firstItem="MKU-vq-mML" firstAttribute="top" secondItem="wZJ-u8-dGf" secondAttribute="top" id="PUR-zl-e6u"/>
+                            <constraint firstAttribute="bottom" secondItem="MKU-vq-mML" secondAttribute="bottom" id="Q2j-ux-Zir"/>
+                            <constraint firstItem="MKU-vq-mML" firstAttribute="leading" secondItem="wZJ-u8-dGf" secondAttribute="leading" id="bUM-VE-O01"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="bottom" secondItem="wZJ-u8-dGf" secondAttribute="bottom" constant="8" id="eEY-fm-yv6"/>
+                    <constraint firstAttribute="trailing" secondItem="wZJ-u8-dGf" secondAttribute="trailing" constant="16" id="gAi-3d-eHW"/>
+                    <constraint firstItem="wZJ-u8-dGf" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="u4v-Vz-rjg"/>
+                    <constraint firstItem="wZJ-u8-dGf" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="yuV-h7-gTi"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="authorLabel" destination="fyr-o2-tfd" id="XH6-zv-WHW"/>
+                <outlet property="debateDateLabel" destination="3yH-Lw-AAv" id="ZLd-cn-tPd"/>
+                <outlet property="debateTypeLabel" destination="dde-bA-QLY" id="5ob-Q9-HTD"/>
+                <outlet property="partyIconContainer" destination="JMZ-wh-6d6" id="vBV-if-47K"/>
+                <outlet property="profileView" destination="BZN-UZ-dVp" id="Puq-e6-94l"/>
+                <outlet property="titleLabel" destination="nIx-Yu-h6Z" id="goY-Oy-uVV"/>
+            </connections>
+            <point key="canvasLocation" x="-11" y="244"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

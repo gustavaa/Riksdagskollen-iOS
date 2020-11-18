@@ -12,7 +12,7 @@ class NewsService {
     
     
     static func fetchNews(page: Int, success: @escaping((_ success: [NewsDocument]) -> ()), failure: @escaping ((_ error:String) -> ())) {
-        var urlComponents = URLComponents(string: "/dokumentlista/")!
+        var urlComponents = URLComponents()
         let queryItems = [
             URLQueryItem(name: "avd", value: "aktuellt"),
             URLQueryItem(name: "sort", value: "datum"),

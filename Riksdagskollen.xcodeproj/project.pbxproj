@@ -16,6 +16,21 @@
 		BF3DA20E255E80A50094F463 /* DecisionDocument.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF3DA20D255E80A50094F463 /* DecisionDocument.swift */; };
 		BF3FAD27256267C600261E5C /* ImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF3FAD26256267C600261E5C /* ImageView.swift */; };
 		BF3FAD2E2562C9A400261E5C /* DecisionCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF3FAD2D2562C9A400261E5C /* DecisionCategory.swift */; };
+		BF3FAD362563C26400261E5C /* DebateFeedController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF3FAD352563C26400261E5C /* DebateFeedController.swift */; };
+		BF3FAD392563C29B00261E5C /* DebateFeedModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF3FAD382563C29B00261E5C /* DebateFeedModel.swift */; };
+		BF3FAD412563C35F00261E5C /* PartyDocument.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF3FAD402563C35F00261E5C /* PartyDocument.swift */; };
+		BF3FAD442563C48C00261E5C /* Debate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF3FAD432563C48C00261E5C /* Debate.swift */; };
+		BF3FAD472563C49D00261E5C /* DebateStatement.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF3FAD462563C49D00261E5C /* DebateStatement.swift */; };
+		BF3FAD4A2563C4A500261E5C /* Speech.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF3FAD492563C4A500261E5C /* Speech.swift */; };
+		BF3FAD4D2563C5CF00261E5C /* DebateService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF3FAD4C2563C5CF00261E5C /* DebateService.swift */; };
+		BF3FAD512563C6FE00261E5C /* DebateFeedTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF3FAD4F2563C6FE00261E5C /* DebateFeedTableViewCell.swift */; };
+		BF3FAD522563C6FE00261E5C /* DebateFeedTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BF3FAD502563C6FE00261E5C /* DebateFeedTableViewCell.xib */; };
+		BF3FAD562563CA9A00261E5C /* DocumentType.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF3FAD552563CA9A00261E5C /* DocumentType.swift */; };
+		BF3FAD592563CDA600261E5C /* Parties.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF3FAD582563CDA600261E5C /* Parties.swift */; };
+		BF3FAD5C2563DE4800261E5C /* StackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF3FAD5B2563DE4800261E5C /* StackView.swift */; };
+		BF3FAD61256406D100261E5C /* RepresentativeService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF3FAD60256406D100261E5C /* RepresentativeService.swift */; };
+		BF3FAD662564070900261E5C /* Representative.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF3FAD652564070900261E5C /* Representative.swift */; };
+		BF3FAD6A256507CA00261E5C /* PartyProfileImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF3FAD69256507CA00261E5C /* PartyProfileImage.swift */; };
 		BF3FE28325555B160036AF2F /* MenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF3FE28225555B160036AF2F /* MenuController.swift */; };
 		BF3FE28A25555EAC0036AF2F /* MenuItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF3FE28925555EAC0036AF2F /* MenuItemCell.swift */; };
 		BF3FE28F255583B10036AF2F /* MenuItemCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BF3FE28E255583B10036AF2F /* MenuItemCell.xib */; };
@@ -54,6 +69,21 @@
 		BF3DA20D255E80A50094F463 /* DecisionDocument.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DecisionDocument.swift; sourceTree = "<group>"; };
 		BF3FAD26256267C600261E5C /* ImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageView.swift; sourceTree = "<group>"; };
 		BF3FAD2D2562C9A400261E5C /* DecisionCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DecisionCategory.swift; sourceTree = "<group>"; };
+		BF3FAD352563C26400261E5C /* DebateFeedController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DebateFeedController.swift; sourceTree = "<group>"; };
+		BF3FAD382563C29B00261E5C /* DebateFeedModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DebateFeedModel.swift; sourceTree = "<group>"; };
+		BF3FAD402563C35F00261E5C /* PartyDocument.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PartyDocument.swift; sourceTree = "<group>"; };
+		BF3FAD432563C48C00261E5C /* Debate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Debate.swift; sourceTree = "<group>"; };
+		BF3FAD462563C49D00261E5C /* DebateStatement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DebateStatement.swift; sourceTree = "<group>"; };
+		BF3FAD492563C4A500261E5C /* Speech.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Speech.swift; sourceTree = "<group>"; };
+		BF3FAD4C2563C5CF00261E5C /* DebateService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DebateService.swift; sourceTree = "<group>"; };
+		BF3FAD4F2563C6FE00261E5C /* DebateFeedTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DebateFeedTableViewCell.swift; sourceTree = "<group>"; };
+		BF3FAD502563C6FE00261E5C /* DebateFeedTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DebateFeedTableViewCell.xib; sourceTree = "<group>"; };
+		BF3FAD552563CA9A00261E5C /* DocumentType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentType.swift; sourceTree = "<group>"; };
+		BF3FAD582563CDA600261E5C /* Parties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Parties.swift; sourceTree = "<group>"; };
+		BF3FAD5B2563DE4800261E5C /* StackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StackView.swift; sourceTree = "<group>"; };
+		BF3FAD60256406D100261E5C /* RepresentativeService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepresentativeService.swift; sourceTree = "<group>"; };
+		BF3FAD652564070900261E5C /* Representative.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Representative.swift; sourceTree = "<group>"; };
+		BF3FAD69256507CA00261E5C /* PartyProfileImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PartyProfileImage.swift; sourceTree = "<group>"; };
 		BF3FE28225555B160036AF2F /* MenuController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuController.swift; sourceTree = "<group>"; };
 		BF3FE28925555EAC0036AF2F /* MenuItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuItemCell.swift; sourceTree = "<group>"; };
 		BF3FE28E255583B10036AF2F /* MenuItemCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MenuItemCell.xib; sourceTree = "<group>"; };
@@ -111,6 +141,7 @@
 				BF7F603B255889D400D2959F /* Font.swift */,
 				BF023D30255A889D00BF919D /* String.swift */,
 				BF3FAD26256267C600261E5C /* ImageView.swift */,
+				BF3FAD5B2563DE4800261E5C /* StackView.swift */,
 			);
 			path = extensions;
 			sourceTree = "<group>";
@@ -122,6 +153,95 @@
 				BF3FAD2D2562C9A400261E5C /* DecisionCategory.swift */,
 			);
 			path = data;
+			sourceTree = "<group>";
+		};
+		BF3FAD302563BA9300261E5C /* debate */ = {
+			isa = PBXGroup;
+			children = (
+				BF3FAD3C2563C2B000261E5C /* data */,
+				BF3FAD342563C22A00261E5C /* details */,
+				BF3FAD332563C22500261E5C /* feed */,
+			);
+			path = debate;
+			sourceTree = "<group>";
+		};
+		BF3FAD332563C22500261E5C /* feed */ = {
+			isa = PBXGroup;
+			children = (
+				BF3FAD352563C26400261E5C /* DebateFeedController.swift */,
+				BF3FAD382563C29B00261E5C /* DebateFeedModel.swift */,
+				BF3FAD4F2563C6FE00261E5C /* DebateFeedTableViewCell.swift */,
+				BF3FAD502563C6FE00261E5C /* DebateFeedTableViewCell.xib */,
+			);
+			path = feed;
+			sourceTree = "<group>";
+		};
+		BF3FAD342563C22A00261E5C /* details */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = details;
+			sourceTree = "<group>";
+		};
+		BF3FAD3C2563C2B000261E5C /* data */ = {
+			isa = PBXGroup;
+			children = (
+				BF3FAD432563C48C00261E5C /* Debate.swift */,
+				BF3FAD462563C49D00261E5C /* DebateStatement.swift */,
+				BF3FAD492563C4A500261E5C /* Speech.swift */,
+			);
+			path = data;
+			sourceTree = "<group>";
+		};
+		BF3FAD3E2563C34800261E5C /* shared */ = {
+			isa = PBXGroup;
+			children = (
+				BF3FAD682565066500261E5C /* views */,
+				BF3FAD542563CA7800261E5C /* static */,
+				BF3FAD3F2563C35200261E5C /* data */,
+			);
+			path = shared;
+			sourceTree = "<group>";
+		};
+		BF3FAD3F2563C35200261E5C /* data */ = {
+			isa = PBXGroup;
+			children = (
+				BF3FAD402563C35F00261E5C /* PartyDocument.swift */,
+			);
+			path = data;
+			sourceTree = "<group>";
+		};
+		BF3FAD542563CA7800261E5C /* static */ = {
+			isa = PBXGroup;
+			children = (
+				BF3FAD552563CA9A00261E5C /* DocumentType.swift */,
+				BF3FAD582563CDA600261E5C /* Parties.swift */,
+			);
+			path = static;
+			sourceTree = "<group>";
+		};
+		BF3FAD63256406F400261E5C /* representatives */ = {
+			isa = PBXGroup;
+			children = (
+				BF3FAD64256406FD00261E5C /* data */,
+			);
+			path = representatives;
+			sourceTree = "<group>";
+		};
+		BF3FAD64256406FD00261E5C /* data */ = {
+			isa = PBXGroup;
+			children = (
+				BF3FAD652564070900261E5C /* Representative.swift */,
+			);
+			path = data;
+			sourceTree = "<group>";
+		};
+		BF3FAD682565066500261E5C /* views */ = {
+			isa = PBXGroup;
+			children = (
+				BF3FAD69256507CA00261E5C /* PartyProfileImage.swift */,
+			);
+			path = views;
 			sourceTree = "<group>";
 		};
 		BF40396D25504E7D00D766F4 = {
@@ -145,6 +265,9 @@
 		BF40397825504E7D00D766F4 /* Riksdagskollen */ = {
 			isa = PBXGroup;
 			children = (
+				BF3FAD63256406F400261E5C /* representatives */,
+				BF3FAD3E2563C34800261E5C /* shared */,
+				BF3FAD302563BA9300261E5C /* debate */,
 				BF7B6CA8255D4DC700AD70B3 /* settings */,
 				BF7F605125597FCA00D2959F /* networking */,
 				BF7F603A255889C600D2959F /* utils */,
@@ -219,6 +342,8 @@
 				BF7F605325597FF300D2959F /* RiksdagenBaseService.swift */,
 				BF7F604A2559793900D2959F /* NewsService.swift */,
 				BF3DA204255E6C260094F463 /* DecisionsService.swift */,
+				BF3FAD4C2563C5CF00261E5C /* DebateService.swift */,
+				BF3FAD60256406D100261E5C /* RepresentativeService.swift */,
 			);
 			path = service;
 			sourceTree = "<group>";
@@ -340,6 +465,7 @@
 				BF3FE28F255583B10036AF2F /* MenuItemCell.xib in Resources */,
 				BF40398325504E7E00D766F4 /* Assets.xcassets in Resources */,
 				BF40398125504E7D00D766F4 /* Main.storyboard in Resources */,
+				BF3FAD522563C6FE00261E5C /* DebateFeedTableViewCell.xib in Resources */,
 				BF7B6CA0255C298600AD70B3 /* NewsItemTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -400,23 +526,37 @@
 				BF3FAD27256267C600261E5C /* ImageView.swift in Sources */,
 				BF7B6CAA255D4DE400AD70B3 /* SettingsController.swift in Sources */,
 				BF7B6C9F255C298600AD70B3 /* NewsItemTableViewCell.swift in Sources */,
+				BF3FAD512563C6FE00261E5C /* DebateFeedTableViewCell.swift in Sources */,
+				BF3FAD662564070900261E5C /* Representative.swift in Sources */,
+				BF3FAD412563C35F00261E5C /* PartyDocument.swift in Sources */,
+				BF3FAD4D2563C5CF00261E5C /* DebateService.swift in Sources */,
+				BF3FAD592563CDA600261E5C /* Parties.swift in Sources */,
 				BF3DA1FA255E6A230094F463 /* DecisionModel.swift in Sources */,
 				BF8BE5D02553143F0016C85A /* CustomScrollView.swift in Sources */,
+				BF3FAD6A256507CA00261E5C /* PartyProfileImage.swift in Sources */,
+				BF3FAD472563C49D00261E5C /* DebateStatement.swift in Sources */,
 				BF7F603C255889D400D2959F /* Font.swift in Sources */,
 				BF3FAD2E2562C9A400261E5C /* DecisionCategory.swift in Sources */,
 				BF40397E25504E7D00D766F4 /* NewsController.swift in Sources */,
+				BF3FAD5C2563DE4800261E5C /* StackView.swift in Sources */,
 				BF7B6CBC255D802700AD70B3 /* ThemeComponents.swift in Sources */,
 				BF3DA205255E6C260094F463 /* DecisionsService.swift in Sources */,
+				BF3FAD562563CA9A00261E5C /* DocumentType.swift in Sources */,
 				BFD8B1E225554D20001CEFB2 /* MasterViewController.swift in Sources */,
 				BF023D31255A889D00BF919D /* String.swift in Sources */,
 				BF4039902550536000D766F4 /* Theme.swift in Sources */,
 				BF7F6044255963E100D2959F /* NewsModel.swift in Sources */,
+				BF3FAD362563C26400261E5C /* DebateFeedController.swift in Sources */,
+				BF3FAD4A2563C4A500261E5C /* Speech.swift in Sources */,
 				BF3FE28325555B160036AF2F /* MenuController.swift in Sources */,
 				BF403993255056A200D766F4 /* ThemeManager.swift in Sources */,
 				BF3FE28A25555EAC0036AF2F /* MenuItemCell.swift in Sources */,
+				BF3FAD61256406D100261E5C /* RepresentativeService.swift in Sources */,
 				BF3DA20E255E80A50094F463 /* DecisionDocument.swift in Sources */,
 				BF8BE5CA2552F9150016C85A /* DecisionsController.swift in Sources */,
+				BF3FAD392563C29B00261E5C /* DebateFeedModel.swift in Sources */,
 				BF40399B25505E6800D766F4 /* SplashController.swift in Sources */,
+				BF3FAD442563C48C00261E5C /* Debate.swift in Sources */,
 				BF7F605425597FF300D2959F /* RiksdagenBaseService.swift in Sources */,
 				BF40397A25504E7D00D766F4 /* AppDelegate.swift in Sources */,
 				BF40397C25504E7D00D766F4 /* SceneDelegate.swift in Sources */,
