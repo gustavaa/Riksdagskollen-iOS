@@ -47,6 +47,9 @@ class ThemeManager {
         UISegmentedControl.appearance().setTitleTextAttributes([NSAttributedString.Key.foregroundColor: theme.segmentedControlSelectedColor], for: .selected)
         UISegmentedControl.appearance().setTitleTextAttributes([NSAttributedString.Key.foregroundColor: theme.mainBodyTextColor], for: .normal)
         
+        UIActivityIndicatorView.appearance().color = theme.debateTextColor
+        UIActivityIndicatorView.appearance().style = .large
+
         DrawerHeaderView.appearance().backgroundColor = theme.primaryColor
         ThemedView.appearance().backgroundColor = theme.mainBackgroundColor
         TitleLabel.appearance().textColor = theme.mainTitleTextColor
@@ -55,6 +58,9 @@ class ThemeManager {
         AccentIcon.appearance().fillColor = theme.colorAccent
         CardView.appearance().backgroundColor = theme.cellBackgroundColor
         ShadowView.appearance().backgroundColor = theme.mainBackgroundColor
+        SpeechBubble.appearance().fillColor = theme.debateSpeechBubbleColor
+        SpeechBubble.appearance().speechTextColor = theme.debateTextColor
+        SpeechBubble.appearance().backgroundColor = theme.mainBackgroundColor
         
         
         

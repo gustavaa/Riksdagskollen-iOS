@@ -25,6 +25,7 @@ protocol Theme {
     var mainTitleTextColor : UIColor { get }
     var mainBodyTextColor : UIColor { get }
     var debateTextColor : UIColor { get }
+    var debateSpeechBubbleColor : UIColor { get }
     var buttonColor : UIColor { get }
     var segmentedControlSelectedColor : UIColor { get }
 }
@@ -50,6 +51,7 @@ struct StandardTheme: Theme {
     var mainTitleTextColor: UIColor = UIColor(named: "RiksdagBlue")!
     var mainBodyTextColor: UIColor = UIColor(named: "DarkText")!
     var debateTextColor: UIColor = UIColor.white
+    var debateSpeechBubbleColor : UIColor = UIColor(named: "RiksdagBlue")!
     var buttonColor: UIColor = UIColor(named: "RiksdagBlue")!
     var segmentedControlSelectedColor: UIColor = UIColor(named: "RiksdagBlue")!
 }
@@ -72,6 +74,7 @@ struct DarkTheme: Theme {
     var mainTitleTextColor: UIColor =  UIColor.white
     var mainBodyTextColor: UIColor =  UIColor.white
     var debateTextColor: UIColor = UIColor.white
+    var debateSpeechBubbleColor : UIColor = UIColor(named: "RiksdagDarkGray")!
     var buttonColor: UIColor =  UIColor.white
     var segmentedControlSelectedColor: UIColor = UIColor.black
 }
@@ -94,6 +97,7 @@ struct LightTheme: Theme {
     var mainTitleTextColor: UIColor = UIColor(named: "RiksdagBlueLight")!
     var mainBodyTextColor: UIColor =  UIColor(named: "DarkText")!
     var debateTextColor: UIColor = UIColor(named: "RiksdagBlueLight")!
+    var debateSpeechBubbleColor : UIColor = UIColor(named: "RiksdagBlueLightest")!
     var buttonColor: UIColor = UIColor(named: "RiksdagBlueLight")!
     var segmentedControlSelectedColor: UIColor = UIColor(named: "RiksdagBlueLight")!
 }

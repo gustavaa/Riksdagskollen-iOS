@@ -10,6 +10,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="DebateReplayViewController" customModule="Riksdagskollen" customModuleProvider="target">
             <connections>
+                <outlet property="tableView" destination="oBo-aB-YPN" id="ONC-rV-gYZ"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -17,9 +18,21 @@
         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT" customClass="ThemedView" customModule="Riksdagskollen" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="oBo-aB-YPN">
+                    <rect key="frame" x="0.0" y="44" width="414" height="852"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                </tableView>
+            </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-            <point key="canvasLocation" x="-272" y="84"/>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="oBo-aB-YPN" secondAttribute="bottom" id="Dud-pO-G4o"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="oBo-aB-YPN" secondAttribute="trailing" id="GXf-fb-WWB"/>
+                <constraint firstItem="oBo-aB-YPN" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="topMargin" id="Rmx-bm-sby"/>
+                <constraint firstItem="oBo-aB-YPN" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="uLB-gz-tfa"/>
+            </constraints>
+            <point key="canvasLocation" x="-272.46376811594206" y="83.705357142857139"/>
         </view>
     </objects>
     <resources>

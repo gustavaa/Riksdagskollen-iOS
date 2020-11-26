@@ -53,7 +53,7 @@ class DebateFeedTableViewCell: UITableViewCell {
             self.authorLabel.isHidden = false
         }
         
-        for party in partyDocument.debatt.getPartiesInDebate() {
+        for party in partyDocument.debatt!.getPartiesInDebate() {
             let partyIcon = UIImageView()
             partyIcon.image = party.logo
             partyIcon.widthAnchor.constraint(equalToConstant: 25).isActive = true

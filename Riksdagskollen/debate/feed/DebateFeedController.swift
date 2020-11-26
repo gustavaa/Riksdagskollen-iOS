@@ -68,6 +68,7 @@ class DebateFeedController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let replayVc = DebateReplayViewController()
+        replayVc.setIntiatingDocument(intiatingDocument: model.debateDocuments[indexPath.row])
         show(replayVc, sender: self)
     }
     

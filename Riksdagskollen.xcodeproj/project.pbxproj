@@ -44,6 +44,9 @@
 		BF403993255056A200D766F4 /* ThemeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF403992255056A200D766F4 /* ThemeManager.swift */; };
 		BF40399725505CD500D766F4 /* PushUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF40399625505CD500D766F4 /* PushUp.swift */; };
 		BF40399B25505E6800D766F4 /* SplashController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF40399A25505E6800D766F4 /* SplashController.swift */; };
+		BF5C86E8256C0547003CC1E9 /* DebateReplayTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF5C86E6256C0547003CC1E9 /* DebateReplayTableViewCell.swift */; };
+		BF5C86E9256C0547003CC1E9 /* DebateReplayOutgoingCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BF5C86E7256C0547003CC1E9 /* DebateReplayOutgoingCell.xib */; };
+		BF5C86EC256C0E09003CC1E9 /* DebateReplayModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF5C86EB256C0E09003CC1E9 /* DebateReplayModel.swift */; };
 		BF7B6C9F255C298600AD70B3 /* NewsItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF7B6C9D255C298600AD70B3 /* NewsItemTableViewCell.swift */; };
 		BF7B6CA0255C298600AD70B3 /* NewsItemTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BF7B6C9E255C298600AD70B3 /* NewsItemTableViewCell.xib */; };
 		BF7B6CAA255D4DE400AD70B3 /* SettingsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF7B6CA9255D4DE400AD70B3 /* SettingsController.swift */; };
@@ -53,11 +56,14 @@
 		BF7F6044255963E100D2959F /* NewsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF7F6043255963E100D2959F /* NewsModel.swift */; };
 		BF7F604B2559793900D2959F /* NewsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF7F604A2559793900D2959F /* NewsService.swift */; };
 		BF7F605425597FF300D2959F /* RiksdagenBaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF7F605325597FF300D2959F /* RiksdagenBaseService.swift */; };
+		BF88BA56256EA8F60028BF66 /* DebateReplayIncomingCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BF88BA55256EA8F60028BF66 /* DebateReplayIncomingCell.xib */; };
+		BF88BA5A256F976F0028BF66 /* Toast.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF88BA59256F976F0028BF66 /* Toast.swift */; };
 		BF8BE5CA2552F9150016C85A /* DecisionsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF8BE5C92552F9150016C85A /* DecisionsController.swift */; };
 		BF8BE5D02553143F0016C85A /* CustomScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF8BE5CF2553143F0016C85A /* CustomScrollView.swift */; };
 		BFB6C7062565390000FF2708 /* DebateReplayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFB6C7042565390000FF2708 /* DebateReplayViewController.swift */; };
 		BFB6C7072565390000FF2708 /* DebateReplayViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BFB6C7052565390000FF2708 /* DebateReplayViewController.xib */; };
 		BFB6C70A25653B2200FF2708 /* RepresentativeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFB6C70925653B2200FF2708 /* RepresentativeManager.swift */; };
+		BFB6C70D2565681800FF2708 /* SpeechBubble.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFB6C70C2565681800FF2708 /* SpeechBubble.swift */; };
 		BFD8B1E225554D20001CEFB2 /* MasterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFD8B1E125554D20001CEFB2 /* MasterViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -103,6 +109,9 @@
 		BF40399625505CD500D766F4 /* PushUp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PushUp.swift; sourceTree = "<group>"; };
 		BF40399A25505E6800D766F4 /* SplashController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashController.swift; sourceTree = "<group>"; };
 		BF5964062C3BFA7F2583EB4D /* Pods_Riksdagskollen.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Riksdagskollen.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		BF5C86E6256C0547003CC1E9 /* DebateReplayTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DebateReplayTableViewCell.swift; sourceTree = "<group>"; };
+		BF5C86E7256C0547003CC1E9 /* DebateReplayOutgoingCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DebateReplayOutgoingCell.xib; sourceTree = "<group>"; };
+		BF5C86EB256C0E09003CC1E9 /* DebateReplayModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DebateReplayModel.swift; sourceTree = "<group>"; };
 		BF7B6C9D255C298600AD70B3 /* NewsItemTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsItemTableViewCell.swift; sourceTree = "<group>"; };
 		BF7B6C9E255C298600AD70B3 /* NewsItemTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NewsItemTableViewCell.xib; sourceTree = "<group>"; };
 		BF7B6CA9255D4DE400AD70B3 /* SettingsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsController.swift; sourceTree = "<group>"; };
@@ -112,11 +121,14 @@
 		BF7F6043255963E100D2959F /* NewsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsModel.swift; sourceTree = "<group>"; };
 		BF7F604A2559793900D2959F /* NewsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsService.swift; sourceTree = "<group>"; };
 		BF7F605325597FF300D2959F /* RiksdagenBaseService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RiksdagenBaseService.swift; sourceTree = "<group>"; };
+		BF88BA55256EA8F60028BF66 /* DebateReplayIncomingCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DebateReplayIncomingCell.xib; sourceTree = "<group>"; };
+		BF88BA59256F976F0028BF66 /* Toast.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Toast.swift; sourceTree = "<group>"; };
 		BF8BE5C92552F9150016C85A /* DecisionsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DecisionsController.swift; sourceTree = "<group>"; };
 		BF8BE5CF2553143F0016C85A /* CustomScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomScrollView.swift; sourceTree = "<group>"; };
 		BFB6C7042565390000FF2708 /* DebateReplayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DebateReplayViewController.swift; sourceTree = "<group>"; };
 		BFB6C7052565390000FF2708 /* DebateReplayViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DebateReplayViewController.xib; sourceTree = "<group>"; };
 		BFB6C70925653B2200FF2708 /* RepresentativeManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepresentativeManager.swift; sourceTree = "<group>"; };
+		BFB6C70C2565681800FF2708 /* SpeechBubble.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeechBubble.swift; sourceTree = "<group>"; };
 		BFD8B1E125554D20001CEFB2 /* MasterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MasterViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -187,6 +199,11 @@
 			children = (
 				BFB6C7042565390000FF2708 /* DebateReplayViewController.swift */,
 				BFB6C7052565390000FF2708 /* DebateReplayViewController.xib */,
+				BFB6C70C2565681800FF2708 /* SpeechBubble.swift */,
+				BF5C86E6256C0547003CC1E9 /* DebateReplayTableViewCell.swift */,
+				BF5C86E7256C0547003CC1E9 /* DebateReplayOutgoingCell.xib */,
+				BF88BA55256EA8F60028BF66 /* DebateReplayIncomingCell.xib */,
+				BF5C86EB256C0E09003CC1E9 /* DebateReplayModel.swift */,
 			);
 			path = replay;
 			sourceTree = "<group>";
@@ -249,6 +266,7 @@
 			isa = PBXGroup;
 			children = (
 				BF3FAD69256507CA00261E5C /* PartyProfileImage.swift */,
+				BF88BA59256F976F0028BF66 /* Toast.swift */,
 			);
 			path = views;
 			sourceTree = "<group>";
@@ -469,8 +487,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BF5C86E9256C0547003CC1E9 /* DebateReplayOutgoingCell.xib in Resources */,
 				BFB6C7072565390000FF2708 /* DebateReplayViewController.xib in Resources */,
 				BF40398625504E7E00D766F4 /* LaunchScreen.storyboard in Resources */,
+				BF88BA56256EA8F60028BF66 /* DebateReplayIncomingCell.xib in Resources */,
 				BF3DA1FF255E6A410094F463 /* DecisionsTableViewCell.xib in Resources */,
 				BF3FE28F255583B10036AF2F /* MenuItemCell.xib in Resources */,
 				BF40398325504E7E00D766F4 /* Assets.xcassets in Resources */,
@@ -530,12 +550,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				BF40399725505CD500D766F4 /* PushUp.swift in Sources */,
+				BFB6C70D2565681800FF2708 /* SpeechBubble.swift in Sources */,
 				BF3DA1FE255E6A410094F463 /* DecisionsTableViewCell.swift in Sources */,
 				BFB6C7062565390000FF2708 /* DebateReplayViewController.swift in Sources */,
 				BF7F604B2559793900D2959F /* NewsService.swift in Sources */,
 				BF7F604025588D2100D2959F /* NewsDocument.swift in Sources */,
 				BF3FAD27256267C600261E5C /* ImageView.swift in Sources */,
 				BF7B6CAA255D4DE400AD70B3 /* SettingsController.swift in Sources */,
+				BF88BA5A256F976F0028BF66 /* Toast.swift in Sources */,
 				BF7B6C9F255C298600AD70B3 /* NewsItemTableViewCell.swift in Sources */,
 				BF3FAD512563C6FE00261E5C /* DebateFeedTableViewCell.swift in Sources */,
 				BF3FAD662564070900261E5C /* Representative.swift in Sources */,
@@ -548,6 +570,7 @@
 				BF3FAD472563C49D00261E5C /* DebateStatement.swift in Sources */,
 				BFB6C70A25653B2200FF2708 /* RepresentativeManager.swift in Sources */,
 				BF7F603C255889D400D2959F /* Font.swift in Sources */,
+				BF5C86E8256C0547003CC1E9 /* DebateReplayTableViewCell.swift in Sources */,
 				BF3FAD2E2562C9A400261E5C /* DecisionCategory.swift in Sources */,
 				BF40397E25504E7D00D766F4 /* NewsController.swift in Sources */,
 				BF3FAD5C2563DE4800261E5C /* StackView.swift in Sources */,
@@ -556,6 +579,7 @@
 				BF3FAD562563CA9A00261E5C /* DocumentType.swift in Sources */,
 				BFD8B1E225554D20001CEFB2 /* MasterViewController.swift in Sources */,
 				BF023D31255A889D00BF919D /* String.swift in Sources */,
+				BF5C86EC256C0E09003CC1E9 /* DebateReplayModel.swift in Sources */,
 				BF4039902550536000D766F4 /* Theme.swift in Sources */,
 				BF7F6044255963E100D2959F /* NewsModel.swift in Sources */,
 				BF3FAD362563C26400261E5C /* DebateFeedController.swift in Sources */,

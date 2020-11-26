@@ -43,8 +43,11 @@ class RiksdagenBaseService {
         }
     }
     
-   
+    struct SpeechResponse: Codable {
+        public var anforande: Speech
+    }
     
+   
     static func makeDocumentListJSONRequest<T>(subUrl: String, documentType: T.Type, success: @escaping(([T]) -> Void), failure: @escaping((String) -> Void)) where T : Codable{
         let url = URL(string: "\(HOST)/dokumentlista/\(subUrl)")
         if url == nil {
@@ -63,9 +66,20 @@ class RiksdagenBaseService {
         makeJSONRequest(url: url!, responseType: RepresentativeListResponse.self, success: {response in success(response.personlista.person)}, failure: failure)
     }
     
+    static func makeSpeechJSONRequest(subUrl: String, success: @escaping((Speech?) -> Void), failure: @escaping((String) -> Void)){
+        let url = URL(string: "\(HOST)/anforande/\(subUrl)")
+        if url == nil {
+            failure("Could not parse URL")
+            return
+        }
+        makeJSONRequest(url: url!, responseType: SpeechResponse.self, success: {response in success(response.anforande)}, failure: failure)
+    }
+    
     private static func makeJSONRequest<T>(url: URL, responseType: T.Type, success: @escaping((T) -> Void), failure: @escaping((String) -> Void)) where T : Codable{
         print("Making request to: \(String(describing: url.absoluteString))")
-        AF.request(url).responseString { response in
+        AF.request(url)
+            .validate(statusCode: 200..<300)
+            .responseString { response in
             switch response.result {
                 case .success(let value):
                     let json = value.data(using: .utf8)!

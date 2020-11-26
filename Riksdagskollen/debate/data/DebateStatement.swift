@@ -18,6 +18,6 @@ class DebateStatement: Codable {
     public var tumnagel: String
     public var video_url: String
     public var anf_sekunder: String
-    //public var speech: Speech
+    public var speech: Speech?
     //public var webTVUrl: String
 }

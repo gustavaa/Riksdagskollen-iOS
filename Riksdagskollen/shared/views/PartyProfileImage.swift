@@ -11,6 +11,7 @@ class PartyProfileImage: UIView {
     
     var profileImageView: UIImageView
     private var partyLogoView: UIImageView
+    var partyIndicatorSize: Int = 25
     
     required init?(coder: NSCoder) {
         self.profileImageView = UIImageView()
@@ -36,7 +37,7 @@ class PartyProfileImage: UIView {
         partyLogoView.removeFromSuperview()
         let partyLogo = CurrentParties.getParty(id: partyId)?.logo
         partyLogoView.image = partyLogo 
-        let size = CGFloat(25)
+        let size = CGFloat(partyIndicatorSize)
         partyLogoView.frame = CGRect(x: frame.width-size, y: frame.height-size, width: size, height: size)
         addSubview(partyLogoView)
     }

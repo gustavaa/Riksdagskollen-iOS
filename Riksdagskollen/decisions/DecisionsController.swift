@@ -61,14 +61,6 @@ class DecisionsController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return UITableView.automaticDimension
-        
-//        if model.decisionDocuments[indexPath.row].isExpanded {
-//            return UITableView.automaticDimension
-//        } else if model.decisionDocuments[indexPath.row].initialHeight > 0 {
-//            return UITableView.automaticDimension
-//        } else {
-//            return 150
-//        }
     }
     
     func refreshCellAt(indexPath: IndexPath){

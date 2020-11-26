@@ -27,7 +27,7 @@ class MasterViewController: UIViewController, SideMenuDelegate{
         setupViewController(viewController: debateViewController)
 
         currentViewController = newsViewController
-        switchToViewControlller(viewController: newsViewController)
+        switchToViewControlller(viewController: debateViewController)
         navigationItem.title = "Aktuellt"
     }
     

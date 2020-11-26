@@ -22,10 +22,24 @@ class PartyDocument: Codable {
     public var summary: String
     public var dokumentnamn: String
     public var datum: String
-    public var debatt: Debate
+    public var debatt: Debate?
     public var dokintressent: DocIntressent?
     public var debattnamn: String
     public var debattdag: String
+    
+    
+    func getSenders() -> [String] {
+        if let intressents = dokintressent?.intressent {
+            var senders: [String] = []
+            for intressent in intressents {
+                if intressent.roll == "undertecknare" || (doktyp == "frs" && intressent.roll == "besvaradav") {
+                    senders.append(intressent.intressent_id)
+                }
+            }
+            return senders
+        }
+        return []
+    }
 }
 
 class DocIntressent: Codable {

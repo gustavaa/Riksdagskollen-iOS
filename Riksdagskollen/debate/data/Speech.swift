@@ -11,4 +11,7 @@ class Speech: Codable {
     public var anforandetext: String
     public var talare: String
     public var systemnyckel: String
+    public var intressent_id: String
+    public var parti: String
+
 }
