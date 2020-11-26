@@ -58,12 +58,19 @@
 		BF7F605425597FF300D2959F /* RiksdagenBaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF7F605325597FF300D2959F /* RiksdagenBaseService.swift */; };
 		BF88BA56256EA8F60028BF66 /* DebateReplayIncomingCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BF88BA55256EA8F60028BF66 /* DebateReplayIncomingCell.xib */; };
 		BF88BA5A256F976F0028BF66 /* Toast.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF88BA59256F976F0028BF66 /* Toast.swift */; };
+		BF88BA5E256FA4060028BF66 /* VotesFeedController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF88BA5D256FA4060028BF66 /* VotesFeedController.swift */; };
+		BF88BA64256FA5D40028BF66 /* VotesFeedModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF88BA63256FA5D40028BF66 /* VotesFeedModel.swift */; };
+		BF88BA67256FA6FB0028BF66 /* VotesService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF88BA66256FA6FB0028BF66 /* VotesService.swift */; };
+		BF88BA6B256FAAE00028BF66 /* VotesFeedTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF88BA69256FAAE00028BF66 /* VotesFeedTableViewCell.swift */; };
+		BF88BA6C256FAAE00028BF66 /* VotesFeedTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BF88BA6A256FAAE00028BF66 /* VotesFeedTableViewCell.xib */; };
 		BF8BE5CA2552F9150016C85A /* DecisionsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF8BE5C92552F9150016C85A /* DecisionsController.swift */; };
 		BF8BE5D02553143F0016C85A /* CustomScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF8BE5CF2553143F0016C85A /* CustomScrollView.swift */; };
 		BFB6C7062565390000FF2708 /* DebateReplayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFB6C7042565390000FF2708 /* DebateReplayViewController.swift */; };
 		BFB6C7072565390000FF2708 /* DebateReplayViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BFB6C7052565390000FF2708 /* DebateReplayViewController.xib */; };
 		BFB6C70A25653B2200FF2708 /* RepresentativeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFB6C70925653B2200FF2708 /* RepresentativeManager.swift */; };
 		BFB6C70D2565681800FF2708 /* SpeechBubble.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFB6C70C2565681800FF2708 /* SpeechBubble.swift */; };
+		BFC2CFC7256FB34800A24DF0 /* VotesDocument.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFC2CFC6256FB34800A24DF0 /* VotesDocument.swift */; };
+		BFC2CFCA256FB6BC00A24DF0 /* VoteResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFC2CFC9256FB6BC00A24DF0 /* VoteResult.swift */; };
 		BFD8B1E225554D20001CEFB2 /* MasterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFD8B1E125554D20001CEFB2 /* MasterViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -123,12 +130,19 @@
 		BF7F605325597FF300D2959F /* RiksdagenBaseService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RiksdagenBaseService.swift; sourceTree = "<group>"; };
 		BF88BA55256EA8F60028BF66 /* DebateReplayIncomingCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DebateReplayIncomingCell.xib; sourceTree = "<group>"; };
 		BF88BA59256F976F0028BF66 /* Toast.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Toast.swift; sourceTree = "<group>"; };
+		BF88BA5D256FA4060028BF66 /* VotesFeedController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VotesFeedController.swift; sourceTree = "<group>"; };
+		BF88BA63256FA5D40028BF66 /* VotesFeedModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VotesFeedModel.swift; sourceTree = "<group>"; };
+		BF88BA66256FA6FB0028BF66 /* VotesService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VotesService.swift; sourceTree = "<group>"; };
+		BF88BA69256FAAE00028BF66 /* VotesFeedTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VotesFeedTableViewCell.swift; sourceTree = "<group>"; };
+		BF88BA6A256FAAE00028BF66 /* VotesFeedTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = VotesFeedTableViewCell.xib; sourceTree = "<group>"; };
 		BF8BE5C92552F9150016C85A /* DecisionsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DecisionsController.swift; sourceTree = "<group>"; };
 		BF8BE5CF2553143F0016C85A /* CustomScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomScrollView.swift; sourceTree = "<group>"; };
 		BFB6C7042565390000FF2708 /* DebateReplayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DebateReplayViewController.swift; sourceTree = "<group>"; };
 		BFB6C7052565390000FF2708 /* DebateReplayViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DebateReplayViewController.xib; sourceTree = "<group>"; };
 		BFB6C70925653B2200FF2708 /* RepresentativeManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepresentativeManager.swift; sourceTree = "<group>"; };
 		BFB6C70C2565681800FF2708 /* SpeechBubble.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeechBubble.swift; sourceTree = "<group>"; };
+		BFC2CFC6256FB34800A24DF0 /* VotesDocument.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VotesDocument.swift; sourceTree = "<group>"; };
+		BFC2CFC9256FB6BC00A24DF0 /* VoteResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoteResult.swift; sourceTree = "<group>"; };
 		BFD8B1E125554D20001CEFB2 /* MasterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MasterViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -292,6 +306,7 @@
 		BF40397825504E7D00D766F4 /* Riksdagskollen */ = {
 			isa = PBXGroup;
 			children = (
+				BF88BA5C256FA39E0028BF66 /* votes */,
 				BF3FAD63256406F400261E5C /* representatives */,
 				BF3FAD3E2563C34800261E5C /* shared */,
 				BF3FAD302563BA9300261E5C /* debate */,
@@ -371,8 +386,29 @@
 				BF3DA204255E6C260094F463 /* DecisionsService.swift */,
 				BF3FAD4C2563C5CF00261E5C /* DebateService.swift */,
 				BF3FAD60256406D100261E5C /* RepresentativeService.swift */,
+				BF88BA66256FA6FB0028BF66 /* VotesService.swift */,
 			);
 			path = service;
+			sourceTree = "<group>";
+		};
+		BF88BA5C256FA39E0028BF66 /* votes */ = {
+			isa = PBXGroup;
+			children = (
+				BFC2CFC5256FB33200A24DF0 /* data */,
+				BF88BA61256FA4110028BF66 /* feed */,
+			);
+			path = votes;
+			sourceTree = "<group>";
+		};
+		BF88BA61256FA4110028BF66 /* feed */ = {
+			isa = PBXGroup;
+			children = (
+				BF88BA5D256FA4060028BF66 /* VotesFeedController.swift */,
+				BF88BA63256FA5D40028BF66 /* VotesFeedModel.swift */,
+				BF88BA69256FAAE00028BF66 /* VotesFeedTableViewCell.swift */,
+				BF88BA6A256FAAE00028BF66 /* VotesFeedTableViewCell.xib */,
+			);
+			path = feed;
 			sourceTree = "<group>";
 		};
 		BF8BE5C72552F8970016C85A /* news */ = {
@@ -408,6 +444,15 @@
 				BF3FE28E255583B10036AF2F /* MenuItemCell.xib */,
 			);
 			path = drawer;
+			sourceTree = "<group>";
+		};
+		BFC2CFC5256FB33200A24DF0 /* data */ = {
+			isa = PBXGroup;
+			children = (
+				BFC2CFC6256FB34800A24DF0 /* VotesDocument.swift */,
+				BFC2CFC9256FB6BC00A24DF0 /* VoteResult.swift */,
+			);
+			path = data;
 			sourceTree = "<group>";
 		};
 		BFE4B1532552DCC400259BB2 /* navigation */ = {
@@ -487,6 +532,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BF88BA6C256FAAE00028BF66 /* VotesFeedTableViewCell.xib in Resources */,
 				BF5C86E9256C0547003CC1E9 /* DebateReplayOutgoingCell.xib in Resources */,
 				BFB6C7072565390000FF2708 /* DebateReplayViewController.xib in Resources */,
 				BF40398625504E7E00D766F4 /* LaunchScreen.storyboard in Resources */,
@@ -551,6 +597,7 @@
 			files = (
 				BF40399725505CD500D766F4 /* PushUp.swift in Sources */,
 				BFB6C70D2565681800FF2708 /* SpeechBubble.swift in Sources */,
+				BFC2CFC7256FB34800A24DF0 /* VotesDocument.swift in Sources */,
 				BF3DA1FE255E6A410094F463 /* DecisionsTableViewCell.swift in Sources */,
 				BFB6C7062565390000FF2708 /* DebateReplayViewController.swift in Sources */,
 				BF7F604B2559793900D2959F /* NewsService.swift in Sources */,
@@ -566,12 +613,15 @@
 				BF3FAD592563CDA600261E5C /* Parties.swift in Sources */,
 				BF3DA1FA255E6A230094F463 /* DecisionModel.swift in Sources */,
 				BF8BE5D02553143F0016C85A /* CustomScrollView.swift in Sources */,
+				BF88BA67256FA6FB0028BF66 /* VotesService.swift in Sources */,
 				BF3FAD6A256507CA00261E5C /* PartyProfileImage.swift in Sources */,
+				BF88BA64256FA5D40028BF66 /* VotesFeedModel.swift in Sources */,
 				BF3FAD472563C49D00261E5C /* DebateStatement.swift in Sources */,
 				BFB6C70A25653B2200FF2708 /* RepresentativeManager.swift in Sources */,
 				BF7F603C255889D400D2959F /* Font.swift in Sources */,
 				BF5C86E8256C0547003CC1E9 /* DebateReplayTableViewCell.swift in Sources */,
 				BF3FAD2E2562C9A400261E5C /* DecisionCategory.swift in Sources */,
+				BF88BA6B256FAAE00028BF66 /* VotesFeedTableViewCell.swift in Sources */,
 				BF40397E25504E7D00D766F4 /* NewsController.swift in Sources */,
 				BF3FAD5C2563DE4800261E5C /* StackView.swift in Sources */,
 				BF7B6CBC255D802700AD70B3 /* ThemeComponents.swift in Sources */,
@@ -586,10 +636,12 @@
 				BF3FAD4A2563C4A500261E5C /* Speech.swift in Sources */,
 				BF3FE28325555B160036AF2F /* MenuController.swift in Sources */,
 				BF403993255056A200D766F4 /* ThemeManager.swift in Sources */,
+				BF88BA5E256FA4060028BF66 /* VotesFeedController.swift in Sources */,
 				BF3FE28A25555EAC0036AF2F /* MenuItemCell.swift in Sources */,
 				BF3FAD61256406D100261E5C /* RepresentativeService.swift in Sources */,
 				BF3DA20E255E80A50094F463 /* DecisionDocument.swift in Sources */,
 				BF8BE5CA2552F9150016C85A /* DecisionsController.swift in Sources */,
+				BFC2CFCA256FB6BC00A24DF0 /* VoteResult.swift in Sources */,
 				BF3FAD392563C29B00261E5C /* DebateFeedModel.swift in Sources */,
 				BF40399B25505E6800D766F4 /* SplashController.swift in Sources */,
 				BF3FAD442563C48C00261E5C /* Debate.swift in Sources */,

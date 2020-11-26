@@ -28,6 +28,8 @@ protocol Theme {
     var debateSpeechBubbleColor : UIColor { get }
     var buttonColor : UIColor { get }
     var segmentedControlSelectedColor : UIColor { get }
+    var yesIndicatorColor: UIColor { get }
+    var noIndicatorColor: UIColor { get }
 }
 
 protocol Themable {
@@ -54,7 +56,11 @@ struct StandardTheme: Theme {
     var debateSpeechBubbleColor : UIColor = UIColor(named: "RiksdagBlue")!
     var buttonColor: UIColor = UIColor(named: "RiksdagBlue")!
     var segmentedControlSelectedColor: UIColor = UIColor(named: "RiksdagBlue")!
+    var yesIndicatorColor: UIColor = UIColor(named: "YesVoteColorLight")!
+    var noIndicatorColor: UIColor = UIColor(named: "NoVoteColorLight")!
+    
 }
+
 
 
 struct DarkTheme: Theme {
@@ -77,6 +83,8 @@ struct DarkTheme: Theme {
     var debateSpeechBubbleColor : UIColor = UIColor(named: "RiksdagDarkGray")!
     var buttonColor: UIColor =  UIColor.white
     var segmentedControlSelectedColor: UIColor = UIColor.black
+    var yesIndicatorColor: UIColor = UIColor(named: "DarkResultIndicator")!
+    var noIndicatorColor: UIColor = UIColor(named: "DarkResultIndicator")!
 }
 
 
@@ -100,6 +108,8 @@ struct LightTheme: Theme {
     var debateSpeechBubbleColor : UIColor = UIColor(named: "RiksdagBlueLightest")!
     var buttonColor: UIColor = UIColor(named: "RiksdagBlueLight")!
     var segmentedControlSelectedColor: UIColor = UIColor(named: "RiksdagBlueLight")!
+    var yesIndicatorColor: UIColor = UIColor(named: "RiksdagBlueLightest")!
+    var noIndicatorColor: UIColor = UIColor(named: "RiksdagBlueLightest")!
 }
 
 

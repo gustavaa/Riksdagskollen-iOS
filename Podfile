@@ -9,4 +9,5 @@ target 'Riksdagskollen' do
   pod 'SideMenu'
   pod 'Alamofire', '~> 5.2'
   pod 'Kingfisher', '~> 5.0'
+  pod 'SwiftSoup'
 end

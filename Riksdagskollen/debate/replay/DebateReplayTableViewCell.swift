@@ -53,6 +53,7 @@ class DebateReplayTableViewCell: UITableViewCell {
     
     override func prepareForReuse() {
         activityIndicator.isHidden = false
+        profileView.profileImageView.kf.cancelDownloadTask()
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

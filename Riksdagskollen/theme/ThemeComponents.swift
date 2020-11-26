@@ -23,12 +23,16 @@ class ThemedView: UIView{}
 // Wrapper view for the drawer header
 class DrawerHeaderView: UIView{}
 
+// Icon that is filled with accent color
 class AccentIcon: UIImageView{
     @objc dynamic var fillColor: UIColor? {
           get { return self.tintColor }
           set { self.setImageColor(color: newValue!) }
       }
 }
+
+// Separator between views with accentColor
+class SeparatorView: UIView {}
 
 class CardView: UIView {
     override var bounds: CGRect {

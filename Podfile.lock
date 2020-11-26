@@ -4,23 +4,27 @@ PODS:
     - Kingfisher/Core (= 5.15.7)
   - Kingfisher/Core (5.15.7)
   - SideMenu (6.5.0)
+  - SwiftSoup (2.3.2)
 
 DEPENDENCIES:
   - Alamofire (~> 5.2)
   - Kingfisher (~> 5.0)
   - SideMenu
+  - SwiftSoup
 
 SPEC REPOS:
   trunk:
     - Alamofire
     - Kingfisher
     - SideMenu
+    - SwiftSoup
 
 SPEC CHECKSUMS:
   Alamofire: 3b6a534a3df22db367e4dedeeca73d1ddfcf0e2f
   Kingfisher: 6e1a13523fcb1c86924ce53affe4ac957e544d59
   SideMenu: f583187d21c5b1dd04c72002be544b555a2627a2
+  SwiftSoup: f97bc4e988c7729d6457f9642f974c617a6e2510
 
-PODFILE CHECKSUM: 98ff12ea5dd9b5d363eac68e140cc80ca7917af1
+PODFILE CHECKSUM: d3eaf3ec508699a387a0a8ca7dbac88220625936
 
 COCOAPODS: 1.10.0

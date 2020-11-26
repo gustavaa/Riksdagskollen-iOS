@@ -96,6 +96,21 @@ class RiksdagenBaseService {
             }
         }
     }
+    
+    static func makeStringRequest(url: URL, success: @escaping((String) -> ()), failure: @escaping((String) -> Void)) -> DataRequest{
+        print("Making string reuest to: \(String(describing: url.absoluteString))")
+        return AF.request(url)
+            .validate(statusCode: 200..<300)
+            .responseString { response in
+            switch response.result {
+                case .success(let value):
+                    success(value)
+                    break
+                case .failure(let error):
+                    failure(error.errorDescription ?? "Something went wrong")
+            }
+        }
+    }
 
     
 }

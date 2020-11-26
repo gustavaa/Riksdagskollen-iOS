@@ -14,7 +14,7 @@ class RepresentativeManager {
         return representativeManager
     }()
     
-    var representatives = [String : [String : Representative]]();
+    var representatives = [String : [String : Representative]]()
     
     public func addRepresentative(rep: Representative){
         addRepresentativeToParty(party: rep.parti, rep: rep)

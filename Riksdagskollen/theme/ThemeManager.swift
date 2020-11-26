@@ -56,6 +56,7 @@ class ThemeManager {
         BodyLabel.appearance().textColor = theme.mainBodyTextColor
         SubtitleLabel.appearance().textColor = theme.secondaryDarkColor
         AccentIcon.appearance().fillColor = theme.colorAccent
+        SeparatorView.appearance().backgroundColor = theme.secondaryDarkColor
         CardView.appearance().backgroundColor = theme.cellBackgroundColor
         ShadowView.appearance().backgroundColor = theme.mainBackgroundColor
         SpeechBubble.appearance().fillColor = theme.debateSpeechBubbleColor
