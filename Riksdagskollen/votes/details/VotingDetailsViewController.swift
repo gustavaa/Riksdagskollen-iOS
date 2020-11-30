@@ -60,16 +60,46 @@ class VotingDetailsViewController: UIViewController {
                 self.decisionLabel.isHidden = true
                 self.decisionHeacerLabel.isHidden = true
             }
-            print("Text", try? propositionInfo?.text() ?? "nil")
+
             let proposition = try? propositionInfo!.text().split(usingRegex: "förslag:")[1].trimmingCharacters(in: .whitespaces)
             if let propositionText = proposition {
                 let motionIds = VotingUtil.getMotionsIds(propositionText: propositionText)
-                (self.decisionLabel.text, self.motions) = VotingUtil.createMotionItemsAndCleanup(text: propositionText, motionIds: motionIds)
+                let result = VotingUtil.createMotionItemsAndCleanup(text: propositionText, motionIds: motionIds)
+                self.motions = result.1
+                self.displayMotions()
+
+                let attributedPropositionText = VotingUtil.boldKeywordsWithHTML(text: result.0)
+                self.propositionLabel.setHTMLFromString(htmlText: attributedPropositionText)
             }
            
         }, failure: {error in
             
         })
+    }
+    
+    
+    private func displayMotions() {
+        for motion in self.motions {
+            let titleLabel = TitleLabel()
+            titleLabel.font = titleLabel.font.withSize(16)
+            titleLabel.numberOfLines = 0
+            let lowerTitle = BodyLabel()
+            lowerTitle.font = lowerTitle.font.withSize(16)
+            
+            documentsExpandableContainer.addArrangedSubview(titleLabel)
+            documentsExpandableContainer.addArrangedSubview(lowerTitle)
+            VotesService.fetchMotionById(id: motion.id, success: { partyDocuments in
+                guard let partyDoc = partyDocuments?.first else { return }
+                
+                if partyDoc.doktyp == "prop" {
+                    self.documentsExpandableContainer.removeArrangedSubview(lowerTitle)
+                }
+                titleLabel.text = "[\(motion.listPosition)] \(motion.id) \(partyDoc.titel) \(motion.proposalPoint)"
+                lowerTitle.text = partyDoc.undertitel
+            }, failure: { error in
+                
+            })
+        }
     }
     
 

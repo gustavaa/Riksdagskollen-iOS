@@ -56,7 +56,10 @@ class VotingUtil {
                 } else {
                     endIndex = relevantSubstring.endIndexOfFirstRegexMatch(for: pattern)!
                 }
-                proposalPoint = String(relevantSubstring[relevantSubstring.startIndex..<endIndex])
+                let regexStartIndex = relevantSubstring.beginningIndexOfFirstRegexMatch(for: pattern)!
+                let regexEndIndex = relevantSubstring.endIndexOfFirstRegexMatch(for: pattern)!
+              
+                proposalPoint = String(relevantSubstring[regexStartIndex..<regexEndIndex])
                 replaceString = String(relevantSubstring[..<endIndex])
                 
                 if let existingMotion = motions.first(where: {$0.id == motionId}) {
@@ -82,6 +85,15 @@ class VotingUtil {
         let pattern = "[0-9]{4}\\/[0-9]{2}:[A-ö]{0,4}[0-9]{0,4}"
         let matches = propositionText.groups(for: pattern)
         return matches.map({$0[0]})
+    }
+    
+    static func boldKeywordsWithHTML(text: String) -> String{
+        let keywords = ["avslår", "bifaller", "godkänner"]
+        var result = String(text)
+        for keyword in keywords {
+            result = result.replacingOccurrences(of: keyword, with: "<b>\(keyword)</b>")
+        }
+        return result
     }
 }
 

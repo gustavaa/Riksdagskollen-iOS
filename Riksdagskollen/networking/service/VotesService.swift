@@ -26,6 +26,21 @@ class VotesService {
         let stringUrl = "https://riksdagen.se/sv/dokument-lagar/arende/betankande/_\(votingDocument.searchableBetId)";
         let url = URL(string: stringUrl.addingPercentEncoding(withAllowedCharacters: .urlFragmentAllowed)!)!
         
-        RiksdagenBaseService.makeStringRequest(url: url, success: success, failure: failure)
+        _ = RiksdagenBaseService.makeStringRequest(url: url, success: success, failure: failure)
+    }
+    
+    static func fetchMotionById(id: String,  success: @escaping((_ result: [PartyDocument]?) -> () ), failure: @escaping((_ error: String) -> ())) {
+        
+        var urlComponents = URLComponents()
+        let queryItems = [
+            URLQueryItem(name: "sok", value: id.addingPercentEncoding(withAllowedCharacters: .alphanumerics)),
+            URLQueryItem(name: "doktyp", value: "mot,prop"),
+            URLQueryItem(name: "sort", value: "datum"),
+            URLQueryItem(name: "sortorder", value: "desc"),
+            URLQueryItem(name: "utformat", value: "json"),
+        ]
+        
+        urlComponents.percentEncodedQueryItems = queryItems        
+        RiksdagenBaseService.makeDocumentListJSONRequest(subUrl: urlComponents.string!, documentType: PartyDocument.self, success: success, failure: failure)
     }
 }

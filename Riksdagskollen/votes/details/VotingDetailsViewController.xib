@@ -72,29 +72,29 @@
                                     <rect key="frame" x="0.0" y="169" width="398" height="81"/>
                                     <subviews>
                                         <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jbT-hg-LKa">
-                                            <rect key="frame" x="0.0" y="0.0" width="398" height="31"/>
+                                            <rect key="frame" x="8" y="8" width="382" height="15"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Behandlade dokument" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KGJ-8a-Ra6" customClass="TitleLabel" customModule="Riksdagskollen" customModuleProvider="target">
-                                                    <rect key="frame" x="8" y="8" width="352" height="15"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="352" height="15"/>
                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="expand_more" translatesAutoresizingMaskIntoConstraints="NO" id="Jec-7Q-JJw" customClass="AccentIcon" customModule="Riksdagskollen" customModuleProvider="target">
-                                                    <rect key="frame" x="360" y="8" width="30" height="15"/>
+                                                    <rect key="frame" x="352" y="0.0" width="30" height="15"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" secondItem="Jec-7Q-JJw" secondAttribute="height" multiplier="2:1" id="6kh-12-2uk"/>
                                                         <constraint firstAttribute="height" constant="15" id="CFv-BY-s7F"/>
                                                     </constraints>
                                                 </imageView>
                                             </subviews>
-                                            <edgeInsets key="layoutMargins" top="8" left="8" bottom="8" right="8"/>
                                         </stackView>
                                         <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="UbV-SL-AJN">
-                                            <rect key="frame" x="0.0" y="31" width="398" height="50"/>
+                                            <rect key="frame" x="8" y="23" width="382" height="50"/>
                                         </stackView>
                                     </subviews>
                                     <color key="backgroundColor" name="RiksdagBlueAlpha"/>
+                                    <edgeInsets key="layoutMargins" top="8" left="8" bottom="8" right="8"/>
                                 </stackView>
                                 <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="opa-Hb-5L1">
                                     <rect key="frame" x="0.0" y="258" width="398" height="81"/>
@@ -120,6 +120,7 @@
                                         </stackView>
                                         <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Hnc-An-OU7">
                                             <rect key="frame" x="0.0" y="31" width="398" height="50"/>
+                                            <edgeInsets key="layoutMargins" top="8" left="8" bottom="8" right="8"/>
                                         </stackView>
                                     </subviews>
                                     <color key="backgroundColor" name="RiksdagBlueAlpha"/>
