@@ -8,6 +8,7 @@
 import Foundation
 
 class PartyDocument: Codable {
+
     public var id: String
     public var undertitel: String
     public var titel: String

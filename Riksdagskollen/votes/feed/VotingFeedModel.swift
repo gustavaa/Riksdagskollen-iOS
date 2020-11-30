@@ -7,10 +7,10 @@
 
 import Foundation
 
-class VotesFeedModel {
+class VotingFeedModel {
     
     var currentPage = 1;
-    var voteDocuments: [VotesDocument] = []
+    var voteDocuments: [VotingDocument] = []
     
     public func loadNextPage(_ onDataFetched: @escaping(() -> ()), onError: @escaping((String) -> ()) ){
         VotesService.fetchVotes(page: currentPage)

@@ -19,7 +19,7 @@ class VotingFeedTableViewCell: UITableViewCell {
     @IBOutlet weak var noSideView: UIStackView!
     
     
-    static let identifier = "VotesFeedTableViewCell"
+    static let identifier = "VotingFeedTableViewCell"
     private var resultRequst: DataRequest?
     
     static func nib() -> UINib {
@@ -30,7 +30,7 @@ class VotingFeedTableViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
     }
-    func configure(with votesDocument: VotesDocument) {
+    func configure(with votesDocument: VotingDocument) {
         titleLabel.text = trimTitle(votesDocument.titel)
         dateLabel.text = votesDocument.datum
         
@@ -45,6 +45,7 @@ class VotingFeedTableViewCell: UITableViewCell {
             let urlString =  "http:\(votesDocument.dokument_url_html)".addingPercentEncoding(withAllowedCharacters: .urlFragmentAllowed)!
             if let url = URL(string: urlString) {
                 resultRequst = RiksdagenBaseService.makeStringRequest(url: url, success: { response in
+                    votesDocument.votingHtmlContent = response
                     let results = VoteResult(response: response)
                     votesDocument.voteResults = results.voteResults
                     self.arrangeVotes(results: results.voteResults)

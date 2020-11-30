@@ -8,9 +8,9 @@
 import Foundation
 import UIKit
 
-class VotesFeedController: UITableViewController {
+class VotingFeedController: UITableViewController {
     
-    let model: VotesFeedModel = VotesFeedModel()
+    let model: VotingFeedModel = VotingFeedModel()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,7 +21,7 @@ class VotesFeedController: UITableViewController {
     }
     
     func setupTableview () {
-        tableView.register(VotesFeedTableViewCell.nib(), forCellReuseIdentifier: VotesFeedTableViewCell.identifier)
+        tableView.register(VotingFeedTableViewCell.nib(), forCellReuseIdentifier: VotingFeedTableViewCell.identifier)
         tableView.rowHeight = UITableView.automaticDimension
         tableView.estimatedRowHeight = 150
         tableView.separatorStyle = .none
@@ -32,7 +32,7 @@ class VotesFeedController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: VotesFeedTableViewCell.identifier) as! VotesFeedTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: VotingFeedTableViewCell.identifier) as! VotingFeedTableViewCell
         cell.configure(with: model.voteDocuments[indexPath.row])
 
         return cell
@@ -52,7 +52,9 @@ class VotesFeedController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-
+        let detailsVc = VotingDetailsViewController()
+        detailsVc.votingDocument = model.voteDocuments[indexPath.row]
+        present(detailsVc, animated: true, completion: {})
     }
     
     

@@ -47,6 +47,8 @@
 		BF5C86E8256C0547003CC1E9 /* DebateReplayTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF5C86E6256C0547003CC1E9 /* DebateReplayTableViewCell.swift */; };
 		BF5C86E9256C0547003CC1E9 /* DebateReplayOutgoingCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BF5C86E7256C0547003CC1E9 /* DebateReplayOutgoingCell.xib */; };
 		BF5C86EC256C0E09003CC1E9 /* DebateReplayModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF5C86EB256C0E09003CC1E9 /* DebateReplayModel.swift */; };
+		BF5C9AB925750199009F22BC /* VotingUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF5C9AB825750199009F22BC /* VotingUtil.swift */; };
+		BF5C9ABD25750491009F22BC /* VoteResultTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF5C9ABC25750491009F22BC /* VoteResultTests.swift */; };
 		BF7B6C9F255C298600AD70B3 /* NewsItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF7B6C9D255C298600AD70B3 /* NewsItemTableViewCell.swift */; };
 		BF7B6CA0255C298600AD70B3 /* NewsItemTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BF7B6C9E255C298600AD70B3 /* NewsItemTableViewCell.xib */; };
 		BF7B6CAA255D4DE400AD70B3 /* SettingsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF7B6CA9255D4DE400AD70B3 /* SettingsController.swift */; };
@@ -58,21 +60,34 @@
 		BF7F605425597FF300D2959F /* RiksdagenBaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF7F605325597FF300D2959F /* RiksdagenBaseService.swift */; };
 		BF88BA56256EA8F60028BF66 /* DebateReplayIncomingCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BF88BA55256EA8F60028BF66 /* DebateReplayIncomingCell.xib */; };
 		BF88BA5A256F976F0028BF66 /* Toast.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF88BA59256F976F0028BF66 /* Toast.swift */; };
-		BF88BA5E256FA4060028BF66 /* VotesFeedController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF88BA5D256FA4060028BF66 /* VotesFeedController.swift */; };
-		BF88BA64256FA5D40028BF66 /* VotesFeedModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF88BA63256FA5D40028BF66 /* VotesFeedModel.swift */; };
+		BF88BA5E256FA4060028BF66 /* VotingFeedController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF88BA5D256FA4060028BF66 /* VotingFeedController.swift */; };
+		BF88BA64256FA5D40028BF66 /* VotingFeedModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF88BA63256FA5D40028BF66 /* VotingFeedModel.swift */; };
 		BF88BA67256FA6FB0028BF66 /* VotesService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF88BA66256FA6FB0028BF66 /* VotesService.swift */; };
-		BF88BA6B256FAAE00028BF66 /* VotesFeedTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF88BA69256FAAE00028BF66 /* VotesFeedTableViewCell.swift */; };
-		BF88BA6C256FAAE00028BF66 /* VotesFeedTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BF88BA6A256FAAE00028BF66 /* VotesFeedTableViewCell.xib */; };
+		BF88BA6B256FAAE00028BF66 /* VotingFeedTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF88BA69256FAAE00028BF66 /* VotingFeedTableViewCell.swift */; };
+		BF88BA6C256FAAE00028BF66 /* VotingFeedTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BF88BA6A256FAAE00028BF66 /* VotingFeedTableViewCell.xib */; };
 		BF8BE5CA2552F9150016C85A /* DecisionsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF8BE5C92552F9150016C85A /* DecisionsController.swift */; };
 		BF8BE5D02553143F0016C85A /* CustomScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF8BE5CF2553143F0016C85A /* CustomScrollView.swift */; };
 		BFB6C7062565390000FF2708 /* DebateReplayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFB6C7042565390000FF2708 /* DebateReplayViewController.swift */; };
 		BFB6C7072565390000FF2708 /* DebateReplayViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BFB6C7052565390000FF2708 /* DebateReplayViewController.xib */; };
 		BFB6C70A25653B2200FF2708 /* RepresentativeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFB6C70925653B2200FF2708 /* RepresentativeManager.swift */; };
 		BFB6C70D2565681800FF2708 /* SpeechBubble.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFB6C70C2565681800FF2708 /* SpeechBubble.swift */; };
-		BFC2CFC7256FB34800A24DF0 /* VotesDocument.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFC2CFC6256FB34800A24DF0 /* VotesDocument.swift */; };
+		BFC2CFC7256FB34800A24DF0 /* VotingDocument.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFC2CFC6256FB34800A24DF0 /* VotingDocument.swift */; };
 		BFC2CFCA256FB6BC00A24DF0 /* VoteResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFC2CFC9256FB6BC00A24DF0 /* VoteResult.swift */; };
+		BFC2CFE52570080E00A24DF0 /* VotingDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFC2CFE32570080E00A24DF0 /* VotingDetailsViewController.swift */; };
+		BFC2CFE62570080E00A24DF0 /* VotingDetailsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BFC2CFE42570080E00A24DF0 /* VotingDetailsViewController.xib */; };
+		BFC2CFF22574E1F300A24DF0 /* RiksdagskollenTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFC2CFF12574E1F300A24DF0 /* RiksdagskollenTests.swift */; };
 		BFD8B1E225554D20001CEFB2 /* MasterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFD8B1E125554D20001CEFB2 /* MasterViewController.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		BFC2CFF42574E1F300A24DF0 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BF40396E25504E7D00D766F4 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = BF40397525504E7D00D766F4;
+			remoteInfo = Riksdagskollen;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		17491EBE81FDFAB40921E3B7 /* Pods-Riksdagskollen.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Riksdagskollen.debug.xcconfig"; path = "Target Support Files/Pods-Riksdagskollen/Pods-Riksdagskollen.debug.xcconfig"; sourceTree = "<group>"; };
@@ -119,6 +134,8 @@
 		BF5C86E6256C0547003CC1E9 /* DebateReplayTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DebateReplayTableViewCell.swift; sourceTree = "<group>"; };
 		BF5C86E7256C0547003CC1E9 /* DebateReplayOutgoingCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DebateReplayOutgoingCell.xib; sourceTree = "<group>"; };
 		BF5C86EB256C0E09003CC1E9 /* DebateReplayModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DebateReplayModel.swift; sourceTree = "<group>"; };
+		BF5C9AB825750199009F22BC /* VotingUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VotingUtil.swift; sourceTree = "<group>"; };
+		BF5C9ABC25750491009F22BC /* VoteResultTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoteResultTests.swift; sourceTree = "<group>"; };
 		BF7B6C9D255C298600AD70B3 /* NewsItemTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsItemTableViewCell.swift; sourceTree = "<group>"; };
 		BF7B6C9E255C298600AD70B3 /* NewsItemTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NewsItemTableViewCell.xib; sourceTree = "<group>"; };
 		BF7B6CA9255D4DE400AD70B3 /* SettingsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsController.swift; sourceTree = "<group>"; };
@@ -130,19 +147,24 @@
 		BF7F605325597FF300D2959F /* RiksdagenBaseService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RiksdagenBaseService.swift; sourceTree = "<group>"; };
 		BF88BA55256EA8F60028BF66 /* DebateReplayIncomingCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DebateReplayIncomingCell.xib; sourceTree = "<group>"; };
 		BF88BA59256F976F0028BF66 /* Toast.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Toast.swift; sourceTree = "<group>"; };
-		BF88BA5D256FA4060028BF66 /* VotesFeedController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VotesFeedController.swift; sourceTree = "<group>"; };
-		BF88BA63256FA5D40028BF66 /* VotesFeedModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VotesFeedModel.swift; sourceTree = "<group>"; };
+		BF88BA5D256FA4060028BF66 /* VotingFeedController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VotingFeedController.swift; sourceTree = "<group>"; };
+		BF88BA63256FA5D40028BF66 /* VotingFeedModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VotingFeedModel.swift; sourceTree = "<group>"; };
 		BF88BA66256FA6FB0028BF66 /* VotesService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VotesService.swift; sourceTree = "<group>"; };
-		BF88BA69256FAAE00028BF66 /* VotesFeedTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VotesFeedTableViewCell.swift; sourceTree = "<group>"; };
-		BF88BA6A256FAAE00028BF66 /* VotesFeedTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = VotesFeedTableViewCell.xib; sourceTree = "<group>"; };
+		BF88BA69256FAAE00028BF66 /* VotingFeedTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VotingFeedTableViewCell.swift; sourceTree = "<group>"; };
+		BF88BA6A256FAAE00028BF66 /* VotingFeedTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = VotingFeedTableViewCell.xib; sourceTree = "<group>"; };
 		BF8BE5C92552F9150016C85A /* DecisionsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DecisionsController.swift; sourceTree = "<group>"; };
 		BF8BE5CF2553143F0016C85A /* CustomScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomScrollView.swift; sourceTree = "<group>"; };
 		BFB6C7042565390000FF2708 /* DebateReplayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DebateReplayViewController.swift; sourceTree = "<group>"; };
 		BFB6C7052565390000FF2708 /* DebateReplayViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DebateReplayViewController.xib; sourceTree = "<group>"; };
 		BFB6C70925653B2200FF2708 /* RepresentativeManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepresentativeManager.swift; sourceTree = "<group>"; };
 		BFB6C70C2565681800FF2708 /* SpeechBubble.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeechBubble.swift; sourceTree = "<group>"; };
-		BFC2CFC6256FB34800A24DF0 /* VotesDocument.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VotesDocument.swift; sourceTree = "<group>"; };
+		BFC2CFC6256FB34800A24DF0 /* VotingDocument.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VotingDocument.swift; sourceTree = "<group>"; };
 		BFC2CFC9256FB6BC00A24DF0 /* VoteResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoteResult.swift; sourceTree = "<group>"; };
+		BFC2CFE32570080E00A24DF0 /* VotingDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VotingDetailsViewController.swift; sourceTree = "<group>"; };
+		BFC2CFE42570080E00A24DF0 /* VotingDetailsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = VotingDetailsViewController.xib; sourceTree = "<group>"; };
+		BFC2CFEF2574E1F300A24DF0 /* RiksdagskollenTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RiksdagskollenTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		BFC2CFF12574E1F300A24DF0 /* RiksdagskollenTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RiksdagskollenTests.swift; sourceTree = "<group>"; };
+		BFC2CFF32574E1F300A24DF0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BFD8B1E125554D20001CEFB2 /* MasterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MasterViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -152,6 +174,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				B655B04380982B055F7581A9 /* Pods_Riksdagskollen.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BFC2CFEC2574E1F300A24DF0 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -289,6 +318,7 @@
 			isa = PBXGroup;
 			children = (
 				BF40397825504E7D00D766F4 /* Riksdagskollen */,
+				BFC2CFF02574E1F300A24DF0 /* RiksdagskollenTests */,
 				BF40397725504E7D00D766F4 /* Products */,
 				47E979B9B8E31F228120D1B5 /* Pods */,
 				D4C2B2ED704F7549323E7B9F /* Frameworks */,
@@ -299,6 +329,7 @@
 			isa = PBXGroup;
 			children = (
 				BF40397625504E7D00D766F4 /* Riksdagskollen.app */,
+				BFC2CFEF2574E1F300A24DF0 /* RiksdagskollenTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -344,6 +375,14 @@
 				BF40399625505CD500D766F4 /* PushUp.swift */,
 			);
 			path = segues;
+			sourceTree = "<group>";
+		};
+		BF5C9AB72575017D009F22BC /* util */ = {
+			isa = PBXGroup;
+			children = (
+				BF5C9AB825750199009F22BC /* VotingUtil.swift */,
+			);
+			path = util;
 			sourceTree = "<group>";
 		};
 		BF7B6CA8255D4DC700AD70B3 /* settings */ = {
@@ -394,6 +433,8 @@
 		BF88BA5C256FA39E0028BF66 /* votes */ = {
 			isa = PBXGroup;
 			children = (
+				BF5C9AB72575017D009F22BC /* util */,
+				BFC2CFD2257003E000A24DF0 /* details */,
 				BFC2CFC5256FB33200A24DF0 /* data */,
 				BF88BA61256FA4110028BF66 /* feed */,
 			);
@@ -403,10 +444,10 @@
 		BF88BA61256FA4110028BF66 /* feed */ = {
 			isa = PBXGroup;
 			children = (
-				BF88BA5D256FA4060028BF66 /* VotesFeedController.swift */,
-				BF88BA63256FA5D40028BF66 /* VotesFeedModel.swift */,
-				BF88BA69256FAAE00028BF66 /* VotesFeedTableViewCell.swift */,
-				BF88BA6A256FAAE00028BF66 /* VotesFeedTableViewCell.xib */,
+				BF88BA5D256FA4060028BF66 /* VotingFeedController.swift */,
+				BF88BA63256FA5D40028BF66 /* VotingFeedModel.swift */,
+				BF88BA69256FAAE00028BF66 /* VotingFeedTableViewCell.swift */,
+				BF88BA6A256FAAE00028BF66 /* VotingFeedTableViewCell.xib */,
 			);
 			path = feed;
 			sourceTree = "<group>";
@@ -449,10 +490,29 @@
 		BFC2CFC5256FB33200A24DF0 /* data */ = {
 			isa = PBXGroup;
 			children = (
-				BFC2CFC6256FB34800A24DF0 /* VotesDocument.swift */,
+				BFC2CFC6256FB34800A24DF0 /* VotingDocument.swift */,
 				BFC2CFC9256FB6BC00A24DF0 /* VoteResult.swift */,
 			);
 			path = data;
+			sourceTree = "<group>";
+		};
+		BFC2CFD2257003E000A24DF0 /* details */ = {
+			isa = PBXGroup;
+			children = (
+				BFC2CFE32570080E00A24DF0 /* VotingDetailsViewController.swift */,
+				BFC2CFE42570080E00A24DF0 /* VotingDetailsViewController.xib */,
+			);
+			path = details;
+			sourceTree = "<group>";
+		};
+		BFC2CFF02574E1F300A24DF0 /* RiksdagskollenTests */ = {
+			isa = PBXGroup;
+			children = (
+				BF5C9ABC25750491009F22BC /* VoteResultTests.swift */,
+				BFC2CFF12574E1F300A24DF0 /* RiksdagskollenTests.swift */,
+				BFC2CFF32574E1F300A24DF0 /* Info.plist */,
+			);
+			path = RiksdagskollenTests;
 			sourceTree = "<group>";
 		};
 		BFE4B1532552DCC400259BB2 /* navigation */ = {
@@ -495,6 +555,24 @@
 			productReference = BF40397625504E7D00D766F4 /* Riksdagskollen.app */;
 			productType = "com.apple.product-type.application";
 		};
+		BFC2CFEE2574E1F300A24DF0 /* RiksdagskollenTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BFC2CFF62574E1F300A24DF0 /* Build configuration list for PBXNativeTarget "RiksdagskollenTests" */;
+			buildPhases = (
+				BFC2CFEB2574E1F300A24DF0 /* Sources */,
+				BFC2CFEC2574E1F300A24DF0 /* Frameworks */,
+				BFC2CFED2574E1F300A24DF0 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				BFC2CFF52574E1F300A24DF0 /* PBXTargetDependency */,
+			);
+			name = RiksdagskollenTests;
+			productName = RiksdagskollenTests;
+			productReference = BFC2CFEF2574E1F300A24DF0 /* RiksdagskollenTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -506,6 +584,10 @@
 				TargetAttributes = {
 					BF40397525504E7D00D766F4 = {
 						CreatedOnToolsVersion = 12.1;
+					};
+					BFC2CFEE2574E1F300A24DF0 = {
+						CreatedOnToolsVersion = 12.1;
+						TestTargetID = BF40397525504E7D00D766F4;
 					};
 				};
 			};
@@ -523,6 +605,7 @@
 			projectRoot = "";
 			targets = (
 				BF40397525504E7D00D766F4 /* Riksdagskollen */,
+				BFC2CFEE2574E1F300A24DF0 /* RiksdagskollenTests */,
 			);
 		};
 /* End PBXProject section */
@@ -532,7 +615,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BF88BA6C256FAAE00028BF66 /* VotesFeedTableViewCell.xib in Resources */,
+				BF88BA6C256FAAE00028BF66 /* VotingFeedTableViewCell.xib in Resources */,
 				BF5C86E9256C0547003CC1E9 /* DebateReplayOutgoingCell.xib in Resources */,
 				BFB6C7072565390000FF2708 /* DebateReplayViewController.xib in Resources */,
 				BF40398625504E7E00D766F4 /* LaunchScreen.storyboard in Resources */,
@@ -540,9 +623,17 @@
 				BF3DA1FF255E6A410094F463 /* DecisionsTableViewCell.xib in Resources */,
 				BF3FE28F255583B10036AF2F /* MenuItemCell.xib in Resources */,
 				BF40398325504E7E00D766F4 /* Assets.xcassets in Resources */,
+				BFC2CFE62570080E00A24DF0 /* VotingDetailsViewController.xib in Resources */,
 				BF40398125504E7D00D766F4 /* Main.storyboard in Resources */,
 				BF3FAD522563C6FE00261E5C /* DebateFeedTableViewCell.xib in Resources */,
 				BF7B6CA0255C298600AD70B3 /* NewsItemTableViewCell.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BFC2CFED2574E1F300A24DF0 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -597,7 +688,7 @@
 			files = (
 				BF40399725505CD500D766F4 /* PushUp.swift in Sources */,
 				BFB6C70D2565681800FF2708 /* SpeechBubble.swift in Sources */,
-				BFC2CFC7256FB34800A24DF0 /* VotesDocument.swift in Sources */,
+				BFC2CFC7256FB34800A24DF0 /* VotingDocument.swift in Sources */,
 				BF3DA1FE255E6A410094F463 /* DecisionsTableViewCell.swift in Sources */,
 				BFB6C7062565390000FF2708 /* DebateReplayViewController.swift in Sources */,
 				BF7F604B2559793900D2959F /* NewsService.swift in Sources */,
@@ -611,17 +702,19 @@
 				BF3FAD412563C35F00261E5C /* PartyDocument.swift in Sources */,
 				BF3FAD4D2563C5CF00261E5C /* DebateService.swift in Sources */,
 				BF3FAD592563CDA600261E5C /* Parties.swift in Sources */,
+				BF5C9AB925750199009F22BC /* VotingUtil.swift in Sources */,
 				BF3DA1FA255E6A230094F463 /* DecisionModel.swift in Sources */,
 				BF8BE5D02553143F0016C85A /* CustomScrollView.swift in Sources */,
 				BF88BA67256FA6FB0028BF66 /* VotesService.swift in Sources */,
 				BF3FAD6A256507CA00261E5C /* PartyProfileImage.swift in Sources */,
-				BF88BA64256FA5D40028BF66 /* VotesFeedModel.swift in Sources */,
+				BF88BA64256FA5D40028BF66 /* VotingFeedModel.swift in Sources */,
 				BF3FAD472563C49D00261E5C /* DebateStatement.swift in Sources */,
+				BFC2CFE52570080E00A24DF0 /* VotingDetailsViewController.swift in Sources */,
 				BFB6C70A25653B2200FF2708 /* RepresentativeManager.swift in Sources */,
 				BF7F603C255889D400D2959F /* Font.swift in Sources */,
 				BF5C86E8256C0547003CC1E9 /* DebateReplayTableViewCell.swift in Sources */,
 				BF3FAD2E2562C9A400261E5C /* DecisionCategory.swift in Sources */,
-				BF88BA6B256FAAE00028BF66 /* VotesFeedTableViewCell.swift in Sources */,
+				BF88BA6B256FAAE00028BF66 /* VotingFeedTableViewCell.swift in Sources */,
 				BF40397E25504E7D00D766F4 /* NewsController.swift in Sources */,
 				BF3FAD5C2563DE4800261E5C /* StackView.swift in Sources */,
 				BF7B6CBC255D802700AD70B3 /* ThemeComponents.swift in Sources */,
@@ -636,7 +729,7 @@
 				BF3FAD4A2563C4A500261E5C /* Speech.swift in Sources */,
 				BF3FE28325555B160036AF2F /* MenuController.swift in Sources */,
 				BF403993255056A200D766F4 /* ThemeManager.swift in Sources */,
-				BF88BA5E256FA4060028BF66 /* VotesFeedController.swift in Sources */,
+				BF88BA5E256FA4060028BF66 /* VotingFeedController.swift in Sources */,
 				BF3FE28A25555EAC0036AF2F /* MenuItemCell.swift in Sources */,
 				BF3FAD61256406D100261E5C /* RepresentativeService.swift in Sources */,
 				BF3DA20E255E80A50094F463 /* DecisionDocument.swift in Sources */,
@@ -651,7 +744,24 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		BFC2CFEB2574E1F300A24DF0 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BF5C9ABD25750491009F22BC /* VoteResultTests.swift in Sources */,
+				BFC2CFF22574E1F300A24DF0 /* RiksdagskollenTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		BFC2CFF52574E1F300A24DF0 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = BF40397525504E7D00D766F4 /* Riksdagskollen */;
+			targetProxy = BFC2CFF42574E1F300A24DF0 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		BF40397F25504E7D00D766F4 /* Main.storyboard */ = {
@@ -827,6 +937,44 @@
 			};
 			name = Release;
 		};
+		BFC2CFF72574E1F300A24DF0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = RiksdagskollenTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = Riksdagskollen.RiksdagskollenTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Riksdagskollen.app/Riksdagskollen";
+			};
+			name = Debug;
+		};
+		BFC2CFF82574E1F300A24DF0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = RiksdagskollenTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = Riksdagskollen.RiksdagskollenTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Riksdagskollen.app/Riksdagskollen";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -844,6 +992,15 @@
 			buildConfigurations = (
 				BF40398B25504E7E00D766F4 /* Debug */,
 				BF40398C25504E7E00D766F4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		BFC2CFF62574E1F300A24DF0 /* Build configuration list for PBXNativeTarget "RiksdagskollenTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BFC2CFF72574E1F300A24DF0 /* Debug */,
+				BFC2CFF82574E1F300A24DF0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

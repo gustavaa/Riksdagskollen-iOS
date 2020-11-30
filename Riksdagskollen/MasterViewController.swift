@@ -11,7 +11,7 @@ import SideMenu
 
 class MasterViewController: UIViewController, SideMenuDelegate{
     
-    var votesViewController = VotesFeedController()
+    var votesViewController = VotingFeedController()
     var newsViewController = NewsController()
     var decisionsViewController = DecisionsController()
     var debateViewController = DebateFeedController()

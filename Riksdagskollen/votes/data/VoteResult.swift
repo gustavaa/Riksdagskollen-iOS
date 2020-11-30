@@ -11,6 +11,9 @@ import SwiftSoup
 class VoteResult {
     var voteResults = [String: [Int]]()
     var partiesInVoteList = [String]()
+    var total: [Int]? {
+        return voteResults["totalt"]
+    }
     private let votTableBegin = "<table class=\"vottabell\""
     private let votTableEnd = "</table>"
 
@@ -37,7 +40,7 @@ class VoteResult {
                 ] as! [Int]
                 let label = allVotesArray[index].lowercased()
                 voteResults[label] = data
-                if label != "TOTALT" {
+                if label != "totalt" {
                     partiesInVoteList.append(label)
                 }
             }
@@ -46,5 +49,9 @@ class VoteResult {
         } catch {
             print("error parsing voteresult html")
         }
+    }
+    
+    func getPartyVotes(party: String) -> [Int]?{
+        return voteResults[party.lowercased()]
     }
 }

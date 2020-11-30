@@ -8,7 +8,7 @@
 import Foundation
 class VotesService {
     
-    static func fetchVotes(page: Int, success: @escaping((_ result: [VotesDocument]?) -> () ), failure: @escaping((_ error: String) -> ())) {
+    static func fetchVotes(page: Int, success: @escaping((_ result: [VotingDocument]?) -> () ), failure: @escaping((_ error: String) -> ())) {
         
         var urlComponents = URLComponents()
         let queryItems = [
@@ -19,6 +19,13 @@ class VotesService {
             URLQueryItem(name: "p", value: "\(page)"),
         ]
         urlComponents.queryItems = queryItems
-        RiksdagenBaseService.makeDocumentListJSONRequest(subUrl: urlComponents.string!, documentType: VotesDocument.self, success: success, failure: failure)
+        RiksdagenBaseService.makeDocumentListJSONRequest(subUrl: urlComponents.string!, documentType: VotingDocument.self, success: success, failure: failure)
+    }
+    
+    static func fetchBetForVotingDocment(votingDocument: VotingDocument, success: @escaping((String) -> () ), failure: @escaping((_ error: String) -> ())){
+        let stringUrl = "https://riksdagen.se/sv/dokument-lagar/arende/betankande/_\(votingDocument.searchableBetId)";
+        let url = URL(string: stringUrl.addingPercentEncoding(withAllowedCharacters: .urlFragmentAllowed)!)!
+        
+        RiksdagenBaseService.makeStringRequest(url: url, success: success, failure: failure)
     }
 }
