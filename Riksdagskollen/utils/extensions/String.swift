@@ -71,6 +71,22 @@ extension String {
         }
     }
     
+    func beginningIndexOfFirstRegexMatch(for regexPattern: String) -> Index? {
+        do {
+            let text = self
+            let regex = try NSRegularExpression(pattern: regexPattern)
+            let matches = regex.matches(in: text,
+                                        range: NSRange(text.startIndex..., in: text))
+            let optionalRange = matches.first?.range
+            if let range = optionalRange {
+                return self.index(startIndex, offsetBy: range.lowerBound)
+            } else {return nil}
+        } catch let error {
+            print("invalid regex: \(error.localizedDescription)")
+            return nil
+        }
+    }
+    
     func stringByReplacingFirstOccurrenceOfString(
         target: String, withString replaceString: String) -> String
     {
@@ -78,7 +94,7 @@ extension String {
             return self.replacingCharacters(in: range, with: replaceString)
         }
         return self
-    } 
+    }
 }
 
 extension StringProtocol {

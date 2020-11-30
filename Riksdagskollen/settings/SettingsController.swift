@@ -28,7 +28,7 @@ class SettingsController: UIViewController {
         let selectedTheme = ThemeManager.themes[themeSelector.selectedSegmentIndex]
         ThemeManager.shared.setTheme(theme: selectedTheme)
         
-        navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: ThemeManager.shared.theme?.statusBarTitleTextColor]
+        navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: ThemeManager.shared.theme!.statusBarTitleTextColor]
         navigationController?.navigationBar.tintColor = ThemeManager.shared.theme?.statusBarTitleTextColor
         navigationController?.navigationBar.barTintColor = ThemeManager.shared.theme?.primaryColor
     }

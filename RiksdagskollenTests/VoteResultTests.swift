@@ -55,7 +55,7 @@ class VoteResultTests: XCTestCase {
     
     func testPartiesInVoting() throws {
         let correctPartiesInVoting = ["s", "m","sd","mp","c","v","l","kd","-"]
-        XCTAssert(correctPartiesInVoting == testVoteResult.partiesInVoteList, "Got \(testVoteResult.partiesInVoteList ?? []), expected \(correctPartiesInVoting)")
+        XCTAssert(correctPartiesInVoting == testVoteResult.partiesInVoteList, "Got \(testVoteResult.partiesInVoteList), expected \(correctPartiesInVoting)")
     }
 
     

@@ -42,7 +42,7 @@ struct DecisionCategories {
     static let allCategories = [FiU, CU, AU, FöU, JuU, KU, KrU, MjU, NU, SkU, SfU, SoU, TU, UbU, UU, UFöU]
     
     static func getCategoryFromBet(bet: String) -> DecisionCategory? {
-        var id = bet.trimmingCharacters(in: .decimalDigits)
+        let id = bet.trimmingCharacters(in: .decimalDigits)
         return allCategories.first(where: { $0.id == id })
     }
 }
