@@ -66,6 +66,7 @@ class DecisionsTableViewCell: UITableViewCell {
 
     func setExpanded(expanded: Bool) {
         self.layoutIfNeeded()
+        
         let rotationAngle = expanded ? CGFloat(Double.pi) : 0
  
         UIView.animate(withDuration: 0.2,

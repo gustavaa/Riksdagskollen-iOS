@@ -39,7 +39,6 @@ class VotingFeedTableViewCell: UITableViewCell {
         cardLabel.text = decisionCategory?.categoryName
         
         if votesDocument.voteResults != nil {
-            print("reused result")
             arrangeVotes(results: votesDocument.voteResults!)
         } else {
             let urlString =  "http:\(votesDocument.dokument_url_html)".addingPercentEncoding(withAllowedCharacters: .urlFragmentAllowed)!
@@ -109,6 +108,6 @@ class VotingFeedTableViewCell: UITableViewCell {
     }
     
     func trimTitle(_ title: String) -> String{
-        return title.split(usingRegex: "[0-9]{4}\\/[0-9]{2}:[A-ö]{0,4}[0-9]{0,4}")[1]
+        return title.split(usingRegex: "[0-9]{4}\\/[0-9]{2}:[A-ö]{0,4}[0-9]{0,4}")[1].trimmingCharacters(in: .whitespaces)
     }
 }
