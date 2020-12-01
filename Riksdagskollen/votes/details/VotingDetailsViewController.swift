@@ -8,6 +8,7 @@
 import UIKit
 import Foundation
 import SwiftSoup
+import Charts
 
 class VotingDetailsViewController: UIViewController {
     
@@ -15,6 +16,7 @@ class VotingDetailsViewController: UIViewController {
     private var motions = [MotionDetails]()
     private let parseStart = "<section class=\"component-case-content"
 
+    @IBOutlet weak var chartContainer: UIStackView!
     @IBOutlet weak var mainTitleLabel: TitleLabel!
     @IBOutlet weak var pointTitleLabel: TitleLabel!
     @IBOutlet weak var propositionLabel: BodyLabel!
@@ -48,6 +50,7 @@ class VotingDetailsViewController: UIViewController {
         mainTitleLabel.text = votingDocument.titel
         let pattern = "förslagspunkt ([0-9]+)"
         let regexResults = self.votingDocument?.titel.groups(for: pattern)
+        setupResultGraph()
  
         VotesService.fetchBetForVotingDocment(votingDocument: votingDocument, success: { response in
             let htmlPart = response[response.index(of: self.parseStart)!..<response.endIndex]
@@ -117,6 +120,56 @@ class VotingDetailsViewController: UIViewController {
         let votesTapGesture = UITapGestureRecognizer(target: self, action: #selector(toggleVotesContainerExpanded))
         votesExpandableHeader.addGestureRecognizer(votesTapGesture)
     }
+    
+    private func setupResultGraph(){
+        guard let total = votingDocument?.voteResults?.total else { return }
+        let barData = BarChartData(dataSet: createDataSet(totalVotes: total))
+        barData.setValueFont(decisionLabel.font.withSize(14))
+        barData.setValueTextColor(UIColor.black)
+        
+        let chart = HorizontalBarChartView()
+        chart.data = barData
+        
+        let xAxis = chart.xAxis
+        xAxis.labelPosition = .bottom
+        xAxis.drawGridLinesEnabled = false
+        xAxis.drawLabelsEnabled = false
+        xAxis.axisLineWidth = 2
+        xAxis.axisLineColor = ThemeManager.shared.theme!.mainBodyTextColor
+        
+        chart.leftAxis.drawLabelsEnabled = false
+        chart.leftAxis.drawGridLinesEnabled = false
+        chart.leftAxis.drawAxisLineEnabled = false
+        
+        chart.rightAxis.drawLabelsEnabled = false
+        chart.rightAxis.drawGridLinesEnabled = false
+        chart.rightAxis.drawAxisLineEnabled = false
+        
+        chart.layoutMargins = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0 )
+        
+        chart.legend.enabled = false
+        chart.drawValueAboveBarEnabled = true
+        chart.fitBars = true
+        chart.pinchZoomEnabled = false
+        chart.heightAnchor.constraint(equalToConstant: 200).isActive = true
+        chartContainer.addArrangedSubview(chart)
+        
+    }
+    
+    private func createDataSet(totalVotes: [Int]) -> BarChartDataSet{
+        let colors = [UIColor.black, UIColor(named: "RefrainVoteColor")!, UIColor(named: "NoVoteColor")!, UIColor(named:"YesVoteColor")!]
+        var entries = [BarChartDataEntry]()
+        entries.append(BarChartDataEntry(x: 1, y: Double(totalVotes[3])))
+        entries.append(BarChartDataEntry(x: 2, y: Double(totalVotes[2])))
+        entries.append(BarChartDataEntry(x: 3, y: Double(totalVotes[1])))
+        entries.append(BarChartDataEntry(x: 4, y: Double(totalVotes[0])))
+        let dataset = BarChartDataSet(entries: entries)
+        dataset.colors = colors
+        dataset.drawValuesEnabled = true
+        return dataset
+    }
+    
+    
     
     @objc func toggleDocContainerExpanded() {
         docsIsExpanded.toggle()

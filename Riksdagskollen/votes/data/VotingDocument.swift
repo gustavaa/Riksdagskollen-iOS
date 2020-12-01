@@ -34,6 +34,6 @@ class VotingDocument: PartyDocument {
         return yearCode + documentType + organ + nummer
     }
     
-    var voteResults: [String : [Int]]?
+    var voteResults: VoteResult?
     var votingHtmlContent: String?
 }

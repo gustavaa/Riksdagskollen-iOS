@@ -39,14 +39,14 @@ class VotingFeedTableViewCell: UITableViewCell {
         cardLabel.text = decisionCategory?.categoryName
         
         if votesDocument.voteResults != nil {
-            arrangeVotes(results: votesDocument.voteResults!)
+            arrangeVotes(results: votesDocument.voteResults!.voteResults)
         } else {
             let urlString =  "http:\(votesDocument.dokument_url_html)".addingPercentEncoding(withAllowedCharacters: .urlFragmentAllowed)!
             if let url = URL(string: urlString) {
                 resultRequst = RiksdagenBaseService.makeStringRequest(url: url, success: { response in
                     votesDocument.votingHtmlContent = response
                     let results = VoteResult(response: response)
-                    votesDocument.voteResults = results.voteResults
+                    votesDocument.voteResults = results
                     self.arrangeVotes(results: results.voteResults)
                 }, failure: { error in
                     print(error)

@@ -13,6 +13,7 @@
             <connections>
                 <outlet property="abstractHeaderLabel" destination="nip-wh-ERg" id="vkp-hO-934"/>
                 <outlet property="abstractLabel" destination="Qvj-pJ-GB7" id="5Pf-Cw-xhB"/>
+                <outlet property="chartContainer" destination="4Rl-Me-Pt4" id="TmC-5j-m3y"/>
                 <outlet property="decisionHeacerLabel" destination="R9P-qJ-33b" id="V4Y-ox-iag"/>
                 <outlet property="decisionLabel" destination="BXS-Ey-8y8" id="4PI-Ee-keP"/>
                 <outlet property="docExpandableContainer" destination="UbV-SL-AJN" id="z3i-YK-r8j"/>
@@ -36,7 +37,7 @@
                     <rect key="frame" x="0.0" y="44" width="414" height="818"/>
                     <subviews>
                         <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="bgO-05-7iJ">
-                            <rect key="frame" x="8" y="16" width="398" height="374.5"/>
+                            <rect key="frame" x="8" y="16" width="398" height="506.5"/>
                             <subviews>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZDh-3l-vt8" customClass="TitleLabel" customModule="Riksdagskollen" customModuleProvider="target">
                                     <rect key="frame" x="0.0" y="0.0" width="398" height="21.5"/>
@@ -44,38 +45,74 @@
                                     <nil key="textColor"/>
                                     <nil key="highlightedColor"/>
                                 </label>
+                                <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4Rl-Me-Pt4">
+                                    <rect key="frame" x="0.0" y="29.5" width="398" height="124"/>
+                                    <subviews>
+                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="RBI-o1-zcM">
+                                            <rect key="frame" x="8" y="8" width="382" height="108"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ja" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="50" translatesAutoresizingMaskIntoConstraints="NO" id="Eva-sT-mzn" customClass="TitleLabel" customModule="Riksdagskollen" customModuleProvider="target">
+                                                    <rect key="frame" x="181.5" y="18" width="17.5" height="18"/>
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nej" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="50" translatesAutoresizingMaskIntoConstraints="NO" id="oQQ-uu-5N4" customClass="TitleLabel" customModule="Riksdagskollen" customModuleProvider="target">
+                                                    <rect key="frame" x="178" y="36" width="24.5" height="18"/>
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Avstående" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="50" translatesAutoresizingMaskIntoConstraints="NO" id="cka-O7-LYn" customClass="TitleLabel" customModule="Riksdagskollen" customModuleProvider="target">
+                                                    <rect key="frame" x="151.5" y="54" width="77.5" height="18"/>
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Frånvarande" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="50" translatesAutoresizingMaskIntoConstraints="NO" id="r1j-9k-qfX" customClass="TitleLabel" customModule="Riksdagskollen" customModuleProvider="target">
+                                                    <rect key="frame" x="144" y="72" width="92" height="18"/>
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <edgeInsets key="layoutMargins" top="18" left="0.0" bottom="18" right="2"/>
+                                        </stackView>
+                                    </subviews>
+                                    <edgeInsets key="layoutMargins" top="8" left="8" bottom="8" right="8"/>
+                                </stackView>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Punktrubrik" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ElA-b4-0qg" customClass="TitleLabel" customModule="Riksdagskollen" customModuleProvider="target">
-                                    <rect key="frame" x="0.0" y="29.5" width="398" height="21.5"/>
+                                    <rect key="frame" x="0.0" y="161.5" width="398" height="21.5"/>
                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
                                     <nil key="textColor"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Utskottets förslag" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qw2-6N-MUq" customClass="TitleLabel" customModule="Riksdagskollen" customModuleProvider="target">
-                                    <rect key="frame" x="0.0" y="59" width="398" height="19.5"/>
+                                    <rect key="frame" x="0.0" y="191" width="398" height="19.5"/>
                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
                                     <nil key="textColor"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="*förslagstext*" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="V9w-vU-HQm" customClass="BodyLabel" customModule="Riksdagskollen" customModuleProvider="target">
-                                    <rect key="frame" x="0.0" y="86.5" width="398" height="19.5"/>
+                                    <rect key="frame" x="0.0" y="218.5" width="398" height="19.5"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                     <nil key="textColor"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Beslut:" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="R9P-qJ-33b" customClass="TitleLabel" customModule="Riksdagskollen" customModuleProvider="target">
-                                    <rect key="frame" x="0.0" y="114" width="398" height="19.5"/>
+                                    <rect key="frame" x="0.0" y="246" width="398" height="19.5"/>
                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
                                     <nil key="textColor"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Kammaren biföll utskottets förslag" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BXS-Ey-8y8" customClass="BodyLabel" customModule="Riksdagskollen" customModuleProvider="target">
-                                    <rect key="frame" x="0.0" y="141.5" width="398" height="19.5"/>
+                                    <rect key="frame" x="0.0" y="273.5" width="398" height="19.5"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                     <nil key="textColor"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="d5U-FV-tsb">
-                                    <rect key="frame" x="0.0" y="169" width="398" height="81"/>
+                                    <rect key="frame" x="0.0" y="301" width="398" height="81"/>
                                     <subviews>
                                         <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jbT-hg-LKa">
                                             <rect key="frame" x="8" y="8" width="382" height="15"/>
@@ -104,7 +141,7 @@
                                     <edgeInsets key="layoutMargins" top="8" left="8" bottom="8" right="8"/>
                                 </stackView>
                                 <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="opa-Hb-5L1">
-                                    <rect key="frame" x="0.0" y="258" width="398" height="81"/>
+                                    <rect key="frame" x="0.0" y="390" width="398" height="81"/>
                                     <subviews>
                                         <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kMV-NI-0AP">
                                             <rect key="frame" x="0.0" y="0.0" width="398" height="31"/>
@@ -133,13 +170,13 @@
                                     <color key="backgroundColor" name="RiksdagBlueAlpha"/>
                                 </stackView>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Om ämnet:" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nip-wh-ERg" customClass="TitleLabel" customModule="Riksdagskollen" customModuleProvider="target">
-                                    <rect key="frame" x="0.0" y="347" width="398" height="19.5"/>
+                                    <rect key="frame" x="0.0" y="479" width="398" height="19.5"/>
                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
                                     <nil key="textColor"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qvj-pJ-GB7" customClass="BodyLabel" customModule="Riksdagskollen" customModuleProvider="target">
-                                    <rect key="frame" x="0.0" y="374.5" width="398" height="0.0"/>
+                                    <rect key="frame" x="0.0" y="506.5" width="398" height="0.0"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                     <nil key="textColor"/>
                                     <nil key="highlightedColor"/>
