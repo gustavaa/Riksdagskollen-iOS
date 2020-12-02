@@ -53,8 +53,9 @@ class VotingFeedController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let detailsVc = VotingDetailsViewController()
+        detailsVc.modalPresentationCapturesStatusBarAppearance = true
         detailsVc.votingDocument = model.voteDocuments[indexPath.row]
-        present(detailsVc, animated: true, completion: {})
+        self.present(detailsVc, animated: true, completion: {})
     }
     
     

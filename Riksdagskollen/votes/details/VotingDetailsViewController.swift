@@ -41,8 +41,7 @@ class VotingDetailsViewController: UIViewController {
         super.viewDidLoad()
         setUpViews()
         docExpandableContainer.isHidden = true
-        
-        // Do any additional setup after loading the view.
+        votesExpandableContainer.isHidden = true
     }
     
     
@@ -51,6 +50,7 @@ class VotingDetailsViewController: UIViewController {
         let pattern = "förslagspunkt ([0-9]+)"
         let regexResults = self.votingDocument?.titel.groups(for: pattern)
         setupResultGraph()
+        setupPartyGraphs()
  
         VotesService.fetchBetForVotingDocment(votingDocument: votingDocument, success: { response in
             let htmlPart = response[response.index(of: self.parseStart)!..<response.endIndex]
@@ -125,7 +125,7 @@ class VotingDetailsViewController: UIViewController {
         guard let total = votingDocument?.voteResults?.total else { return }
         let barData = BarChartData(dataSet: createDataSet(totalVotes: total))
         barData.setValueFont(decisionLabel.font.withSize(14))
-        barData.setValueTextColor(UIColor.black)
+        barData.setValueTextColor(ThemeManager.shared.theme!.mainBodyTextColor)
         
         let chart = HorizontalBarChartView()
         chart.data = barData
@@ -151,13 +151,22 @@ class VotingDetailsViewController: UIViewController {
         chart.drawValueAboveBarEnabled = true
         chart.fitBars = true
         chart.pinchZoomEnabled = false
+        chart.isUserInteractionEnabled = false
         chart.heightAnchor.constraint(equalToConstant: 200).isActive = true
         chartContainer.addArrangedSubview(chart)
         
     }
     
+    private func setupPartyGraphs(){
+        guard let voteResult = votingDocument.voteResults else { return }
+        for partyId in voteResult.partiesInVoteList {
+            if partyId == "-" { continue }
+            votesExpandableContainer.addArrangedSubview(PartyVoteResultView(party: CurrentParties.getParty(id: partyId)!, partyResults: voteResult.getPartyVotes(party: partyId)!))
+        }
+    }
+    
     private func createDataSet(totalVotes: [Int]) -> BarChartDataSet{
-        let colors = [UIColor.black, UIColor(named: "RefrainVoteColor")!, UIColor(named: "NoVoteColor")!, UIColor(named:"YesVoteColor")!]
+        let colors = [ThemeManager.shared.theme!.absentColor, ThemeManager.shared.theme!.refrainColor, UIColor(named: "NoVoteColor")!, UIColor(named:"YesVoteColor")!]
         var entries = [BarChartDataEntry]()
         entries.append(BarChartDataEntry(x: 1, y: Double(totalVotes[3])))
         entries.append(BarChartDataEntry(x: 2, y: Double(totalVotes[2])))
@@ -168,6 +177,8 @@ class VotingDetailsViewController: UIViewController {
         dataset.drawValuesEnabled = true
         return dataset
     }
+    
+    
     
     
     
@@ -222,12 +233,20 @@ class VotingDetailsViewController: UIViewController {
                 if partyDoc.doktyp == "prop" {
                     self.docExpandableContainer.removeArrangedSubview(lowerTitle)
                 }
-                titleLabel.text = "[\(motion.listPosition)] \(motion.id) \(partyDoc.titel) \(motion.proposalPoint)"
+                titleLabel.text = "[\(motion.listPosition)] \(motion.id) \(partyDoc.titel) \(motion.proposalPoint.trimmingCharacters(in: .whitespaces))"
                 lowerTitle.text = partyDoc.undertitel
             }, failure: { error in
                 
             })
         }
+    }
+    
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        get { if ThemeManager.shared.theme?.name == ThemeManager.light.name {
+            return .darkContent
+        } else {
+            return .lightContent
+        }}
     }
     
 

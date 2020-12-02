@@ -29,6 +29,7 @@ class VotingFeedTableViewCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        self.selectionStyle = .none
     }
     func configure(with votesDocument: VotingDocument) {
         titleLabel.text = trimTitle(votesDocument.titel)
@@ -102,9 +103,7 @@ class VotingFeedTableViewCell: UITableViewCell {
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
 
-        // Configure the view for the selected state
     }
     
     func trimTitle(_ title: String) -> String{
