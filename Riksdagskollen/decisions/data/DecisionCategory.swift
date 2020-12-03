@@ -29,7 +29,7 @@ struct DecisionCategories {
     static let JuU = DecisionCategory(id: "JuU", categoryName: "Kriminalitet och rättväsende", categoryColor: UIColor(named: "CatBlue")!)
     static let KU = DecisionCategory(id: "KU", categoryName: "Riksdagen", categoryColor: UIColor(named: "RiksdagBlue")!)
     static let KrU = DecisionCategory(id: "KrU", categoryName: "Kultur", categoryColor: UIColor(named: "CatPink")!)
-    static let MjU = DecisionCategory(id: "MjU", categoryName: "Miljö och jordbruk", categoryColor: UIColor(named: "CatGreen")!)
+    static let MjU = DecisionCategory(id: "MJU", categoryName: "Miljö och jordbruk", categoryColor: UIColor(named: "CatGreen")!)
     static let NU = DecisionCategory(id: "NU", categoryName: "Näringsliv", categoryColor: UIColor(named: "CatOrange")!)
     static let SkU = DecisionCategory(id: "SkU", categoryName: "Skatter", categoryColor: UIColor(named: "CatYellow")!)
     static let SfU = DecisionCategory(id: "SfU", categoryName: "Socialförsäkringar", categoryColor: UIColor(named: "CatBrown")!)

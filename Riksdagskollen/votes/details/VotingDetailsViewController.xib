@@ -14,6 +14,7 @@
                 <outlet property="abstractHeaderLabel" destination="nip-wh-ERg" id="vkp-hO-934"/>
                 <outlet property="abstractLabel" destination="Qvj-pJ-GB7" id="5Pf-Cw-xhB"/>
                 <outlet property="chartContainer" destination="4Rl-Me-Pt4" id="TmC-5j-m3y"/>
+                <outlet property="contentView" destination="CAd-1d-Khx" id="yDZ-3S-SYK"/>
                 <outlet property="decisionHeacerLabel" destination="R9P-qJ-33b" id="V4Y-ox-iag"/>
                 <outlet property="decisionLabel" destination="BXS-Ey-8y8" id="4PI-Ee-keP"/>
                 <outlet property="docExpandableContainer" destination="UbV-SL-AJN" id="z3i-YK-r8j"/>

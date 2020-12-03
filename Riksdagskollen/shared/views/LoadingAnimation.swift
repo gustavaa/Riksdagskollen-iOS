@@ -16,40 +16,37 @@ class LoadingAnimation: UIView {
     private let firstCirclePath = getCircleWith(xPos: 15).cgPath
     private let secondCirclePath = getCircleWith(xPos: 187.5).cgPath
     private let outroCircle = getCircleWith(xPos: 280).cgPath
+    private var isAnimating = true
 
     @objc dynamic var fillColor: UIColor?
     
     override init(frame: CGRect){
         super.init(frame: frame)
         clipsToBounds = true
-        backgroundColor = .green
-        animate()
     }
         
     init(){
         super.init(frame: .zero)
         clipsToBounds = true
-        backgroundColor = .green
-        animate()
     }
     
     required init?(coder: NSCoder) {
         super.init(coder: coder)
         clipsToBounds = true
-        backgroundColor = .green
-        animate()
     }
-    
-    func animate(){
+    func stopAnimating(){
+        isAnimating = false
+    }
+    func startAnimating(){
+        isAnimating = true
         CATransaction.begin()
         let intro = createAnimatePathChange(for: drawingLayer, toPath: firstCirclePath, offset: 0, duration: 0.2)
         let anim1 = createAnimatePathChange(for: drawingLayer, toPath: crownPath, offset: 0.4, duration: 0.6)
         let anim2 = createAnimatePathChange(for: drawingLayer, toPath: secondCirclePath, offset: 1, duration: 0.6)
         let outro = createAnimatePathChange(for: drawingLayer, toPath: outroCircle, offset: 1.8, duration: 0.2)
-
         CATransaction.setCompletionBlock(){
             self.drawingLayer.path = self.introCircle
-            self.animate()
+            if(self.isAnimating){ self.startAnimating() }
         }
         drawingLayer.add(intro, forKey: nil)
         drawingLayer.add(anim1, forKey: nil)
@@ -62,7 +59,6 @@ class LoadingAnimation: UIView {
         drawingLayer.frame = rect
         drawingLayer.path = outroCircle
         drawingLayer.fillColor = fillColor?.cgColor
-        print(rect)
         layer.addSublayer(drawingLayer)
         super.draw(rect)
     }
@@ -71,7 +67,6 @@ class LoadingAnimation: UIView {
         let animation = CABasicAnimation(keyPath: "path")
         animation.duration = duration
         animation.repeatCount = 0
-
         animation.beginTime = CACurrentMediaTime() + offset
         animation.fromValue = layer.path
         animation.toValue = toPath

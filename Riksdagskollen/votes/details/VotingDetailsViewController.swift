@@ -16,6 +16,7 @@ class VotingDetailsViewController: UIViewController {
     private var motions = [MotionDetails]()
     private let parseStart = "<section class=\"component-case-content"
 
+    @IBOutlet weak var contentView: UIScrollView!
     @IBOutlet weak var chartContainer: UIStackView!
     @IBOutlet weak var mainTitleLabel: TitleLabel!
     @IBOutlet weak var pointTitleLabel: TitleLabel!
@@ -42,9 +43,14 @@ class VotingDetailsViewController: UIViewController {
         setUpViews()
         docExpandableContainer.isHidden = true
         votesExpandableContainer.isHidden = true
+        contentView.isHidden = true
+
     }
     
-    
+    override func viewWillAppear(_ animated: Bool) {
+        LoadingOverlay.shared.showOverlay()
+
+    }
     func setUpViews(){
         mainTitleLabel.text = votingDocument.titel
         let pattern = "förslagspunkt ([0-9]+)"
@@ -79,7 +85,6 @@ class VotingDetailsViewController: UIViewController {
                 self.abstractLabel.isHidden = true
             }
            
-
             
             if let titleStart = regexResults?[0][0] {
                 self.pointTitleLabel.text = titleStart.capitalized + ": " + pointTitle
@@ -111,7 +116,8 @@ class VotingDetailsViewController: UIViewController {
                 let attributedPropositionText = VotingUtil.boldKeywordsWithHTML(text: result.0)
                 self.propositionLabel.setHTMLFromString(htmlText: attributedPropositionText)
             }
-           
+            LoadingOverlay.shared.hideOverlayView()
+            self.contentView.isHidden = false
         }, failure: {error in
             
         })
@@ -177,10 +183,6 @@ class VotingDetailsViewController: UIViewController {
         dataset.drawValuesEnabled = true
         return dataset
     }
-    
-    
-    
-    
     
     @objc func toggleDocContainerExpanded() {
         docsIsExpanded.toggle()
