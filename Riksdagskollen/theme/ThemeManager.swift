@@ -62,6 +62,7 @@ class ThemeManager {
         SpeechBubble.appearance().fillColor = theme.debateSpeechBubbleColor
         SpeechBubble.appearance().speechTextColor = theme.debateTextColor
         SpeechBubble.appearance().backgroundColor = theme.mainBackgroundColor
+        LoadingAnimation.appearance().fillColor = theme.loadingViewAccentColor
         
         
         

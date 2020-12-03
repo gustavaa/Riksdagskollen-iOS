@@ -10,5 +10,5 @@ target 'Riksdagskollen' do
   pod 'Alamofire', '~> 5.2'
   pod 'Kingfisher', '~> 5.0'
   pod 'SwiftSoup'
-  pod 'Charts'  
+  pod 'Charts'
 end

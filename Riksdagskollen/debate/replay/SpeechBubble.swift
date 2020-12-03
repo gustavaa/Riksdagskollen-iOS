@@ -18,9 +18,7 @@ class SpeechBubble: UIView {
     @objc dynamic var speechTextColor: UIColor?
     @IBInspectable var isOutgoing: Bool = false {
         didSet {
-            print("Was set to ", isOutgoing)
             initialize()
-
         }
     }
 
