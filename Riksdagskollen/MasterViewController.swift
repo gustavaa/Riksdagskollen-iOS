@@ -11,10 +11,10 @@ import SideMenu
 
 class MasterViewController: UIViewController, SideMenuDelegate{
     
-    var votesViewController = VotingFeedController()
-    var newsViewController = NewsController()
-    var decisionsViewController = DecisionsController()
-    var debateViewController = DebateFeedController()
+    var votesViewController: VotingFeedController?
+    var newsViewController: NewsController?
+    var decisionsViewController: DecisionsController?
+    var debateViewController: DebateFeedController?
 
     var menu: SideMenuNavigationController?
     
@@ -24,13 +24,10 @@ class MasterViewController: UIViewController, SideMenuDelegate{
     override func viewDidLoad() {
         super.viewDidLoad()
         setupSideMenu()
-        setupViewController(viewController: newsViewController)
-        setupViewController(viewController: decisionsViewController)
-        setupViewController(viewController: debateViewController)
-        setupViewController(viewController: votesViewController)
-
+        newsViewController = NewsController()
+        setupViewController(viewController: newsViewController!)
         currentViewController = newsViewController
-        switchToViewControlller(viewController: votesViewController)
+        switchToViewController(viewController: newsViewController!)
         navigationItem.title = "Aktuellt"
     }
     
@@ -54,16 +51,32 @@ class MasterViewController: UIViewController, SideMenuDelegate{
     func didSelectMenuItem(menuItem: MenuItem) {
         switch menuItem.title {
         case MenuItems.news.rawValue:
-            switchToViewControlller(viewController: newsViewController)
+            if newsViewController == nil {
+                newsViewController = NewsController()
+                setupViewController(viewController: newsViewController!)
+            }
+            switchToViewController(viewController: newsViewController!)
             break
         case MenuItems.decisions.rawValue:
-            switchToViewControlller(viewController: decisionsViewController)
+            if decisionsViewController == nil {
+                decisionsViewController = DecisionsController()
+                setupViewController(viewController: decisionsViewController!)
+            }
+            switchToViewController(viewController: decisionsViewController!)
             break
         case MenuItems.debate.rawValue:
-            switchToViewControlller(viewController: debateViewController)
+            if debateViewController == nil {
+                debateViewController = DebateFeedController()
+                setupViewController(viewController: debateViewController!)
+            }
+            switchToViewController(viewController: debateViewController!)
             break
         case MenuItems.votes.rawValue:
-            switchToViewControlller(viewController: votesViewController)
+            if votesViewController == nil {
+                votesViewController = VotingFeedController()
+                setupViewController(viewController: votesViewController!)
+            }
+            switchToViewController(viewController: votesViewController!)
             break
         default: break
         }
@@ -73,12 +86,17 @@ class MasterViewController: UIViewController, SideMenuDelegate{
     func setupViewController(viewController: UIViewController){
         addChild(viewController)
         view.addSubview(viewController.view)
-        viewController.view.frame = view.frame
+        print(view.frame)
+        if let cvc = currentViewController {
+            viewController.view.frame = cvc.view.frame
+        } else {
+            viewController.view.frame = view.frame
+        }
         viewController.didMove(toParent: self)
         viewController.view.isHidden = true
     }
     
-    func switchToViewControlller(viewController: UIViewController){
+    func switchToViewController(viewController: UIViewController){
         currentViewController?.view.isHidden = true
         viewController.view.isHidden = false
         currentViewController = viewController

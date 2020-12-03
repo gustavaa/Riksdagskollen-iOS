@@ -25,10 +25,16 @@ class DebateFeedController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupTableview()
+        tableView.isHidden = true
     }
+    
     override func viewDidAppear(_ animated: Bool) {
-        requestMoreData()
+        if model.debateDocuments.count == 0 {
+            requestMoreData()
+            LoadingOverlay.shared.showOverlay(in: view)
+        }
     }
+    
     
     func setupTableview () {
         tableView.register(DebateFeedTableViewCell.nib(), forCellReuseIdentifier: DebateFeedTableViewCell.identifier)
@@ -50,6 +56,8 @@ class DebateFeedController: UITableViewController {
     func requestMoreData () {
         model.loadNextPage(){
             self.tableView.reloadData()
+            self.tableView.isHidden = false
+            LoadingOverlay.shared.hideOverlayView()
         } onError: {error in
             print("error \(error)")
             // TODO: Handle error

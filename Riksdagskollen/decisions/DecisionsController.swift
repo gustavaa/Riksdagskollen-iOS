@@ -26,7 +26,10 @@ class DecisionsController: UITableViewController {
         setupTableview()
     }
     override func viewDidAppear(_ animated: Bool) {
-        requestMoreData()
+        if model.decisionDocuments.count == 0 {
+            requestMoreData()
+            LoadingOverlay.shared.showOverlay(in: view)
+        }
     }
     
     func setupTableview () {
@@ -53,6 +56,7 @@ class DecisionsController: UITableViewController {
     func requestMoreData () {
         model.loadNextPage(){
             self.tableView.reloadData()
+            LoadingOverlay.shared.hideOverlayView()
         } onError: {error in
             print("error \(error)")
             // TODO: Handle error

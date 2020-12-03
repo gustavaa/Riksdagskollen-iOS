@@ -29,7 +29,10 @@ class NewsController: UITableViewController {
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        requestMoreData()
+        if model.newsItems.count == 0 {
+            requestMoreData()
+            LoadingOverlay.shared.showOverlay(in: view)
+        }
     }
     
     
@@ -43,6 +46,7 @@ class NewsController: UITableViewController {
     func requestMoreData () {
         model.loadNextPage(){
             self.tableView.reloadData()
+            LoadingOverlay.shared.hideOverlayView()
         } onError: {error in
             // TODO: Handle error
         }

@@ -57,7 +57,7 @@ class LoadingAnimation: UIView {
     
     override func draw(_ rect: CGRect) {
         drawingLayer.frame = rect
-        drawingLayer.path = outroCircle
+        drawingLayer.path = introCircle
         drawingLayer.fillColor = fillColor?.cgColor
         layer.addSublayer(drawingLayer)
         super.draw(rect)

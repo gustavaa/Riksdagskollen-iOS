@@ -48,9 +48,9 @@ class VotingDetailsViewController: UIViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        LoadingOverlay.shared.showOverlay()
-
+        LoadingOverlay.shared.showOverlay(in: view)
     }
+    
     func setUpViews(){
         mainTitleLabel.text = votingDocument.titel
         let pattern = "förslagspunkt ([0-9]+)"
