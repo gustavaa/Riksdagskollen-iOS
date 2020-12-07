@@ -83,13 +83,16 @@ class RiksdagenBaseService {
             switch response.result {
                 case .success(let value):
                     let json = value.data(using: .utf8)!
-                    do {
-                        let decodedResponse = try JSONDecoder().decode(T.self, from: json)
-                        success(decodedResponse)
-                        break
-                    } catch {
-                        print(error)
-                        failure(error.localizedDescription)
+                    DispatchQueue(label: "parsing", qos: .userInitiated).async {
+                        do {
+                            let decodedResponse = try JSONDecoder().decode(T.self, from: json)
+                            DispatchQueue.main.async {
+                                success(decodedResponse)
+                            }
+                        } catch {
+                            print(error)
+                            failure(error.localizedDescription)
+                        }
                     }
                 case .failure(let error):
                     failure(error.errorDescription ?? "Something went wrong")

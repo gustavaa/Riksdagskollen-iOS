@@ -15,6 +15,7 @@ class MasterViewController: UIViewController, SideMenuDelegate{
     var newsViewController: NewsController?
     var decisionsViewController: DecisionsController?
     var debateViewController: DebateFeedController?
+    var representativesViewController: RepresentativesListController?
 
     var menu: SideMenuNavigationController?
     
@@ -29,6 +30,7 @@ class MasterViewController: UIViewController, SideMenuDelegate{
         currentViewController = newsViewController
         switchToViewController(viewController: newsViewController!)
         navigationItem.title = "Aktuellt"
+        RepresentativeService.fetchAllCurrentRepresentatives(success: {_ in}, failure: {_ in})
     }
     
     func setupSideMenu() {
@@ -77,6 +79,13 @@ class MasterViewController: UIViewController, SideMenuDelegate{
                 setupViewController(viewController: votesViewController!)
             }
             switchToViewController(viewController: votesViewController!)
+            break
+        case MenuItems.representatives.rawValue:
+            if representativesViewController == nil {
+                representativesViewController = RepresentativesListController()
+                setupViewController(viewController: representativesViewController!)
+            }
+            switchToViewController(viewController: representativesViewController!)
             break
         default: break
         }

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="17192" systemVersion="19H2" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="Representative" representedClassName=".Representative" syncable="YES" codeGenerationType="category">
+        <attribute name="bild_url_80" optional="YES" attributeType="String"/>
+        <attribute name="bild_url_192" optional="YES" attributeType="String"/>
+        <attribute name="bild_url_max" optional="YES" attributeType="String"/>
+        <attribute name="efternamn" optional="YES" attributeType="String"/>
+        <attribute name="fodd_ar" optional="YES" attributeType="String"/>
+        <attribute name="intressent_id" optional="YES" attributeType="String"/>
+        <attribute name="kon" optional="YES" attributeType="String"/>
+        <attribute name="parti" optional="YES" attributeType="String"/>
+        <attribute name="sourceid" optional="YES" attributeType="String"/>
+        <attribute name="status" optional="YES" attributeType="String"/>
+        <attribute name="tilltalsnamn" optional="YES" attributeType="String"/>
+        <attribute name="valkrets" optional="YES" attributeType="String"/>
+    </entity>
+    <elements>
+        <element name="Representative" positionX="-63" positionY="-18" width="128" height="223"/>
+    </elements>
+</model>

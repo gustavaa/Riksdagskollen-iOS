@@ -7,14 +7,20 @@
 
 import Foundation
 
+protocol RepresentativeDownloadedListener {
+    func onRepresentativesDownloaded(_ representatives: [Representative]) -> ()
+}
+
 class RepresentativeManager {
     
-    static var shared: RepresentativeManager = {
-        let representativeManager = RepresentativeManager()
-        return representativeManager
-    }()
+    static var shared = RepresentativeManager()
+    
     
     var representatives = [String : [String : Representative]]()
+    var currentRepresentatives = [Representative]()
+    var downloadListeners = [RepresentativeDownloadedListener]()
+    var representativesAreDownloaded = false
+    
     
     public func addRepresentative(rep: Representative){
         addRepresentativeToParty(party: rep.parti, rep: rep)
@@ -25,6 +31,16 @@ class RepresentativeManager {
             representatives[party.lowercased()] = [String : Representative]()
         }
         representatives[party.lowercased()]![rep.intressent_id] = rep
+    }
+    
+    public func addCurrentRepresentatives(representatives: [Representative]){
+        currentRepresentatives.append(contentsOf: representatives)
+        for rep in representatives {
+            print("Added rep", rep.efternamn)
+            addRepresentative(rep: rep)
+        }
+        representativesAreDownloaded = true
+        notifyDownloaded()
     }
     
     public func getRepresentative(iid: String, party: String?) -> Representative?{
@@ -40,10 +56,22 @@ class RepresentativeManager {
         }
         return nil
     }
+    
+    private func notifyDownloaded(){
+        for listener in downloadListeners {
+            listener.onRepresentativesDownloaded(currentRepresentatives)
+        }
+        clearDownloadListeners()
+    }
+    
+    public func addDownloadListener(listener: RepresentativeDownloadedListener){
+        downloadListeners.append(listener)
+    }
+    
+    private func clearDownloadListeners(){
+        downloadListeners.removeAll()
+    }
         
-   
-    
-    
     
     
 }

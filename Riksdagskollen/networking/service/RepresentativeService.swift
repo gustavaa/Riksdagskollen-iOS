@@ -27,4 +27,16 @@ class RepresentativeService {
             }
         }, failure: failure)
     }
+    
+    static func fetchAllCurrentRepresentatives(success: @escaping((_ result: [Representative]?) -> () ), failure: @escaping((_ error: String) -> ())){
+        var urlComponents = URLComponents()
+        let queryItems = [
+            URLQueryItem(name: "utformat", value: "json"),
+        ]
+        urlComponents.queryItems = queryItems
+        RiksdagenBaseService.makeRepresentativelistJSONRequest(subUrl: urlComponents.string!, success:{ result in
+            RepresentativeManager.shared.addCurrentRepresentatives(representatives: result!)
+            success(result)
+        } , failure: failure)
+    }
 }
