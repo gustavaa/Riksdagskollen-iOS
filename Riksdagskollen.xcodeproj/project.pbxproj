@@ -53,6 +53,10 @@
 		BF628629257664BA00BBBEB7 /* PartyVoteResultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF628628257664BA00BBBEB7 /* PartyVoteResultView.swift */; };
 		BF6286402577D00700BBBEB7 /* LoadingAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF62863F2577D00700BBBEB7 /* LoadingAnimation.swift */; };
 		BF62864E25790CE300BBBEB7 /* LoadingOverlay.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF62864D25790CE300BBBEB7 /* LoadingOverlay.swift */; };
+		BF628656257A1DF200BBBEB7 /* DocumentReaderController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF628654257A1DF200BBBEB7 /* DocumentReaderController.swift */; };
+		BF628657257A1DF200BBBEB7 /* DocumentReaderController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BF628655257A1DF200BBBEB7 /* DocumentReaderController.xib */; };
+		BF62865D257A272F00BBBEB7 /* DocumentHtmlView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF62865C257A272F00BBBEB7 /* DocumentHtmlView.swift */; };
+		BF628661257A428B00BBBEB7 /* Collection.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF628660257A428B00BBBEB7 /* Collection.swift */; };
 		BF7B6C9F255C298600AD70B3 /* NewsItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF7B6C9D255C298600AD70B3 /* NewsItemTableViewCell.swift */; };
 		BF7B6CA0255C298600AD70B3 /* NewsItemTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BF7B6C9E255C298600AD70B3 /* NewsItemTableViewCell.xib */; };
 		BF7B6CAA255D4DE400AD70B3 /* SettingsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF7B6CA9255D4DE400AD70B3 /* SettingsController.swift */; };
@@ -71,6 +75,9 @@
 		BF88BA6C256FAAE00028BF66 /* VotingFeedTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BF88BA6A256FAAE00028BF66 /* VotingFeedTableViewCell.xib */; };
 		BF8BE5CA2552F9150016C85A /* DecisionsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF8BE5C92552F9150016C85A /* DecisionsController.swift */; };
 		BF8BE5D02553143F0016C85A /* CustomScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF8BE5CF2553143F0016C85A /* CustomScrollView.swift */; };
+		BF99F22F257A6880001CD2BF /* motion_style.css in Resources */ = {isa = PBXBuildFile; fileRef = BF99F22C257A6880001CD2BF /* motion_style.css */; };
+		BF99F230257A6880001CD2BF /* motion_style_white.css in Resources */ = {isa = PBXBuildFile; fileRef = BF99F22D257A6880001CD2BF /* motion_style_white.css */; };
+		BF99F231257A6880001CD2BF /* motion_style_black.css in Resources */ = {isa = PBXBuildFile; fileRef = BF99F22E257A6880001CD2BF /* motion_style_black.css */; };
 		BFB6C7062565390000FF2708 /* DebateReplayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFB6C7042565390000FF2708 /* DebateReplayViewController.swift */; };
 		BFB6C7072565390000FF2708 /* DebateReplayViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BFB6C7052565390000FF2708 /* DebateReplayViewController.xib */; };
 		BFB6C70A25653B2200FF2708 /* RepresentativeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFB6C70925653B2200FF2708 /* RepresentativeManager.swift */; };
@@ -144,6 +151,10 @@
 		BF628628257664BA00BBBEB7 /* PartyVoteResultView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PartyVoteResultView.swift; sourceTree = "<group>"; };
 		BF62863F2577D00700BBBEB7 /* LoadingAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingAnimation.swift; sourceTree = "<group>"; };
 		BF62864D25790CE300BBBEB7 /* LoadingOverlay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingOverlay.swift; sourceTree = "<group>"; };
+		BF628654257A1DF200BBBEB7 /* DocumentReaderController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentReaderController.swift; sourceTree = "<group>"; };
+		BF628655257A1DF200BBBEB7 /* DocumentReaderController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DocumentReaderController.xib; sourceTree = "<group>"; };
+		BF62865C257A272F00BBBEB7 /* DocumentHtmlView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentHtmlView.swift; sourceTree = "<group>"; };
+		BF628660257A428B00BBBEB7 /* Collection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Collection.swift; sourceTree = "<group>"; };
 		BF7B6C9D255C298600AD70B3 /* NewsItemTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsItemTableViewCell.swift; sourceTree = "<group>"; };
 		BF7B6C9E255C298600AD70B3 /* NewsItemTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NewsItemTableViewCell.xib; sourceTree = "<group>"; };
 		BF7B6CA9255D4DE400AD70B3 /* SettingsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsController.swift; sourceTree = "<group>"; };
@@ -162,6 +173,9 @@
 		BF88BA6A256FAAE00028BF66 /* VotingFeedTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = VotingFeedTableViewCell.xib; sourceTree = "<group>"; };
 		BF8BE5C92552F9150016C85A /* DecisionsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DecisionsController.swift; sourceTree = "<group>"; };
 		BF8BE5CF2553143F0016C85A /* CustomScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomScrollView.swift; sourceTree = "<group>"; };
+		BF99F22C257A6880001CD2BF /* motion_style.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = motion_style.css; sourceTree = "<group>"; };
+		BF99F22D257A6880001CD2BF /* motion_style_white.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = motion_style_white.css; sourceTree = "<group>"; };
+		BF99F22E257A6880001CD2BF /* motion_style_black.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = motion_style_black.css; sourceTree = "<group>"; };
 		BFB6C7042565390000FF2708 /* DebateReplayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DebateReplayViewController.swift; sourceTree = "<group>"; };
 		BFB6C7052565390000FF2708 /* DebateReplayViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DebateReplayViewController.xib; sourceTree = "<group>"; };
 		BFB6C70925653B2200FF2708 /* RepresentativeManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepresentativeManager.swift; sourceTree = "<group>"; };
@@ -212,6 +226,7 @@
 				BF3FAD26256267C600261E5C /* ImageView.swift */,
 				BF3FAD5B2563DE4800261E5C /* StackView.swift */,
 				BF62861D2575421B00BBBEB7 /* Label.swift */,
+				BF628660257A428B00BBBEB7 /* Collection.swift */,
 			);
 			path = extensions;
 			sourceTree = "<group>";
@@ -273,6 +288,7 @@
 		BF3FAD3E2563C34800261E5C /* shared */ = {
 			isa = PBXGroup;
 			children = (
+				BF99F22A257A6850001CD2BF /* documentReader */,
 				BF3FAD682565066500261E5C /* views */,
 				BF3FAD542563CA7800261E5C /* static */,
 				BF3FAD3F2563C35200261E5C /* data */,
@@ -498,6 +514,27 @@
 			path = drawer;
 			sourceTree = "<group>";
 		};
+		BF99F22A257A6850001CD2BF /* documentReader */ = {
+			isa = PBXGroup;
+			children = (
+				BF99F22B257A6863001CD2BF /* css */,
+				BF628654257A1DF200BBBEB7 /* DocumentReaderController.swift */,
+				BF628655257A1DF200BBBEB7 /* DocumentReaderController.xib */,
+				BF62865C257A272F00BBBEB7 /* DocumentHtmlView.swift */,
+			);
+			path = documentReader;
+			sourceTree = "<group>";
+		};
+		BF99F22B257A6863001CD2BF /* css */ = {
+			isa = PBXGroup;
+			children = (
+				BF99F22E257A6880001CD2BF /* motion_style_black.css */,
+				BF99F22D257A6880001CD2BF /* motion_style_white.css */,
+				BF99F22C257A6880001CD2BF /* motion_style.css */,
+			);
+			path = css;
+			sourceTree = "<group>";
+		};
 		BFC2CFC5256FB33200A24DF0 /* data */ = {
 			isa = PBXGroup;
 			children = (
@@ -630,15 +667,19 @@
 				BF88BA6C256FAAE00028BF66 /* VotingFeedTableViewCell.xib in Resources */,
 				BF5C86E9256C0547003CC1E9 /* DebateReplayOutgoingCell.xib in Resources */,
 				BFB6C7072565390000FF2708 /* DebateReplayViewController.xib in Resources */,
+				BF99F22F257A6880001CD2BF /* motion_style.css in Resources */,
+				BF99F230257A6880001CD2BF /* motion_style_white.css in Resources */,
 				BF40398625504E7E00D766F4 /* LaunchScreen.storyboard in Resources */,
 				BF88BA56256EA8F60028BF66 /* DebateReplayIncomingCell.xib in Resources */,
 				BF3DA1FF255E6A410094F463 /* DecisionsTableViewCell.xib in Resources */,
 				BF3FE28F255583B10036AF2F /* MenuItemCell.xib in Resources */,
 				BF40398325504E7E00D766F4 /* Assets.xcassets in Resources */,
 				BFC2CFE62570080E00A24DF0 /* VotingDetailsViewController.xib in Resources */,
+				BF628657257A1DF200BBBEB7 /* DocumentReaderController.xib in Resources */,
 				BF40398125504E7D00D766F4 /* Main.storyboard in Resources */,
 				BF3FAD522563C6FE00261E5C /* DebateFeedTableViewCell.xib in Resources */,
 				BF7B6CA0255C298600AD70B3 /* NewsItemTableViewCell.xib in Resources */,
+				BF99F231257A6880001CD2BF /* motion_style_black.css in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -707,6 +748,7 @@
 				BF7F604025588D2100D2959F /* NewsDocument.swift in Sources */,
 				BF3FAD27256267C600261E5C /* ImageView.swift in Sources */,
 				BF62864E25790CE300BBBEB7 /* LoadingOverlay.swift in Sources */,
+				BF628661257A428B00BBBEB7 /* Collection.swift in Sources */,
 				BF7B6CAA255D4DE400AD70B3 /* SettingsController.swift in Sources */,
 				BF88BA5A256F976F0028BF66 /* Toast.swift in Sources */,
 				BF7B6C9F255C298600AD70B3 /* NewsItemTableViewCell.swift in Sources */,
@@ -747,6 +789,7 @@
 				BF3FE28A25555EAC0036AF2F /* MenuItemCell.swift in Sources */,
 				BF3FAD61256406D100261E5C /* RepresentativeService.swift in Sources */,
 				BF628629257664BA00BBBEB7 /* PartyVoteResultView.swift in Sources */,
+				BF62865D257A272F00BBBEB7 /* DocumentHtmlView.swift in Sources */,
 				BF3DA20E255E80A50094F463 /* DecisionDocument.swift in Sources */,
 				BF8BE5CA2552F9150016C85A /* DecisionsController.swift in Sources */,
 				BFC2CFCA256FB6BC00A24DF0 /* VoteResult.swift in Sources */,
@@ -757,6 +800,7 @@
 				BF40397A25504E7D00D766F4 /* AppDelegate.swift in Sources */,
 				BF62861E2575421B00BBBEB7 /* Label.swift in Sources */,
 				BF40397C25504E7D00D766F4 /* SceneDelegate.swift in Sources */,
+				BF628656257A1DF200BBBEB7 /* DocumentReaderController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

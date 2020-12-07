@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17126"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="DocumentReaderController" customModule="Riksdagskollen" customModuleProvider="target">
+            <connections>
+                <outlet property="authorLabel" destination="Zp6-UD-Hmx" id="4bC-J1-2u4"/>
+                <outlet property="scrollView" destination="n2O-RB-eds" id="85j-Uy-elW"/>
+                <outlet property="senderContainer" destination="QWT-JG-RPN" id="ZBf-TG-0Oo"/>
+                <outlet property="separator" destination="fy3-Sf-Jts" id="SVu-VK-RPq"/>
+                <outlet property="titleLabel" destination="eCw-hI-rWs" id="20C-Ry-hVM"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+                <outlet property="webView" destination="y6m-lT-3zR" id="a4I-ZZ-YkT"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT" customClass="ThemedView" customModule="Riksdagskollen" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" horizontalHuggingPriority="252" verticalHuggingPriority="252" horizontalCompressionResistancePriority="752" verticalCompressionResistancePriority="752" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="n2O-RB-eds">
+                    <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                    <subviews>
+                        <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="LKv-xL-Vxs">
+                            <rect key="frame" x="12" y="16" width="390" height="519"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Användningen av order särskola i gymnasiet" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eCw-hI-rWs" customClass="TitleLabel" customModule="Riksdagskollen" customModuleProvider="target">
+                                    <rect key="frame" x="0.0" y="0.0" width="390" height="21.5"/>
+                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                                    <nil key="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="av Agneta Sjödin" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zp6-UD-Hmx" customClass="TitleLabel" customModule="Riksdagskollen" customModuleProvider="target">
+                                    <rect key="frame" x="0.0" y="21.5" width="390" height="19.5"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                    <nil key="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4fn-Xp-Kw6">
+                                    <rect key="frame" x="0.0" y="41" width="390" height="25"/>
+                                    <subviews>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fy3-Sf-Jts" customClass="SeparatorView" customModule="Riksdagskollen" customModuleProvider="target">
+                                            <rect key="frame" x="0.0" y="23" width="390" height="2"/>
+                                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="2" id="cD3-xR-YrK"/>
+                                            </constraints>
+                                        </view>
+                                    </subviews>
+                                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                    <constraints>
+                                        <constraint firstAttribute="trailing" secondItem="fy3-Sf-Jts" secondAttribute="trailing" id="9tN-RY-Eov"/>
+                                        <constraint firstAttribute="bottom" secondItem="fy3-Sf-Jts" secondAttribute="bottom" id="ZDg-8F-nuf"/>
+                                        <constraint firstAttribute="height" constant="25" id="wTc-5i-IPo"/>
+                                        <constraint firstItem="fy3-Sf-Jts" firstAttribute="leading" secondItem="4fn-Xp-Kw6" secondAttribute="leading" id="xdi-dB-kim"/>
+                                    </constraints>
+                                </view>
+                                <wkWebView contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="y6m-lT-3zR" customClass="DocumentHtmlView" customModule="Riksdagskollen" customModuleProvider="target">
+                                    <rect key="frame" x="0.0" y="66" width="390" height="273.5"/>
+                                    <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <wkWebViewConfiguration key="configuration">
+                                        <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
+                                        <wkPreferences key="preferences"/>
+                                    </wkWebViewConfiguration>
+                                </wkWebView>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Avsändare" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T6Q-ee-aIm" customClass="TitleLabel" customModule="Riksdagskollen" customModuleProvider="target">
+                                    <rect key="frame" x="0.0" y="339.5" width="390" height="19.5"/>
+                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
+                                    <nil key="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" alwaysBounceHorizontal="YES" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yfe-Zo-JvA">
+                                    <rect key="frame" x="0.0" y="359" width="390" height="160"/>
+                                    <subviews>
+                                        <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" distribution="equalCentering" translatesAutoresizingMaskIntoConstraints="NO" id="QWT-JG-RPN" userLabel="Sender Container">
+                                            <rect key="frame" x="0.0" y="16" width="390" height="144"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="144" id="0mv-7k-fDm"/>
+                                            </constraints>
+                                        </stackView>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="160" id="7Ab-jk-fc4"/>
+                                        <constraint firstItem="QWT-JG-RPN" firstAttribute="trailing" secondItem="Yfe-Zo-JvA" secondAttribute="trailing" id="LTs-A1-Mit"/>
+                                        <constraint firstItem="QWT-JG-RPN" firstAttribute="leading" secondItem="Yfe-Zo-JvA" secondAttribute="leading" id="Zn3-dY-bCA"/>
+                                        <constraint firstAttribute="bottom" secondItem="QWT-JG-RPN" secondAttribute="bottom" id="Zui-qU-FBB"/>
+                                        <constraint firstItem="QWT-JG-RPN" firstAttribute="top" secondItem="Yfe-Zo-JvA" secondAttribute="top" constant="16" id="m5P-eB-l6t"/>
+                                    </constraints>
+                                    <viewLayoutGuide key="contentLayoutGuide" id="IaC-HZ-Spu"/>
+                                    <viewLayoutGuide key="frameLayoutGuide" id="HW6-rx-pyX"/>
+                                </scrollView>
+                            </subviews>
+                        </stackView>
+                    </subviews>
+                    <constraints>
+                        <constraint firstItem="LKv-xL-Vxs" firstAttribute="top" secondItem="n2O-RB-eds" secondAttribute="top" constant="16" id="1q6-f1-ePV"/>
+                        <constraint firstItem="LKv-xL-Vxs" firstAttribute="leading" secondItem="n2O-RB-eds" secondAttribute="leading" constant="12" id="6I6-3c-cnJ"/>
+                        <constraint firstItem="LKv-xL-Vxs" firstAttribute="centerX" secondItem="n2O-RB-eds" secondAttribute="centerX" id="Agv-bR-ANH"/>
+                        <constraint firstAttribute="trailing" secondItem="LKv-xL-Vxs" secondAttribute="trailing" constant="12" id="Kzx-OJ-2UG"/>
+                        <constraint firstAttribute="bottom" secondItem="LKv-xL-Vxs" secondAttribute="bottom" constant="78" id="gUr-of-3or"/>
+                    </constraints>
+                    <viewLayoutGuide key="contentLayoutGuide" id="DNp-St-OoC"/>
+                    <viewLayoutGuide key="frameLayoutGuide" id="95O-0e-AQJ"/>
+                </scrollView>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="n2O-RB-eds" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="8Xe-zP-PJi"/>
+                <constraint firstItem="n2O-RB-eds" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="QjU-xc-qGx"/>
+                <constraint firstItem="n2O-RB-eds" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="Viw-oN-rc2"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="n2O-RB-eds" secondAttribute="bottom" id="ZFZ-i8-t6n"/>
+            </constraints>
+            <point key="canvasLocation" x="28.985507246376812" y="128.57142857142856"/>
+        </view>
+    </objects>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

@@ -41,6 +41,10 @@ class PartyDocument: Codable {
         }
         return []
     }
+    
+    func isMotion() -> Bool {
+        return dokumentnamn.caseInsensitiveCompare("motion") == .orderedSame
+    }
 }
 
 class DocIntressent: Codable {

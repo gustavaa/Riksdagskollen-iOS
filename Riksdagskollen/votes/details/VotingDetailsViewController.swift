@@ -14,6 +14,7 @@ class VotingDetailsViewController: UIViewController {
     
     var votingDocument: VotingDocument!
     private var motions = [MotionDetails]()
+    private var dowloadedPartyDocs = [PartyDocument]()
     private let parseStart = "<section class=\"component-case-content"
 
     @IBOutlet weak var contentView: UIScrollView!
@@ -37,18 +38,23 @@ class VotingDetailsViewController: UIViewController {
     
     var votesIsExpanded = false
     var docsIsExpanded = false
+    var shouldShowLoadingView = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.shouldShowLoadingView = true
         setUpViews()
         docExpandableContainer.isHidden = true
         votesExpandableContainer.isHidden = true
         contentView.isHidden = true
-
+        self.title = "Votering"
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        LoadingOverlay.shared.showOverlay(in: view)
+        print(votesExpandableContainer.arrangedSubviews.count)
+        if (shouldShowLoadingView) {
+            LoadingOverlay.shared.showOverlay(in: view)
+        }
     }
     
     func setUpViews(){
@@ -117,6 +123,7 @@ class VotingDetailsViewController: UIViewController {
                 self.propositionLabel.setHTMLFromString(htmlText: attributedPropositionText)
             }
             LoadingOverlay.shared.hideOverlayView()
+            self.shouldShowLoadingView = false
             self.contentView.isHidden = false
         }, failure: {error in
             
@@ -220,7 +227,7 @@ class VotingDetailsViewController: UIViewController {
     
     
     private func displayMotions() {
-        for motion in self.motions {
+        for (motion) in self.motions {
             let titleLabel = TitleLabel()
             titleLabel.font = titleLabel.font.withSize(16)
             titleLabel.numberOfLines = 0
@@ -231,16 +238,28 @@ class VotingDetailsViewController: UIViewController {
             docExpandableContainer.addArrangedSubview(lowerTitle)
             VotesService.fetchMotionById(id: motion.id, success: { partyDocuments in
                 guard let partyDoc = partyDocuments?.first else { return }
-                
+                self.dowloadedPartyDocs.append(partyDoc)
                 if partyDoc.doktyp == "prop" {
                     self.docExpandableContainer.removeArrangedSubview(lowerTitle)
                 }
                 titleLabel.text = "[\(motion.listPosition)] \(motion.id) \(partyDoc.titel) \(motion.proposalPoint.trimmingCharacters(in: .whitespaces))"
                 lowerTitle.text = partyDoc.undertitel
+                titleLabel.tag = self.dowloadedPartyDocs.count - 1
+                titleLabel.isUserInteractionEnabled = true
+                let tapGesture = UITapGestureRecognizer(target: self, action: #selector(self.openPartyDocumentDetails(sender:)))
+                titleLabel.addGestureRecognizer(tapGesture)
             }, failure: { error in
                 
             })
         }
+    }
+    
+    @objc func openPartyDocumentDetails(sender: UITapGestureRecognizer) {
+        let vc = DocumentReaderController()
+        guard let view = sender.view, let partyDoc = dowloadedPartyDocs[safe: view.tag] else {return}
+        modalPresentationStyle = .none
+        vc.partyDocument = partyDoc
+        show(vc, sender: self)
     }
     
     override var preferredStatusBarStyle: UIStatusBarStyle {

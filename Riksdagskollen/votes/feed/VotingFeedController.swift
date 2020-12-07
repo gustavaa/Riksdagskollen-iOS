@@ -59,7 +59,7 @@ class VotingFeedController: UITableViewController {
         let detailsVc = VotingDetailsViewController()
         detailsVc.modalPresentationCapturesStatusBarAppearance = true
         detailsVc.votingDocument = model.voteDocuments[indexPath.row]
-        self.present(detailsVc, animated: true, completion: {})
+        self.show(detailsVc, sender: self)
     }
     
     

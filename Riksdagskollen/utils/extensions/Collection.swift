@@ -2,13 +2,14 @@
 //  Collection.swift
 //  Riksdagskollen
 //
-//  Created by Gustav Aaro on 2020-11-30.
+//  Created by Gustav Aaro on 2020-12-04.
 //
 
 import Foundation
 
-extension Collection where Indices.Iterator.Element == Index {
-    subscript (safe index: Index) -> Iterator.Element? {
+extension Collection {
+    /// Returns the element at the specified index if it is within bounds, otherwise nil.
+    subscript (safe index: Index) -> Element? {
         return indices.contains(index) ? self[index] : nil
     }
 }

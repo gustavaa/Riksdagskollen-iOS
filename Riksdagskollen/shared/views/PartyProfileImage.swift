@@ -13,6 +13,13 @@ class PartyProfileImage: UIView {
     private var partyLogoView: UIImageView
     var partyIndicatorSize: Int = 25
     
+    override init(frame: CGRect){
+        self.profileImageView = UIImageView()
+        self.partyLogoView = UIImageView()
+        super.init(frame: frame)
+        initialize()
+    }
+    
     required init?(coder: NSCoder) {
         self.profileImageView = UIImageView()
         self.partyLogoView = UIImageView()

@@ -47,7 +47,6 @@ class VotingUtil {
             }
             
             if relevantSubstring.contains(keyword) {
-                print("Relevant:",relevantSubstring)
                 let pattern = "\(keyword)[a-z]*\\s[0-9\\soch,-]*[0-9]"
                 if relevantSubstring.hasSuffix(", ") {
                     endIndex = relevantSubstring.lastIndex(of: ", ")!
