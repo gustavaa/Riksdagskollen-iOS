@@ -38,7 +38,7 @@ extension UIApplication {
     }
 }
 
-struct MenuItem {
+struct DrawerMenuItem {
     var title: String
     var imageName: String
     init(title:String, imageName: String) {
@@ -57,22 +57,22 @@ enum MenuItems: String, CaseIterable{
 }
 
 protocol SideMenuDelegate {
-    func didSelectMenuItem(menuItem: MenuItem)
+    func didSelectMenuItem(menuItem: DrawerMenuItem)
 }
 
 class MenuController: UITableViewController {
     public var delegate: SideMenuDelegate?
     
     private let sections = ["", "I Riksdagen", "Partier", "Övrigt"]
-    private var selectedMenuItem: MenuItem?
+    private var selectedMenuItem: DrawerMenuItem?
     
     private let riksdagenMenuItems = [
-        MenuItem(title: "Aktuellt", imageName: "riksdagskollen_logo_small"),
-        MenuItem(title: "Riksdagsbeslut", imageName: "betlogo"),
-        MenuItem(title: "Debatter", imageName: "debatelogo"),
-        MenuItem(title: "Voteringar", imageName: "votlogo"),
-        MenuItem(title: "Ledamöter", imageName: "replogo"),
-        MenuItem(title: "Kammarprotokoll", imageName: "replogo")
+        DrawerMenuItem(title: "Aktuellt", imageName: "riksdagskollen_logo_small"),
+        DrawerMenuItem(title: "Riksdagsbeslut", imageName: "betlogo"),
+        DrawerMenuItem(title: "Debatter", imageName: "debatelogo"),
+        DrawerMenuItem(title: "Voteringar", imageName: "votlogo"),
+        DrawerMenuItem(title: "Ledamöter", imageName: "replogo"),
+        DrawerMenuItem(title: "Kammarprotokoll", imageName: "replogo")
     ]
     
     

@@ -16,7 +16,9 @@ class MasterViewController: UIViewController, SideMenuDelegate{
     var decisionsViewController: DecisionsController?
     var debateViewController: DebateFeedController?
     var representativesViewController: RepresentativesListController?
-
+    
+    @IBOutlet weak var optionsBarButton: UIBarButtonItem!
+    
     var menu: SideMenuNavigationController?
     
     var currentViewController: UIViewController?
@@ -31,6 +33,7 @@ class MasterViewController: UIViewController, SideMenuDelegate{
         switchToViewController(viewController: newsViewController!)
         navigationItem.title = "Aktuellt"
         RepresentativeService.fetchAllCurrentRepresentatives(success: {_ in}, failure: {_ in})
+        setOptionsButtonHidden(hidden: true)
     }
     
     func setupSideMenu() {
@@ -50,7 +53,8 @@ class MasterViewController: UIViewController, SideMenuDelegate{
         present(menu!, animated: true)
     }
     
-    func didSelectMenuItem(menuItem: MenuItem) {
+    func didSelectMenuItem(menuItem: DrawerMenuItem) {
+        setOptionsButtonHidden(hidden: true)
         switch menuItem.title {
         case MenuItems.news.rawValue:
             if newsViewController == nil {
@@ -81,6 +85,7 @@ class MasterViewController: UIViewController, SideMenuDelegate{
             switchToViewController(viewController: votesViewController!)
             break
         case MenuItems.representatives.rawValue:
+            setOptionsButtonHidden(hidden: false)
             if representativesViewController == nil {
                 representativesViewController = RepresentativesListController()
                 setupViewController(viewController: representativesViewController!)
@@ -92,10 +97,20 @@ class MasterViewController: UIViewController, SideMenuDelegate{
         navigationItem.title = menuItem.title
     }
     
+    func setOptionsButtonHidden(hidden: Bool){
+        if hidden{
+             optionsBarButton?.isEnabled = false
+            optionsBarButton?.tintColor = UIColor.clear
+         } else{
+            optionsBarButton?.isEnabled = true
+            optionsBarButton?.tintColor = nil
+         }
+    }
+    
     func setupViewController(viewController: UIViewController){
         addChild(viewController)
         view.addSubview(viewController.view)
-        print(view.frame)
+
         if let cvc = currentViewController {
             viewController.view.frame = cvc.view.frame
         } else {

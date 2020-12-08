@@ -38,6 +38,7 @@ class ThemeManager {
         UINavigationBar.appearance().isTranslucent = false
         UINavigationBar.appearance().tintColor = theme.statusBarTitleTextColor
         UINavigationBar.appearance().titleTextAttributes = [NSAttributedString.Key.foregroundColor: theme.statusBarTitleTextColor]
+        UIBarButtonItem.appearance().tintColor = theme.statusBarTitleTextColor
 
         UITableView.appearance().backgroundColor = theme.mainBackgroundColor
         UITableViewCell.appearance().backgroundColor = UIColor.clear

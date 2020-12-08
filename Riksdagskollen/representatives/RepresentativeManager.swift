@@ -36,7 +36,6 @@ class RepresentativeManager {
     public func addCurrentRepresentatives(representatives: [Representative]){
         currentRepresentatives.append(contentsOf: representatives)
         for rep in representatives {
-            print("Added rep", rep.efternamn)
             addRepresentative(rep: rep)
         }
         representativesAreDownloaded = true

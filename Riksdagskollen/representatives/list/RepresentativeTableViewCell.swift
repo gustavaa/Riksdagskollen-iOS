@@ -30,7 +30,7 @@ class RepresentativeTableViewCell: UITableViewCell {
     func configure(with representative: Representative){
         
         nameLabel.text = "\(representative.tilltalsnamn) \(representative.efternamn)"
-        ageLabel.text = representative.fodd_ar
+        ageLabel.text = String(Calendar.current.component(.year, from: Date()) - Int(representative.fodd_ar)!)
         districtLabel.text = representative.valkrets
         profileView.profileImageView.kf.setImage(with: URL(string: representative.bild_url_192)!, completionHandler: { _ in
             self.profileView.setParty(partyId: representative.parti)

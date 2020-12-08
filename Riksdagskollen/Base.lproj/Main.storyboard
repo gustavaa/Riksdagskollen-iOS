@@ -91,13 +91,19 @@
                                 <action selector="onMenuTap" destination="kDs-Ip-NSn" id="ZcB-7r-ZPd"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" title="Item" image="settings-24px" id="JIf-tO-TCH">
-                            <connections>
-                                <segue destination="kPt-9H-itx" kind="show" id="YyP-8h-djh"/>
-                            </connections>
-                        </barButtonItem>
+                        <rightBarButtonItems>
+                            <barButtonItem title="Preferences" image="settings-24px" id="JIf-tO-TCH">
+                                <connections>
+                                    <segue destination="kPt-9H-itx" kind="show" id="YyP-8h-djh"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem title="Options" image="ellipsis.circle" catalog="system" id="Lyx-ne-b0m"/>
+                        </rightBarButtonItems>
                     </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="optionsBarButton" destination="Lyx-ne-b0m" id="4J1-oT-Kr1"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DB6-QK-XlY" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -187,6 +193,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="ellipsis.circle" catalog="system" width="128" height="121"/>
         <image name="menu" width="24" height="24"/>
         <image name="riksdagskollen_splash" width="549" height="549"/>
         <image name="settings-24px" width="24" height="24"/>

@@ -6,23 +6,64 @@
 //
 
 import UIKit
+import Sheeeeeeeeet
 
-class RepresentativesListController: UITableViewController, RepresentativeDownloadedListener {
 
-    let manager = RepresentativeManager.shared
+class RepresentativesListController: UITableViewController, UIActionSheetDelegate {
+
+    
+    var optionsButton: UIBarButtonItem!
+    var optionsMenu: ActionSheet!
+    var model: RepresentativesListModel!
+
     override func viewDidLoad() {
         super.viewDidLoad()
+        model = RepresentativesListModel(onDataChange: {self.tableView.reloadData()})
         setupTableview()
-        if !manager.representativesAreDownloaded {
-            manager.addDownloadListener(listener: self)
-        }
 
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
+        optionsMenu = buildActionSheetMenu()
+        optionsButton = parent!.navigationItem.rightBarButtonItems![1]
+        optionsButton.target = self
+        optionsButton.action = #selector(showOptionsMenu(sender:))
+        
     }
+    
+    @objc func showOptionsMenu(sender: AnyObject){
+        buildActionSheetMenu().present(in: self, from: view)
+    }
+    
+    
+    private func buildActionSheetMenu() -> ActionSheet {
+        var items = [MenuItem]()
+        items.append(MenuItem(title: "Filtrera", subtitle: nil, value: nil, image: UIImage(named: "filter"), isEnabled: true, tapBehavior: .dismiss))
+        items.append(SectionMargin())
+        items.append(SectionTitle(title: "Sortering"))
+        items.append(SingleSelectItem(title: "Stigande", subtitle: nil, isSelected: model.currentSortOrderOption == .ascending, group: "sortorder", value: RepresentativesSortOrderOption.ascending, image: nil, tapBehavior: .dismiss))
+        items.append(SingleSelectItem(title: "Fallande", subtitle: nil, isSelected:  model.currentSortOrderOption == .descending, group: "sortorder", value: RepresentativesSortOrderOption.descending, image: nil, tapBehavior: .dismiss))
+        items.append(SectionMargin())
+        items.append(SingleSelectItem(title: "Sortera efter förnamn", subtitle: nil, isSelected: model.currentSortingOption == .firstName, group: "sorting", value: RepresentativesSortingOption.firstName, image: nil, tapBehavior: .dismiss))
+        items.append(SingleSelectItem(title: "Sortera efter efternamn", subtitle: nil, isSelected: model.currentSortingOption  == .lastName, group: "sorting", value: RepresentativesSortingOption.lastName, image: nil, tapBehavior: .dismiss))
+        items.append(SingleSelectItem(title: "Sortera efter ålder", subtitle: nil, isSelected: model.currentSortingOption  == .age, group: "sorting", value: RepresentativesSortingOption.age, image: nil, tapBehavior: .dismiss))
+        items.append(SingleSelectItem(title: "Sortera efter valkrets", subtitle: nil, isSelected: model.currentSortingOption  == .district, group: "sorting", value: RepresentativesSortingOption.district, image: nil, tapBehavior: .dismiss))
+        items.append(SectionMargin())
+        items.append(OkButton(title: "Avbryt"))
+
+        let menu = Menu(title: "Visningsalternativ", items: items)
+        return menu.toActionSheet{ sheet, item in
+            self.menuItemPressed(sheet: sheet, item: item)
+        }
+    }
+    
+    func menuItemPressed(sheet: ActionSheet, item: MenuItem){
+        if let singleSelectItem = item as? SingleSelectItem {
+            if singleSelectItem.group == "sortorder" {
+                model.currentSortOrderOption = singleSelectItem.value as! RepresentativesSortOrderOption
+            } else {
+                model.currentSortingOption = singleSelectItem.value as! RepresentativesSortingOption
+            }
+        }
+    }
+    
     
     
     func setupTableview () {
@@ -40,16 +81,15 @@ class RepresentativesListController: UITableViewController, RepresentativeDownlo
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return manager.currentRepresentatives.count
+        return model.currentRepresentatives.count
     }
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: RepresentativeTableViewCell.identifier, for: indexPath) as! RepresentativeTableViewCell
-        cell.configure(with: manager.currentRepresentatives[indexPath.row])
+        cell.configure(with: model.currentRepresentatives[indexPath.row])
         return cell
     }
-    
     
     /*
     // Override to support editing the table view.
