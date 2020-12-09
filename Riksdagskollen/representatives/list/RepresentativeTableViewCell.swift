@@ -30,7 +30,7 @@ class RepresentativeTableViewCell: UITableViewCell {
     func configure(with representative: Representative){
         
         nameLabel.text = "\(representative.tilltalsnamn) \(representative.efternamn)"
-        ageLabel.text = String(Calendar.current.component(.year, from: Date()) - Int(representative.fodd_ar)!)
+        ageLabel.text = String(representative.age ?? 0)
         districtLabel.text = representative.valkrets
         profileView.profileImageView.kf.setImage(with: URL(string: representative.bild_url_192)!, completionHandler: { _ in
             self.profileView.setParty(partyId: representative.parti)
@@ -47,8 +47,6 @@ class RepresentativeTableViewCell: UITableViewCell {
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
     }
     
 }

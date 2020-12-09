@@ -33,6 +33,13 @@ class Representative: Codable {
         return nil
     }
     
+    public var age: Int? {
+        if let bithYear = Int(fodd_ar) {
+            return Calendar.current.component(.year, from: Date()) - bithYear
+        }
+        return nil
+    }
+
 }
 
 class RepresentativeInfoList: Codable {

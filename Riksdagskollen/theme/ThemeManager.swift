@@ -66,8 +66,6 @@ class ThemeManager {
         LoadingAnimation.appearance().fillColor = theme.loadingViewAccentColor
         
         
-        
-        
         refreshAllView()
     }
     
