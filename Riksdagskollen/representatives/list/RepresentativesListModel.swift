@@ -43,7 +43,6 @@ class RepresentativesListModel: RepresentativeDownloadedListener  {
     }
     var filteredParties: Set = Set(UserDefaults.standard.stringArray(forKey: REP_FILTERED_PARTIES_KEY) ?? CurrentParties.values.map({$0.id})) {
         didSet {
-            print("Was set", filteredParties)
             UserDefaults.standard.setValue([String](filteredParties), forKey: REP_FILTERED_PARTIES_KEY)
             updateData()
         }
@@ -67,7 +66,6 @@ class RepresentativesListModel: RepresentativeDownloadedListener  {
     }
     
     func onRepresentativesDownloaded(_ representatives: [Representative]) {
-        self.currentRepresentatives = representatives
         self.updateData()
     }
     

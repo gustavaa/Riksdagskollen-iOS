@@ -63,7 +63,8 @@ class RepresentativesListController: UITableViewController, UIActionSheetDelegat
         items[0].tapBehavior = .none
         
         for party in CurrentParties.values {
-            items.append(MultiSelectItem(title: party.name, subtitle: nil, isSelected: model.filteredParties.contains(party.id), group: "parties", value: party.id, image: party.logo))
+            let image = party.logo.resizeImage(targetSize: CGSize(width: 30, height: 30))
+            items.append(MultiSelectItem(title: party.name, subtitle: nil, isSelected: model.filteredParties.contains(party.id), group: "parties", value: party.id, image: image))
         }
         items.append(OkButton(title: "Tillämpa"))
         items.append(CancelButton(title: "Avbryt"))
