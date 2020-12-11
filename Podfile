@@ -12,4 +12,5 @@ target 'Riksdagskollen' do
   pod 'SwiftSoup'
   pod 'Charts'
   pod "Sheeeeeeeeet"
+  pod 'XLPagerTabStrip', '~> 9.0'
 end

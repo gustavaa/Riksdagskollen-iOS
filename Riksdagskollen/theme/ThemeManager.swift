@@ -39,6 +39,9 @@ class ThemeManager {
         UINavigationBar.appearance().tintColor = theme.statusBarTitleTextColor
         UINavigationBar.appearance().titleTextAttributes = [NSAttributedString.Key.foregroundColor: theme.statusBarTitleTextColor]
         UIBarButtonItem.appearance().tintColor = theme.statusBarTitleTextColor
+        // To remove separtor line between navigation controller and view
+        UINavigationBar.appearance().setBackgroundImage(UIImage(), for: UIBarMetrics.default)
+        UINavigationBar.appearance().shadowImage = UIImage()
 
         UITableView.appearance().backgroundColor = theme.mainBackgroundColor
         UITableViewCell.appearance().backgroundColor = UIColor.clear
@@ -50,9 +53,12 @@ class ThemeManager {
         
         UIActivityIndicatorView.appearance().color = theme.debateTextColor
         UIActivityIndicatorView.appearance().style = .large
+        
+        
 
         DrawerHeaderView.appearance().backgroundColor = theme.primaryColor
         ThemedView.appearance().backgroundColor = theme.mainBackgroundColor
+        AccentLabel.appearance().textColor = theme.statusBarTitleTextColor
         TitleLabel.appearance().textColor = theme.mainTitleTextColor
         BodyLabel.appearance().textColor = theme.mainBodyTextColor
         SubtitleLabel.appearance().textColor = theme.secondaryDarkColor
@@ -64,6 +70,9 @@ class ThemeManager {
         SpeechBubble.appearance().speechTextColor = theme.debateTextColor
         SpeechBubble.appearance().backgroundColor = theme.mainBackgroundColor
         LoadingAnimation.appearance().fillColor = theme.loadingViewAccentColor
+        TabBarCollectionView.appearance().backgroundColor = theme.primaryColor
+        TabBarCollectionViewCell.appearance().backgroundColor = theme.primaryColor
+        CurrentTabIndicatorView.appearance().backgroundColor = theme.statusBarTitleTextColor
         
         
         refreshAllView()

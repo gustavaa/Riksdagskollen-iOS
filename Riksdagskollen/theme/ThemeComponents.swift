@@ -8,6 +8,9 @@
 import Foundation
 import UIKit
 
+// label used inside primary color
+class AccentLabel: UILabel{}
+
 // Label used for displaying titles
 class TitleLabel: UILabel{}
 
@@ -30,6 +33,10 @@ class AccentIcon: UIImageView{
           set { self.setImageColor(color: newValue!) }
       }
 }
+
+class TabBarCollectionView: UICollectionView{}
+
+class CurrentTabIndicatorView: UIView{}
 
 // Separator between views with accentColor
 class SeparatorView: UIView {}

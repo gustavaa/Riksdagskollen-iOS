@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17126"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="RepresentativeDetailsController" customModule="Riksdagskollen" customModuleProvider="target">
+            <connections>
+                <outlet property="headerView" destination="gy7-DI-CaD" id="vk3-3c-9PU"/>
+                <outlet property="headerViewHeightConstraint" destination="PYW-jg-7iN" id="UYL-Vz-hM8"/>
+                <outlet property="outerHeaderView" destination="7om-T7-Cux" id="4aq-8r-oSu"/>
+                <outlet property="tabBarCollectionView" destination="aSY-CV-gfs" id="rfP-Di-3Le"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT" customClass="ThemedView" customModule="Riksdagskollen" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7om-T7-Cux" userLabel="HeaderView">
+                    <rect key="frame" x="0.0" y="44" width="414" height="250"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gy7-DI-CaD">
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="250"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Namn här" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LMx-5L-Ur2">
+                                    <rect key="frame" x="164.5" y="113" width="85.5" height="24"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                            </subviews>
+                            <constraints>
+                                <constraint firstItem="LMx-5L-Ur2" firstAttribute="centerX" secondItem="gy7-DI-CaD" secondAttribute="centerX" id="3MX-4z-oNf"/>
+                                <constraint firstItem="LMx-5L-Ur2" firstAttribute="top" relation="greaterThanOrEqual" secondItem="gy7-DI-CaD" secondAttribute="top" priority="250" id="478-6G-PT4"/>
+                                <constraint firstItem="LMx-5L-Ur2" firstAttribute="centerY" secondItem="gy7-DI-CaD" secondAttribute="centerY" id="t9B-k6-gW3"/>
+                            </constraints>
+                        </view>
+                        <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="aSY-CV-gfs" customClass="TabBarCollectionView" customModule="Riksdagskollen" customModuleProvider="target">
+                            <rect key="frame" x="0.0" y="206" width="414" height="44"/>
+                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="44" id="9jM-6J-0Ib"/>
+                            </constraints>
+                            <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="dlc-SN-qIF">
+                                <size key="itemSize" width="128" height="128"/>
+                                <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                            </collectionViewFlowLayout>
+                        </collectionView>
+                    </subviews>
+                    <color key="backgroundColor" name="RiksdagBlue"/>
+                    <constraints>
+                        <constraint firstItem="aSY-CV-gfs" firstAttribute="leading" secondItem="7om-T7-Cux" secondAttribute="leading" id="MIu-8o-2JA"/>
+                        <constraint firstAttribute="bottom" secondItem="gy7-DI-CaD" secondAttribute="bottom" id="Mys-Ax-6jG"/>
+                        <constraint firstAttribute="height" constant="250" id="PYW-jg-7iN"/>
+                        <constraint firstAttribute="trailing" secondItem="gy7-DI-CaD" secondAttribute="trailing" id="UDt-rF-HmF"/>
+                        <constraint firstAttribute="trailing" secondItem="aSY-CV-gfs" secondAttribute="trailing" id="W1w-Yb-mNS"/>
+                        <constraint firstItem="gy7-DI-CaD" firstAttribute="leading" secondItem="7om-T7-Cux" secondAttribute="leading" id="fda-BI-rB0"/>
+                        <constraint firstAttribute="bottom" secondItem="aSY-CV-gfs" secondAttribute="bottom" id="kLa-AP-X91"/>
+                        <constraint firstItem="gy7-DI-CaD" firstAttribute="top" secondItem="7om-T7-Cux" secondAttribute="top" id="un2-wM-cyg"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="7om-T7-Cux" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="lVU-mQ-GUN"/>
+                <constraint firstItem="7om-T7-Cux" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="ofj-Vp-rTN"/>
+                <constraint firstItem="7om-T7-Cux" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="tY8-DK-Q27"/>
+            </constraints>
+            <point key="canvasLocation" x="131.8840579710145" y="54.910714285714285"/>
+        </view>
+    </objects>
+    <resources>
+        <namedColor name="RiksdagBlue">
+            <color red="0.10588235294117647" green="0.31372549019607843" blue="0.43529411764705883" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
