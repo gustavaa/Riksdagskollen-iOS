@@ -6,8 +6,15 @@
 //
 
 import UIKit
+import Kingfisher
 
 class PartyProfileImage: UIView {
+    
+    enum ProfileImageSize {
+        case small
+        case medium
+        case large
+    }
     
     var profileImageView: UIImageView
     private var partyLogoView: UIImageView
@@ -38,6 +45,44 @@ class PartyProfileImage: UIView {
         profileImageView.clipsToBounds = true
         
         addSubview(profileImageView)
+    }
+    
+    func setRepresentative(representative rep: Representative, imageSize: ProfileImageSize){
+        var imageUrlString = ""
+        switch(imageSize){
+        case .small:
+            imageUrlString = rep.bild_url_80
+        case .medium:
+            imageUrlString = rep.bild_url_192
+        case .large:
+            imageUrlString = rep.bild_url_max
+        }
+        
+        self.profileImageView.kf.setImage(with: URL(string: imageUrlString)!, completionHandler: { _ in
+            self.setParty(partyId: rep.parti)
+            self.isHidden = false
+        })
+    }
+    
+    func setRepresentative(iid: String, party: String?, imageSize: ProfileImageSize){
+        RepresentativeService.fetchRepresentative(iid: iid, party: party, success: {representative in
+            guard let rep = representative else { return }
+            
+            var imageUrlString = ""
+            switch(imageSize){
+            case .small:
+                imageUrlString = rep.bild_url_80
+            case .medium:
+                imageUrlString = rep.bild_url_192
+            case .large:
+                imageUrlString = rep.bild_url_max
+            }
+            
+            self.profileImageView.kf.setImage(with: URL(string: imageUrlString)!, completionHandler: { _ in
+                self.setParty(partyId: rep.parti)
+                self.isHidden = false
+            })
+        }, failure: {_ in })
     }
     
     func setParty(partyId: String){

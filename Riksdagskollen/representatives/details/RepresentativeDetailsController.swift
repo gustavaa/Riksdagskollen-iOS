@@ -45,6 +45,8 @@ class RepresentativeDetailsController: UIViewController {
         setupCollectionView()
         setupRepresentativeView()
         navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: navigationController?.navigationBar.tintColor.withAlphaComponent(0) as Any]
+        
+        (orderedViewControllers[0] as! RepresentativeFeedController).representative = representative
     }
     
     func setupRepresentativeView() {

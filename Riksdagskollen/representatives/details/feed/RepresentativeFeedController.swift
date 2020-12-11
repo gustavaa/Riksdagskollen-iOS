@@ -6,8 +6,6 @@
 //
 
 import UIKit
-import XLPagerTabStrip
-
 
 enum DragDirection {
     
@@ -17,48 +15,66 @@ enum DragDirection {
 
 class RepresentativeFeedController: UITableViewController {
     
+  
     weak var innerTableViewScrollDelegate: InnerTableViewScrollDelegate?
     private var dragDirection: DragDirection = .Up
     private var oldContentOffset = CGPoint.zero
+    
+    private var model: RepresentativeFeedModel!
+    var representative: Representative! {
+        didSet {
+            model = RepresentativeFeedModel(representative: representative)
+            requestMoreData()
+            LoadingOverlay.shared.showOverlay(in: view)
+        }
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        tableView.register(UITableViewCell.self, forCellReuseIdentifier: "asd")
-        
-    }
-
-    // MARK: - Table view data source
-
-    override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 1
+        tableView.separatorStyle = .none
+        tableView.estimatedRowHeight = 140
+        tableView.register(PartyDocumentTableViewCell.nib(), forCellReuseIdentifier: PartyDocumentTableViewCell.identifier)
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 100
+        guard let m = model else {return 0}
+        return m.representativeDocuments.count
+    }
+    
+    func requestMoreData () {
+        model.loadNextPage(){
+            self.tableView.reloadData()
+            LoadingOverlay.shared.hideOverlayView()
+        } onError: {error in
+            print("error \(error)")
+        }
+    }
+    
+    override func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        if indexPath.row + 1 == model.representativeDocuments.count {
+           requestMoreData()
+        }
     }
 
-    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "asd", for: indexPath) as UITableViewCell
-        cell.textLabel?.text = String(indexPath.row)
-
-        // Configure the cell...
-
+        let cell = tableView.dequeueReusableCell(withIdentifier: PartyDocumentTableViewCell.identifier, for: indexPath) as! PartyDocumentTableViewCell
+        cell.configure(with: model.representativeDocuments[indexPath.row])
         return cell
     }
     
 
-  
+
+}
+
+extension RepresentativeFeedController {
     override func scrollViewDidScroll(_ scrollView: UIScrollView) {
         let delta = scrollView.contentOffset.y - oldContentOffset.y
         
         let topViewCurrentHeightConst = innerTableViewScrollDelegate?.currentHeaderHeight
         
         if let topViewUnwrappedHeight = topViewCurrentHeightConst {
-
+            
             if delta > 0, topViewUnwrappedHeight > headerViewRange.lowerBound, scrollView.contentOffset.y > 0 {
                 
                 dragDirection = .Up
@@ -67,8 +83,7 @@ class RepresentativeFeedController: UITableViewController {
             }
             
             if delta < 0,
-                 topViewUnwrappedHeight < headerViewRange.upperBound,
-    scrollView.contentOffset.y < 0 {
+               topViewUnwrappedHeight < headerViewRange.upperBound, scrollView.contentOffset.y < 0 {
                 
                 dragDirection = .Down
                 innerTableViewScrollDelegate?.innerTableViewDidScroll(withDistance: delta)
@@ -78,5 +93,4 @@ class RepresentativeFeedController: UITableViewController {
         
         oldContentOffset = scrollView.contentOffset
     }
-
 }
