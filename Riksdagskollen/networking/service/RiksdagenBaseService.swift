@@ -7,22 +7,38 @@
 
 import Foundation
 import Alamofire
+import XMLParsing
 
 class RiksdagenBaseService {
     
     public static let HOST = "https://data.riksdagen.se"
     
     struct DocumentListResponse<T:Codable>: Codable {
-        public var dokumentlista: DocumentList
-        
-        struct DocumentList: Codable {
-            public var dokument: [T]
-        }
+        public var dokumentlista: DocumentList<T>
     }
     
     struct RepresentativeListResponse: Codable {
         public var personlista: PersonList
+    }
+    
+    struct VoteListResponse: Codable {
+        public var votering: RepresentativeVoteStatistics
+    }
+    
+    class DocumentList<T:Codable>: Codable {
+        public var dokument: [T]
+        public var traffar: String
         
+        enum CodingKeys: String, CodingKey {
+            case dokument = "dokument"
+            case traffar = "@traffar"
+        }
+
+        required init(from decoder: Decoder) throws {
+            let container = try decoder.container(keyedBy: CodingKeys.self)
+            dokument = try container.decode([T].self, forKey: .dokument)
+            traffar = try container.decode(String.self, forKey: .traffar)
+        }
     }
     
     class PersonList: Codable {
@@ -57,6 +73,15 @@ class RiksdagenBaseService {
         makeJSONRequest(url: url!, responseType: DocumentListResponse<T>.self, success: {response in success(response.dokumentlista.dokument)}, failure: failure);
     }
     
+    static func makeDocumentListJSONRequest<T>(subUrl: String, documentType: T.Type, success: @escaping(([T], String) -> Void), failure: @escaping((String) -> Void)) where T : Codable{
+        let url = URL(string: "\(HOST)/dokumentlista/\(subUrl)")
+        if url == nil {
+            failure("Could not parse URL")
+            return
+        }
+        makeJSONRequest(url: url!, responseType: DocumentListResponse<T>.self, success: {response in success(response.dokumentlista.dokument, response.dokumentlista.traffar)}, failure: failure);
+    }
+    
     static func makeRepresentativelistJSONRequest(subUrl: String, success: @escaping(([Representative]?) -> Void), failure: @escaping((String) -> Void)){
         let url = URL(string: "\(HOST)/personlista/\(subUrl)")
         if url == nil {
@@ -75,8 +100,17 @@ class RiksdagenBaseService {
         makeJSONRequest(url: url!, responseType: SpeechResponse.self, success: {response in success(response.anforande)}, failure: failure)
     }
     
+    static func makeVotelistXMLRequest(subUrl: String, success: @escaping((RepresentativeVoteStatistics?) -> Void), failure: @escaping((String) -> Void)){
+        let url = URL(string: "\(HOST)/voteringlista/\(subUrl)")
+        if url == nil {
+            failure("Could not parse URL")
+            return
+        }
+        makeXMLRequest(url: url!, responseType: VoteListResponse.self, success: {response in success(response.votering)}, failure: failure)
+    }
+    
     private static func makeJSONRequest<T>(url: URL, responseType: T.Type, success: @escaping((T) -> Void), failure: @escaping((String) -> Void)) where T : Codable{
-        print("Making request to: \(String(describing: url.absoluteString))")
+        print("Making json request to: \(String(describing: url.absoluteString))")
         AF.request(url)
             .validate(statusCode: 200..<300)
             .responseString { response in
@@ -100,8 +134,34 @@ class RiksdagenBaseService {
         }
     }
     
+    
+    private static func makeXMLRequest<T>(url: URL, responseType: T.Type, success: @escaping((T) -> Void), failure: @escaping((String) -> Void)) where T : Codable{
+        print("Making xml request to: \(String(describing: url.absoluteString))")
+        AF.request(url)
+            .validate(statusCode: 200..<300)
+            .responseString { response in
+            switch response.result {
+                case .success(let value):
+                    let xml = value.data(using: .utf8)!
+                    DispatchQueue(label: "parsing", qos: .userInitiated).async {
+                        do {
+                            let decodedResponse = try XMLDecoder().decode(T.self, from: xml)
+                            DispatchQueue.main.async {
+                                success(decodedResponse)
+                            }
+                        } catch {
+                            print(error)
+                            failure(error.localizedDescription)
+                        }
+                    }
+                case .failure(let error):
+                    failure(error.errorDescription ?? "Something went wrong")
+            }
+        }
+    }
+    
     static func makeStringRequest(url: URL, success: @escaping((String) -> ()), failure: @escaping((String) -> Void)) -> DataRequest{
-        print("Making string reuest to: \(String(describing: url.absoluteString))")
+        print("Making string request to: \(String(describing: url.absoluteString))")
         return AF.request(url)
             .validate(statusCode: 200..<300)
             .responseString { response in

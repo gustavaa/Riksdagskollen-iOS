@@ -88,6 +88,7 @@
 		BF99F231257A6880001CD2BF /* motion_style_black.css in Resources */ = {isa = PBXBuildFile; fileRef = BF99F22E257A6880001CD2BF /* motion_style_black.css */; };
 		BFA67FE22582669600ACFAB2 /* TabBarCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFA67FE02582669600ACFAB2 /* TabBarCollectionViewCell.swift */; };
 		BFA67FE32582669600ACFAB2 /* TabBarCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BFA67FE12582669600ACFAB2 /* TabBarCollectionViewCell.xib */; };
+		BFA67FFE25839C0000ACFAB2 /* RepresentativeVoteStatistics.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFA67FFD25839C0000ACFAB2 /* RepresentativeVoteStatistics.swift */; };
 		BFB6C7062565390000FF2708 /* DebateReplayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFB6C7042565390000FF2708 /* DebateReplayViewController.swift */; };
 		BFB6C7072565390000FF2708 /* DebateReplayViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BFB6C7052565390000FF2708 /* DebateReplayViewController.xib */; };
 		BFB6C70A25653B2200FF2708 /* RepresentativeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFB6C70925653B2200FF2708 /* RepresentativeManager.swift */; };
@@ -196,6 +197,7 @@
 		BF99F22E257A6880001CD2BF /* motion_style_black.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = motion_style_black.css; sourceTree = "<group>"; };
 		BFA67FE02582669600ACFAB2 /* TabBarCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarCollectionViewCell.swift; sourceTree = "<group>"; };
 		BFA67FE12582669600ACFAB2 /* TabBarCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TabBarCollectionViewCell.xib; sourceTree = "<group>"; };
+		BFA67FFD25839C0000ACFAB2 /* RepresentativeVoteStatistics.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepresentativeVoteStatistics.swift; sourceTree = "<group>"; };
 		BFB6C7042565390000FF2708 /* DebateReplayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DebateReplayViewController.swift; sourceTree = "<group>"; };
 		BFB6C7052565390000FF2708 /* DebateReplayViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DebateReplayViewController.xib; sourceTree = "<group>"; };
 		BFB6C70925653B2200FF2708 /* RepresentativeManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepresentativeManager.swift; sourceTree = "<group>"; };
@@ -349,6 +351,7 @@
 			isa = PBXGroup;
 			children = (
 				BF3FAD652564070900261E5C /* Representative.swift */,
+				BFA67FFD25839C0000ACFAB2 /* RepresentativeVoteStatistics.swift */,
 			);
 			path = data;
 			sourceTree = "<group>";
@@ -831,6 +834,7 @@
 				BF71DCD02580F56E00011307 /* RepresentativeDetailsController.swift in Sources */,
 				BF3DA205255E6C260094F463 /* DecisionsService.swift in Sources */,
 				BF3FAD562563CA9A00261E5C /* DocumentType.swift in Sources */,
+				BFA67FFE25839C0000ACFAB2 /* RepresentativeVoteStatistics.swift in Sources */,
 				BFD8B1E225554D20001CEFB2 /* MasterViewController.swift in Sources */,
 				BF023D31255A889D00BF919D /* String.swift in Sources */,
 				BF5C86EC256C0E09003CC1E9 /* DebateReplayModel.swift in Sources */,

@@ -138,6 +138,7 @@ class RepresentativesListController: UITableViewController, UIActionSheetDelegat
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let vc = RepresentativeDetailsController()
+        vc.representative = model.currentRepresentatives[indexPath.row]
         show(vc, sender: nil)
     }
 

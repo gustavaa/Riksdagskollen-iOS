@@ -6,9 +6,9 @@
 //
 
 import UIKit
-import XLPagerTabStrip
+import Kingfisher
 
-let headerViewMaxHeight: CGFloat = 250
+let headerViewMaxHeight: CGFloat = 300
 let headerViewMinHeight: CGFloat = 44 //+  UIApplication.shared.statusBarFrame.height
 let headerViewRange = headerViewMinHeight..<headerViewMaxHeight
 
@@ -17,13 +17,12 @@ class RepresentativeDetailsController: UIViewController {
     @IBOutlet weak var headerView: UIView!
     @IBOutlet weak var headerViewHeightConstraint: NSLayoutConstraint!
     @IBOutlet weak var tabBarCollectionView: UICollectionView!
-    
     @IBOutlet weak var outerHeaderView: UIView!
     
     var pageViewController: UIPageViewController!
     var selectedTabView = CurrentTabIndicatorView()
     private var currentpageIndex = 0
-
+    
     private let orderedViewControllers: [UIViewController] = {
         return [RepresentativeFeedController(),
                 RepresentativeFeedController()]
@@ -31,11 +30,47 @@ class RepresentativeDetailsController: UIViewController {
     
     private let tabLabels: [String] = ["Flöde", "Om"]
     
+    @IBOutlet weak var nameLabel: AccentLabel!
+    @IBOutlet weak var roleLabel: AccentLabel!
+    @IBOutlet weak var partyProfileView: PartyProfileImage!
+    @IBOutlet weak var docCountLabel: AccentLabel!
+    @IBOutlet weak var voteLabel: AccentLabel!
+    @IBOutlet weak var ageLabel: AccentLabel!
+    
+    var representative: Representative!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.title = "Namn här"
         setupPagingViewController()
         setupCollectionView()
+        setupRepresentativeView()
+        navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: navigationController?.navigationBar.tintColor.withAlphaComponent(0) as Any]
+    }
+    
+    func setupRepresentativeView() {
+        self.title = "\(representative.tilltalsnamn) \(representative.efternamn)"
+        nameLabel.text = "\(representative.tilltalsnamn) \(representative.efternamn)"
+        roleLabel.text = representative.descriptiveRole
+        partyProfileView.profileImageView.kf.setImage(with: URL(string: representative.bild_url_max)!, completionHandler: { _ in
+            self.partyProfileView.setParty(partyId: self.representative.parti)
+        })
+        
+        if let age = representative.age {
+            ageLabel.text = String(age)
+        }
+        
+        RepresentativeService.fetchDocumentsForRepresentative(iid: representative.intressent_id, page: 1, success: { documents, hits in
+            self.docCountLabel.text = hits
+        }, failure: { _ in
+        
+        })
+        
+        RepresentativeService.fetchVoteStatisticsForRepresentative(iid: representative.intressent_id, success: { statistics in
+            self.voteLabel.text = statistics?.attendancePercentage
+        }, failure: { _ in
+        
+        })
+        
     }
     
     
@@ -89,23 +124,6 @@ class RepresentativeDetailsController: UIViewController {
     }
     
     
-//    func scrollViewDidScroll(_ scrollView: UIScrollView) {
-//        let y: CGFloat = scrollView.contentOffset.y
-//        let newHeaderViewHeight: CGFloat = headerViewHeightConstraint.constant - y
-//        if newHeaderViewHeight > headerViewMaxHeight {
-//            headerViewHeightConstraint.constant = headerViewMaxHeight
-//        } else if newHeaderViewHeight < headerViewMinHeight {
-//            headerViewHeightConstraint.constant = headerViewMinHeight
-//        } else {
-//            headerViewHeightConstraint.constant = newHeaderViewHeight
-//            scrollView.contentOffset.y = 0 // block scroll view
-//        }
-//
-//        let headerViewAlpha = normalize(val: newHeaderViewHeight, min: headerViewMinHeight, max: headerViewMaxHeight, from: 0, to: 1)
-//        let navigationTitleAlpha = normalize(val: newHeaderViewHeight, min: headerViewMinHeight, max: headerViewMaxHeight, from: 1, to: 0)
-//        headerView.alpha = headerViewAlpha
-//        navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: navigationController?.navigationBar.tintColor.withAlphaComponent(navigationTitleAlpha)]
-//    }
     
     func scrollSelectedTabView(toPercentage: CGFloat) {
         let width = view.frame.width
@@ -198,6 +216,11 @@ extension RepresentativeDetailsController: InnerTableViewScrollDelegate {
         if headerViewHeightConstraint.constant < headerViewMinHeight {
             headerViewHeightConstraint.constant = headerViewMinHeight
         }
+        
+        let headerViewAlpha = normalize(val: headerViewHeightConstraint.constant, min: 180, max: headerViewMaxHeight, from: 0, to: 1)
+        let navigationTitleAlpha = normalize(val: headerViewHeightConstraint.constant, min: headerViewMinHeight, max: headerViewMaxHeight, from: 1, to: 0)
+        headerView.alpha = headerViewAlpha
+        navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: navigationController?.navigationBar.tintColor.withAlphaComponent(navigationTitleAlpha)]
     }
 }
 

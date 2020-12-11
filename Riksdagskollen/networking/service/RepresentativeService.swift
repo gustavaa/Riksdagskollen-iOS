@@ -39,4 +39,29 @@ class RepresentativeService {
             success(result)
         } , failure: failure)
     }
+    
+    static func fetchDocumentsForRepresentative(iid: String, page: Int, success: @escaping((_ result: [PartyDocument]?,_ numberOfHits: String) -> () ), failure: @escaping((_ error: String) -> ())) {
+        var urlComponents = URLComponents()
+        let queryItems = [
+            URLQueryItem(name: "iid", value: iid),
+            URLQueryItem(name: "avd", value: "dokument"),
+            URLQueryItem(name: "sort", value: "datum"),
+            URLQueryItem(name: "sortorder", value: "desc"),
+            URLQueryItem(name: "utformat", value: "json"),
+            URLQueryItem(name: "p", value: String(page)),
+        ]
+        urlComponents.queryItems = queryItems
+        RiksdagenBaseService.makeDocumentListJSONRequest(subUrl: urlComponents.string!, documentType: PartyDocument.self, success: success, failure: failure)
+    }
+    
+    static func fetchVoteStatisticsForRepresentative(iid: String, success: @escaping((_ Result: RepresentativeVoteStatistics?) -> ()), failure: @escaping((_ error: String) -> ())){
+        var urlComponents = URLComponents()
+        let queryItems = [
+            URLQueryItem(name: "iid", value: iid),
+            URLQueryItem(name: "gruppering", value: "namn"),
+            URLQueryItem(name: "utformat", value: "XML")
+        ]
+        urlComponents.queryItems = queryItems
+        RiksdagenBaseService.makeVotelistXMLRequest(subUrl: urlComponents.string!, success: success, failure: failure)
+    }
 }

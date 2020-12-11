@@ -13,4 +13,6 @@ target 'Riksdagskollen' do
   pod 'Charts'
   pod "Sheeeeeeeeet"
   pod 'XLPagerTabStrip', '~> 9.0'
+  pod 'XMLParsing', :git => 'https://github.com/ShawnMoore/XMLParsing.git'
+  
 end
