@@ -63,6 +63,12 @@ class RepresentativeFeedController: UITableViewController {
         return cell
     }
     
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let partyDocVC = DocumentReaderController()
+        partyDocVC.partyDocument = model.representativeDocuments[indexPath.row]
+        show(partyDocVC, sender: self)
+    }
+    
 
 
 }
