@@ -45,7 +45,6 @@ class RepresentativeDetailsController: UIViewController {
         setupPagingViewController()
         setupCollectionView()
         setupRepresentativeView()
-        navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: navigationController?.navigationBar.tintColor.withAlphaComponent(0) as Any]
         
         (orderedViewControllers[0] as! RepresentativeFeedController).representative = representative
         (orderedViewControllers[1] as! RepresentativeAboutViewController).representative = representative
@@ -53,6 +52,15 @@ class RepresentativeDetailsController: UIViewController {
         (orderedViewControllers[0] as! RepresentativeFeedController).innerTableViewScrollDelegate = self
         (orderedViewControllers[1] as! RepresentativeAboutViewController).innerTableViewScrollDelegate = self
 
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        let navigationTitleAlpha = normalize(val: headerViewHeightConstraint.constant, min: headerViewMinHeight, max: headerViewMaxHeight, from: 1, to: 0)
+        setNavBarTitleAlpha(navigationTitleAlpha)
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        setNavBarTitleAlpha(1)
     }
     
     func setupRepresentativeView() {
@@ -77,6 +85,10 @@ class RepresentativeDetailsController: UIViewController {
         
         })
         
+    }
+    
+    func setNavBarTitleAlpha(_ alpha: CGFloat){
+        navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: navigationController?.navigationBar.tintColor.withAlphaComponent(alpha) as Any]
     }
     
     
@@ -224,7 +236,7 @@ extension RepresentativeDetailsController: InnerTableViewScrollDelegate {
         let headerViewAlpha = normalize(val: headerViewHeightConstraint.constant, min: 180, max: headerViewMaxHeight, from: 0, to: 1)
         let navigationTitleAlpha = normalize(val: headerViewHeightConstraint.constant, min: headerViewMinHeight, max: headerViewMaxHeight, from: 1, to: 0)
         headerView.alpha = headerViewAlpha
-        navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: navigationController?.navigationBar.tintColor.withAlphaComponent(navigationTitleAlpha)]
+        setNavBarTitleAlpha(navigationTitleAlpha)
     }
     
 }
