@@ -69,6 +69,13 @@
 		BF73BD3A25874E9500F119DA /* RepresentativeAboutViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BF73BD3825874E9500F119DA /* RepresentativeAboutViewController.xib */; };
 		BF73BD3E2587529900F119DA /* BiographyItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF73BD3D2587529900F119DA /* BiographyItemView.swift */; };
 		BF73BD5A258797FA00F119DA /* View.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF73BD59258797FA00F119DA /* View.swift */; };
+		BF73BD5F2587A3D600F119DA /* ProtocolService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF73BD5E2587A3D600F119DA /* ProtocolService.swift */; };
+		BF73BD632587A4B000F119DA /* ProtocolsFeedController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF73BD622587A4B000F119DA /* ProtocolsFeedController.swift */; };
+		BF73BD682587A4DB00F119DA /* ProtocolTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF73BD662587A4DB00F119DA /* ProtocolTableViewCell.swift */; };
+		BF73BD692587A4DB00F119DA /* ProtocolTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BF73BD672587A4DB00F119DA /* ProtocolTableViewCell.xib */; };
+		BF73BD6F2587A4F500F119DA /* ProtocolsFeedModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF73BD6E2587A4F500F119DA /* ProtocolsFeedModel.swift */; };
+		BF73BD782587AAB400F119DA /* ProtocolReaderController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF73BD762587AAB400F119DA /* ProtocolReaderController.swift */; };
+		BF73BD792587AAB400F119DA /* ProtocolReaderController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BF73BD772587AAB400F119DA /* ProtocolReaderController.xib */; };
 		BF7B6C9F255C298600AD70B3 /* NewsItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF7B6C9D255C298600AD70B3 /* NewsItemTableViewCell.swift */; };
 		BF7B6CA0255C298600AD70B3 /* NewsItemTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BF7B6C9E255C298600AD70B3 /* NewsItemTableViewCell.xib */; };
 		BF7B6CAA255D4DE400AD70B3 /* SettingsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF7B6CA9255D4DE400AD70B3 /* SettingsController.swift */; };
@@ -185,6 +192,13 @@
 		BF73BD3825874E9500F119DA /* RepresentativeAboutViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RepresentativeAboutViewController.xib; sourceTree = "<group>"; };
 		BF73BD3D2587529900F119DA /* BiographyItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BiographyItemView.swift; sourceTree = "<group>"; };
 		BF73BD59258797FA00F119DA /* View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = View.swift; sourceTree = "<group>"; };
+		BF73BD5E2587A3D600F119DA /* ProtocolService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProtocolService.swift; sourceTree = "<group>"; };
+		BF73BD622587A4B000F119DA /* ProtocolsFeedController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProtocolsFeedController.swift; sourceTree = "<group>"; };
+		BF73BD662587A4DB00F119DA /* ProtocolTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProtocolTableViewCell.swift; sourceTree = "<group>"; };
+		BF73BD672587A4DB00F119DA /* ProtocolTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProtocolTableViewCell.xib; sourceTree = "<group>"; };
+		BF73BD6E2587A4F500F119DA /* ProtocolsFeedModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProtocolsFeedModel.swift; sourceTree = "<group>"; };
+		BF73BD762587AAB400F119DA /* ProtocolReaderController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProtocolReaderController.swift; sourceTree = "<group>"; };
+		BF73BD772587AAB400F119DA /* ProtocolReaderController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProtocolReaderController.xib; sourceTree = "<group>"; };
 		BF7B6C9D255C298600AD70B3 /* NewsItemTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsItemTableViewCell.swift; sourceTree = "<group>"; };
 		BF7B6C9E255C298600AD70B3 /* NewsItemTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NewsItemTableViewCell.xib; sourceTree = "<group>"; };
 		BF7B6CA9255D4DE400AD70B3 /* SettingsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsController.swift; sourceTree = "<group>"; };
@@ -407,6 +421,7 @@
 		BF40397825504E7D00D766F4 /* Riksdagskollen */ = {
 			isa = PBXGroup;
 			children = (
+				BF73BD5D2587A3BF00F119DA /* protocols */,
 				BF88BA5C256FA39E0028BF66 /* votes */,
 				BF3FAD63256406F400261E5C /* representatives */,
 				BF3FAD3E2563C34800261E5C /* shared */,
@@ -479,6 +494,19 @@
 			path = details;
 			sourceTree = "<group>";
 		};
+		BF73BD5D2587A3BF00F119DA /* protocols */ = {
+			isa = PBXGroup;
+			children = (
+				BF73BD622587A4B000F119DA /* ProtocolsFeedController.swift */,
+				BF73BD762587AAB400F119DA /* ProtocolReaderController.swift */,
+				BF73BD772587AAB400F119DA /* ProtocolReaderController.xib */,
+				BF73BD662587A4DB00F119DA /* ProtocolTableViewCell.swift */,
+				BF73BD672587A4DB00F119DA /* ProtocolTableViewCell.xib */,
+				BF73BD6E2587A4F500F119DA /* ProtocolsFeedModel.swift */,
+			);
+			path = protocols;
+			sourceTree = "<group>";
+		};
 		BF7B6CA8255D4DC700AD70B3 /* settings */ = {
 			isa = PBXGroup;
 			children = (
@@ -520,6 +548,7 @@
 				BF3FAD4C2563C5CF00261E5C /* DebateService.swift */,
 				BF3FAD60256406D100261E5C /* RepresentativeService.swift */,
 				BF88BA66256FA6FB0028BF66 /* VotesService.swift */,
+				BF73BD5E2587A3D600F119DA /* ProtocolService.swift */,
 			);
 			path = service;
 			sourceTree = "<group>";
@@ -754,9 +783,11 @@
 				BF5C86E9256C0547003CC1E9 /* DebateReplayOutgoingCell.xib in Resources */,
 				BFB6C7072565390000FF2708 /* DebateReplayViewController.xib in Resources */,
 				BF99F22F257A6880001CD2BF /* motion_style.css in Resources */,
+				BF73BD792587AAB400F119DA /* ProtocolReaderController.xib in Resources */,
 				BF73BD3A25874E9500F119DA /* RepresentativeAboutViewController.xib in Resources */,
 				BF71DC88257E65EA00011307 /* RepresentativeTableViewCell.xib in Resources */,
 				BFA6800A2583A77900ACFAB2 /* PartyDocumentTableViewCell.xib in Resources */,
+				BF73BD692587A4DB00F119DA /* ProtocolTableViewCell.xib in Resources */,
 				BF99F230257A6880001CD2BF /* motion_style_white.css in Resources */,
 				BF40398625504E7E00D766F4 /* LaunchScreen.storyboard in Resources */,
 				BF88BA56256EA8F60028BF66 /* DebateReplayIncomingCell.xib in Resources */,
@@ -833,6 +864,7 @@
 				BF40399725505CD500D766F4 /* PushUp.swift in Sources */,
 				BF71DC80257E63F100011307 /* RepresentativesListController.swift in Sources */,
 				BFA680092583A77900ACFAB2 /* PartyDocumentTableViewCell.swift in Sources */,
+				BF73BD5F2587A3D600F119DA /* ProtocolService.swift in Sources */,
 				BFB6C70D2565681800FF2708 /* SpeechBubble.swift in Sources */,
 				BFC2CFC7256FB34800A24DF0 /* VotingDocument.swift in Sources */,
 				BF3DA1FE255E6A410094F463 /* DecisionsTableViewCell.swift in Sources */,
@@ -876,8 +908,10 @@
 				BF71DCD02580F56E00011307 /* RepresentativeDetailsController.swift in Sources */,
 				BF3DA205255E6C260094F463 /* DecisionsService.swift in Sources */,
 				BF3FAD562563CA9A00261E5C /* DocumentType.swift in Sources */,
+				BF73BD682587A4DB00F119DA /* ProtocolTableViewCell.swift in Sources */,
 				BFA67FFE25839C0000ACFAB2 /* RepresentativeVoteStatistics.swift in Sources */,
 				BF73BD5A258797FA00F119DA /* View.swift in Sources */,
+				BF73BD782587AAB400F119DA /* ProtocolReaderController.swift in Sources */,
 				BFD8B1E225554D20001CEFB2 /* MasterViewController.swift in Sources */,
 				BF023D31255A889D00BF919D /* String.swift in Sources */,
 				BF5C86EC256C0E09003CC1E9 /* DebateReplayModel.swift in Sources */,
@@ -894,6 +928,7 @@
 				BF3FAD61256406D100261E5C /* RepresentativeService.swift in Sources */,
 				BF628629257664BA00BBBEB7 /* PartyVoteResultView.swift in Sources */,
 				BF62865D257A272F00BBBEB7 /* DocumentHtmlView.swift in Sources */,
+				BF73BD6F2587A4F500F119DA /* ProtocolsFeedModel.swift in Sources */,
 				BF3DA20E255E80A50094F463 /* DecisionDocument.swift in Sources */,
 				BF8BE5CA2552F9150016C85A /* DecisionsController.swift in Sources */,
 				BFC2CFCA256FB6BC00A24DF0 /* VoteResult.swift in Sources */,
@@ -905,6 +940,7 @@
 				BF62861E2575421B00BBBEB7 /* Label.swift in Sources */,
 				BF40397C25504E7D00D766F4 /* SceneDelegate.swift in Sources */,
 				BF628656257A1DF200BBBEB7 /* DocumentReaderController.swift in Sources */,
+				BF73BD632587A4B000F119DA /* ProtocolsFeedController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

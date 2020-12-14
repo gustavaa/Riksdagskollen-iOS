@@ -16,6 +16,7 @@ class MasterViewController: UIViewController, SideMenuDelegate{
     var decisionsViewController: DecisionsController?
     var debateViewController: DebateFeedController?
     var representativesViewController: RepresentativesListController?
+    var protocolsViewController: ProtocolsFeedController?
     
     @IBOutlet weak var optionsBarButton: UIBarButtonItem!
     
@@ -91,6 +92,13 @@ class MasterViewController: UIViewController, SideMenuDelegate{
                 setupViewController(viewController: representativesViewController!)
             }
             switchToViewController(viewController: representativesViewController!)
+            break
+        case MenuItems.protocols.rawValue:
+            if protocolsViewController == nil {
+                protocolsViewController = ProtocolsFeedController()
+                setupViewController(viewController: protocolsViewController!)
+            }
+            switchToViewController(viewController: protocolsViewController!)
             break
         default: break
         }

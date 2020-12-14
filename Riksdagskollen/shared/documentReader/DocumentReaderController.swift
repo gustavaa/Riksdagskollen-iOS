@@ -23,6 +23,10 @@ class DocumentReaderController: UIViewController, WKUIDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        scrollView.isHidden = true
+        LoadingOverlay.shared.showOverlay(in: view)
+        webView.shouldResizeToContentSize = true
+        
         if !partyDocument.isMotion() {
             titleLabel.isHidden = true
             authorLabel.isHidden = true
@@ -35,11 +39,6 @@ class DocumentReaderController: UIViewController, WKUIDelegate {
             LoadingOverlay.shared.hideOverlayView()
             self.scrollView.isHidden = false
         })
-        
-        if webView.scrollView.contentSize.height == 0 {
-            scrollView.isHidden = true
-            LoadingOverlay.shared.showOverlay(in: view)
-        }
         
         webView.uiDelegate = self
         self.title = partyDocument.titel
@@ -59,13 +58,11 @@ class DocumentReaderController: UIViewController, WKUIDelegate {
         verticalStackView.axis = .vertical
         verticalStackView.distribution = .fillEqually
         verticalStackView.alignment = .center
-//        verticalStackView.heightAnchor.constraint(equalToConstant: 120).isActive = true
         verticalStackView.widthAnchor.constraint(equalToConstant: 130).isActive = true
         
         let portraitView = PartyProfileImage(frame: CGRect(x: 0, y: 0, width: 90, height: 90))
         portraitView.translatesAutoresizingMaskIntoConstraints = false
         portraitView.widthAnchor.constraint(equalToConstant: 90).isActive = true
-//        portraitView.partyIndicatorSize = 40
         portraitView.clickable = true
         
         let nameLabel = TitleLabel()
