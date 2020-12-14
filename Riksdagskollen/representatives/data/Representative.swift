@@ -90,6 +90,29 @@ class Representative: Codable {
         if let repStatus = status { return repStatus }
         return currentOrMostRecentRole
     }
+    
+    var biography: [[String]] {
+        var biography = [[String]]()
+        if let personInfo = personuppgift?.uppgift {
+            for info in personInfo {
+                if info.typ == "biografi", let kod = info.kod, let task = info.uppgift{
+                    biography.append([kod, task[0]])
+                }
+            }
+        }
+        return biography
+    }
+    
+    var website: String? {
+        if let infoList = personuppgift?.uppgift {
+            for info in infoList {
+                if info.kod == "Webbsida" {
+                    return info.uppgift![safe: 0]
+                }
+            }
+        }
+        return nil
+    }
 
 }
 

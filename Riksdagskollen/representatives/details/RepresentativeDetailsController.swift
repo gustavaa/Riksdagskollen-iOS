@@ -25,10 +25,10 @@ class RepresentativeDetailsController: UIViewController {
     
     private let orderedViewControllers: [UIViewController] = {
         return [RepresentativeFeedController(),
-                RepresentativeFeedController()]
+                RepresentativeAboutViewController()]
     }()
     
-    private let tabLabels: [String] = ["Flöde", "Om"]
+    private var tabLabels: [String] = ["LEDAMOTSFLÖDE", "OM"]
     
     @IBOutlet weak var nameLabel: AccentLabel!
     @IBOutlet weak var roleLabel: AccentLabel!
@@ -41,12 +41,18 @@ class RepresentativeDetailsController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        tabLabels[1] = "OM \(representative.tilltalsnamn.uppercased())"
         setupPagingViewController()
         setupCollectionView()
         setupRepresentativeView()
         navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: navigationController?.navigationBar.tintColor.withAlphaComponent(0) as Any]
         
         (orderedViewControllers[0] as! RepresentativeFeedController).representative = representative
+        (orderedViewControllers[1] as! RepresentativeAboutViewController).representative = representative
+        
+        (orderedViewControllers[0] as! RepresentativeFeedController).innerTableViewScrollDelegate = self
+        (orderedViewControllers[1] as! RepresentativeAboutViewController).innerTableViewScrollDelegate = self
+
     }
     
     func setupRepresentativeView() {
@@ -103,9 +109,7 @@ class RepresentativeDetailsController: UIViewController {
         pageViewController.view.topAnchor.constraint(equalTo: outerHeaderView.bottomAnchor, constant: 0).isActive = true
         
         
-        let initialVc = orderedViewControllers[0]
-        (initialVc as! RepresentativeFeedController).innerTableViewScrollDelegate = self
-        pageViewController.setViewControllers([initialVc], direction: .forward, animated: true, completion: nil)
+        pageViewController.setViewControllers([orderedViewControllers[0]], direction: .forward, animated: true, completion: nil)
     }
     
     func setupCollectionView() {
@@ -218,12 +222,13 @@ extension RepresentativeDetailsController: InnerTableViewScrollDelegate {
         if headerViewHeightConstraint.constant < headerViewMinHeight {
             headerViewHeightConstraint.constant = headerViewMinHeight
         }
-        
+
         let headerViewAlpha = normalize(val: headerViewHeightConstraint.constant, min: 180, max: headerViewMaxHeight, from: 0, to: 1)
         let navigationTitleAlpha = normalize(val: headerViewHeightConstraint.constant, min: headerViewMinHeight, max: headerViewMaxHeight, from: 1, to: 0)
         headerView.alpha = headerViewAlpha
         navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: navigationController?.navigationBar.tintColor.withAlphaComponent(navigationTitleAlpha)]
     }
+    
 }
 
 
@@ -237,6 +242,8 @@ extension RepresentativeDetailsController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         if let tabCell = collectionView.dequeueReusableCell(withReuseIdentifier: TabBarCollectionViewCell.identifier, for: indexPath) as? TabBarCollectionViewCell {
             tabCell.tabNameLabel.text = tabLabels[indexPath.row]
+            tabCell.tabNameLabel.font = tabCell.tabNameLabel.font.withSize(14)
+            tabCell.tabNameLabel.textAlignment = .center
             return tabCell
         }
         return UICollectionViewCell()
@@ -271,7 +278,7 @@ extension RepresentativeDetailsController: UICollectionViewDelegateFlowLayout {
     //MARK:- Get tab size
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let width = view.frame.size.width
-        return CGSize(width: width * 0.4, height: 40)
+        return CGSize(width: width * 0.45, height: 40)
     }
     
 }

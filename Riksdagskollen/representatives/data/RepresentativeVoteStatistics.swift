@@ -31,10 +31,10 @@ class RepresentativeVoteStatistics: Codable {
     
     required init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
-        yes = try container.decode(String.self, forKey: .yes)
-        no = try container.decode(String.self, forKey: .no)
-        absent = try container.decode(String.self, forKey: .absent)
-        abstained = try container.decode(String.self, forKey: .abstained)
+        yes = try container.decodeIfPresent(String.self, forKey: .yes) ?? "0"
+        no = try container.decodeIfPresent(String.self, forKey: .no) ?? "0"
+        absent = try container.decodeIfPresent(String.self, forKey: .absent) ?? "0"
+        abstained = try container.decodeIfPresent(String.self, forKey: .abstained) ?? "0"
     }
     
 }

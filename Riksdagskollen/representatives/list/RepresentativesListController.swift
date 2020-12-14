@@ -19,7 +19,10 @@ class RepresentativesListController: UITableViewController, UIActionSheetDelegat
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        model = RepresentativesListModel(onDataChange: {self.tableView.reloadData()})
+        model = RepresentativesListModel(onDataChange: {
+            LoadingOverlay.shared.hideOverlayView()
+            self.tableView.reloadData()            
+        })
         currentPartyFilter = model.filteredParties
         setupTableview()
 
@@ -27,6 +30,9 @@ class RepresentativesListController: UITableViewController, UIActionSheetDelegat
         optionsButton = parent!.navigationItem.rightBarButtonItems![1]
         optionsButton.target = self
         optionsButton.action = #selector(showOptionsMenu(sender:))
+        if !RepresentativeManager.shared.representativesAreDownloaded {
+            LoadingOverlay.shared.showOverlay(in: view)
+        }
         
     }
     
@@ -117,12 +123,6 @@ class RepresentativesListController: UITableViewController, UIActionSheetDelegat
         tableView.estimatedRowHeight = 100
         tableView.separatorStyle = .none
     }
-    
-    func onRepresentativesDownloaded(_ representatives: [Representative]) {
-        tableView.reloadData()
-    }
-
-    // MARK: - Table view data source
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows

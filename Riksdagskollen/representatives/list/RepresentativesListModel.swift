@@ -60,6 +60,7 @@ class RepresentativesListModel: RepresentativeDownloadedListener  {
         self.onDataChange = onDataChange
         if manager.representativesAreDownloaded {
             self.currentRepresentatives = manager.currentRepresentatives
+            filterAndSortData()
         } else {
             manager.addDownloadListener(listener: self)
         }
@@ -70,6 +71,11 @@ class RepresentativesListModel: RepresentativeDownloadedListener  {
     }
     
     private func updateData(){
+        filterAndSortData()
+        onDataChange()
+    }
+    
+    private func filterAndSortData() {
         currentRepresentatives = manager.currentRepresentatives.filter({filteredParties.contains($0.parti.lowercased())})
         switch currentSortingOption {
         case .firstName:
@@ -103,7 +109,6 @@ class RepresentativesListModel: RepresentativeDownloadedListener  {
                 self.currentRepresentatives.sort(by: {$1.tilltalsnamn < $0.tilltalsnamn})
             }
         }
-        onDataChange()
     }
     
     

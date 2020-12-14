@@ -37,8 +37,7 @@ class RepresentativeFeedController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        guard let m = model else {return 0}
+        guard let m = model else { return 0 }
         return m.representativeDocuments.count
     }
     
@@ -59,6 +58,7 @@ class RepresentativeFeedController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: PartyDocumentTableViewCell.identifier, for: indexPath) as! PartyDocumentTableViewCell
+
         cell.configure(with: model.representativeDocuments[indexPath.row])
         return cell
     }
@@ -93,4 +93,6 @@ extension RepresentativeFeedController {
         
         oldContentOffset = scrollView.contentOffset
     }
+    
+ 
 }
