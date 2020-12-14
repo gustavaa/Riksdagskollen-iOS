@@ -59,9 +59,7 @@ class RepresentativeDetailsController: UIViewController {
         self.title = "\(representative.tilltalsnamn) \(representative.efternamn)"
         nameLabel.text = "\(representative.tilltalsnamn) \(representative.efternamn)"
         roleLabel.text = representative.descriptiveRole
-        partyProfileView.profileImageView.kf.setImage(with: URL(string: representative.bild_url_max)!, completionHandler: { _ in
-            self.partyProfileView.setParty(partyId: self.representative.parti)
-        })
+        self.partyProfileView.setRepresentative(representative: representative, imageSize: .large)
         
         if let age = representative.age {
             ageLabel.text = String(age)

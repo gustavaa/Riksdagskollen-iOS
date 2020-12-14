@@ -35,15 +35,17 @@ class DocumentReaderController: UIViewController, WKUIDelegate {
             LoadingOverlay.shared.hideOverlayView()
             self.scrollView.isHidden = false
         })
+        
+        if webView.scrollView.contentSize.height == 0 {
+            scrollView.isHidden = true
+            LoadingOverlay.shared.showOverlay(in: view)
+        }
+        
         webView.uiDelegate = self
         self.title = partyDocument.titel
         showSenders()
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        LoadingOverlay.shared.showOverlay(in: view)
-        scrollView.isHidden = true
-    }
     
     private func showSenders(){
         for sender in partyDocument.getSenders(){
@@ -60,9 +62,11 @@ class DocumentReaderController: UIViewController, WKUIDelegate {
 //        verticalStackView.heightAnchor.constraint(equalToConstant: 120).isActive = true
         verticalStackView.widthAnchor.constraint(equalToConstant: 130).isActive = true
         
-        let portraitView = PartyProfileImage(frame: CGRect(x: 0, y: 0, width: 70, height: 90))
+        let portraitView = PartyProfileImage(frame: CGRect(x: 0, y: 0, width: 90, height: 90))
         portraitView.translatesAutoresizingMaskIntoConstraints = false
-        portraitView.widthAnchor.constraint(equalToConstant: 70).isActive = true
+        portraitView.widthAnchor.constraint(equalToConstant: 90).isActive = true
+//        portraitView.partyIndicatorSize = 40
+        portraitView.clickable = true
         
         let nameLabel = TitleLabel()
         nameLabel.numberOfLines = 0
@@ -70,16 +74,13 @@ class DocumentReaderController: UIViewController, WKUIDelegate {
         
         nameLabel.translatesAutoresizingMaskIntoConstraints = false
         
-        
-        RepresentativeService.fetchRepresentative(iid: iid, party: nil, success: { rep in
-            portraitView.profileImageView.kf.setImage(with: URL(string: rep!.bild_url_192)!, completionHandler: { _ in
-                portraitView.setParty(partyId: rep!.parti)
-                nameLabel.text = "\(rep!.tilltalsnamn) \(rep!.efternamn)"
-                verticalStackView.addArrangedSubview(portraitView)
-                verticalStackView.addArrangedSubview(nameLabel)
-                self.senderContainer.addArrangedSubview(verticalStackView)
-                
-            })
+        RepresentativeService.fetchRepresentative(iid: iid, party: nil, success: { representative in
+            guard let rep = representative else { return }
+            portraitView.setRepresentative(representative: rep, imageSize: .medium)
+            nameLabel.text = "\(rep.tilltalsnamn) \(rep.efternamn)"
+            verticalStackView.addArrangedSubview(portraitView)
+            verticalStackView.addArrangedSubview(nameLabel)
+            self.senderContainer.addArrangedSubview(verticalStackView)
         }, failure: { error in
             print(error)
         })

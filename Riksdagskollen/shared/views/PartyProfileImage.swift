@@ -16,9 +16,11 @@ class PartyProfileImage: UIView {
         case large
     }
     
+    var clickable = false
     var profileImageView: UIImageView
     private var partyLogoView: UIImageView
     var partyIndicatorSize: Int = 25
+    private var representative: Representative?
     
     override init(frame: CGRect){
         self.profileImageView = UIImageView()
@@ -43,8 +45,17 @@ class PartyProfileImage: UIView {
         profileImageView.layer.cornerRadius = frame.width/2
         profileImageView.contentMode = .scaleAspectFit
         profileImageView.clipsToBounds = true
+        profileImageView.translatesAutoresizingMaskIntoConstraints = false
         
+        let tapListener = UITapGestureRecognizer(target: self, action: #selector(onViewClick(sender:)))
+        self.addGestureRecognizer(tapListener)
         addSubview(profileImageView)
+        
+        profileImageView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 0).isActive = true
+        profileImageView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: 0).isActive = true
+        profileImageView.topAnchor.constraint(equalTo: topAnchor, constant: 0).isActive = true
+        profileImageView.bottomAnchor.constraint(equalTo: bottomAnchor, constant: 0).isActive = true
+
     }
     
     func setRepresentative(representative rep: Representative, imageSize: ProfileImageSize){
@@ -57,9 +68,13 @@ class PartyProfileImage: UIView {
         case .large:
             imageUrlString = rep.bild_url_max
         }
-        
+        self.representative = rep
+
         self.profileImageView.kf.setImage(with: URL(string: imageUrlString)!, completionHandler: { _ in
             self.setParty(partyId: rep.parti)
+            self.sizeToFit()
+            self.setNeedsLayout()
+            self.layoutIfNeeded()
             self.isHidden = false
         })
     }
@@ -77,7 +92,8 @@ class PartyProfileImage: UIView {
             case .large:
                 imageUrlString = rep.bild_url_max
             }
-            
+            self.representative = rep
+
             self.profileImageView.kf.setImage(with: URL(string: imageUrlString)!, completionHandler: { _ in
                 self.setParty(partyId: rep.parti)
                 self.isHidden = false
@@ -93,5 +109,16 @@ class PartyProfileImage: UIView {
         partyLogoView.frame = CGRect(x: frame.width-size, y: frame.height-size, width: size, height: size)
         addSubview(partyLogoView)
     }
+    
+    @objc func onViewClick(sender: UITapGestureRecognizer) {
+        print("TAPPITITAPP")
+        if clickable, let rep = representative, let currentVC = self.parentViewController {
+            let vc = RepresentativeDetailsController()
+            vc.representative = rep
+            currentVC.show(vc, sender: nil)
+        }
+    }
+    
+    
 
 }

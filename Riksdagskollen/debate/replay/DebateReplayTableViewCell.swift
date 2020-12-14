@@ -31,6 +31,9 @@ class DebateReplayTableViewCell: UITableViewCell {
         super.awakeFromNib()
         activityIndicator.startAnimating()
         profileView.partyIndicatorSize = 15
+        self.isUserInteractionEnabled = true
+        profileView.isUserInteractionEnabled = true
+
     }
     
     func configure(speech: Speech, isOutgoing: Bool){
@@ -41,13 +44,8 @@ class DebateReplayTableViewCell: UITableViewCell {
         } else {
             speechBubbleView.showIncomingSpeech(speech: speech)
         }
-        
-        RepresentativeService.fetchRepresentative(iid: speech.intressent_id, party: speech.parti, success: {rep in
-            self.profileView.profileImageView.kf.setImage(with: URL(string: rep!.bild_url_80)!, completionHandler: { _ in
-                self.profileView.setParty(partyId: rep!.parti)
-                self.profileView.isHidden = false
-            })
-        }, failure: {_ in })
+        profileView.clickable = true
+        profileView.setRepresentative(iid: speech.intressent_id, party: speech.parti, imageSize: .small)
         
     }
     

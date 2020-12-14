@@ -32,9 +32,7 @@ class RepresentativeTableViewCell: UITableViewCell {
         nameLabel.text = "\(representative.tilltalsnamn) \(representative.efternamn)"
         ageLabel.text = String(representative.age ?? 0)
         districtLabel.text = representative.valkrets
-        profileView.profileImageView.kf.setImage(with: URL(string: representative.bild_url_192)!, completionHandler: { _ in
-            self.profileView.setParty(partyId: representative.parti)
-        })
+        profileView.setRepresentative(representative: representative, imageSize: .medium)
         
         guard let repTitel = representative.title else { professionRow.isHidden = true; return }
         professionLabel.text = repTitel

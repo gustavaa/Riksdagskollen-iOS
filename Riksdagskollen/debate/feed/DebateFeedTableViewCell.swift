@@ -37,12 +37,7 @@ class DebateFeedTableViewCell: UITableViewCell {
         self.authorLabel.text = partyDocument.undertitel
         if partyDocument.doktyp == DocumentTypes.interpellation.docType && partyDocument.dokintressent != nil{
             let rep = partyDocument.dokintressent!.intressent[0]
-            RepresentativeService.fetchRepresentative(iid: rep.intressent_id, party: rep.partibet, success: {rep in
-                self.profileView.profileImageView.kf.setImage(with: URL(string: rep!.bild_url_80)!, completionHandler: { _ in
-                    self.profileView.setParty(partyId: rep!.parti)
-                    self.profileView.isHidden = false
-                })
-            }, failure: {_ in })
+            profileView.setRepresentative(iid: rep.intressent_id, party: rep.partibet, imageSize: .small)
         } else {
             self.profileView.isHidden = true
         }
