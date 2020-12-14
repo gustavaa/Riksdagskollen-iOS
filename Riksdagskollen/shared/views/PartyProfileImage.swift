@@ -111,7 +111,6 @@ class PartyProfileImage: UIView {
     }
     
     @objc func onViewClick(sender: UITapGestureRecognizer) {
-        print("TAPPITITAPP")
         if clickable, let rep = representative, let currentVC = self.parentViewController {
             let vc = RepresentativeDetailsController()
             vc.representative = rep
