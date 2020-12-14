@@ -73,6 +73,7 @@ class ThemeManager {
         TabBarCollectionView.appearance().backgroundColor = theme.primaryColor
         TabBarCollectionViewCell.appearance().backgroundColor = theme.primaryColor
         CurrentTabIndicatorView.appearance().backgroundColor = theme.statusBarTitleTextColor
+        NavBarExtensionView.appearance().backgroundColor = theme.primaryColor
         
         
         refreshAllView()

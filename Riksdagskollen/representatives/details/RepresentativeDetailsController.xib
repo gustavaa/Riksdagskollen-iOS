@@ -33,7 +33,7 @@
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7om-T7-Cux" userLabel="HeaderView">
                     <rect key="frame" x="0.0" y="44" width="414" height="300"/>
                     <subviews>
-                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gy7-DI-CaD">
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gy7-DI-CaD" customClass="NavBarExtensionView" customModule="Riksdagskollen" customModuleProvider="target">
                             <rect key="frame" x="0.0" y="0.0" width="414" height="300"/>
                             <subviews>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Åsa Westlund" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LMx-5L-Ur2" customClass="AccentLabel" customModule="Riksdagskollen" customModuleProvider="target">

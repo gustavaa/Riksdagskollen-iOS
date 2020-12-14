@@ -37,7 +37,6 @@ class RepresentativeAboutViewController: UIViewController {
         }
         
         if let website = representative.website {
-            print("Website")
             let bioView = BiographyItemView()
             bioView.setup(withTitel: "Webbsida", withBody: website)
             let textRange = NSMakeRange(0, website.count)
@@ -48,8 +47,6 @@ class RepresentativeAboutViewController: UIViewController {
             bioView.infoLabel.isUserInteractionEnabled = true
             bioView.infoLabel.addGestureRecognizer(tap)
             bioContainer.addArrangedSubview(bioView)
-        } else {
-            print("No website")
         }
         
         if representative.biography.isEmpty, representative.website == nil {

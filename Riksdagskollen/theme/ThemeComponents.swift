@@ -23,6 +23,9 @@ class SubtitleLabel: UILabel{}
 // All purpose view with themed background color
 class ThemedView: UIView{}
 
+// All purpose view with themed background color
+class NavBarExtensionView: UIView{}
+
 // Wrapper view for the drawer header
 class DrawerHeaderView: UIView{}
 
