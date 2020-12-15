@@ -82,6 +82,8 @@
 		BF73BD8D2588C3E200F119DA /* PartyService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF73BD8C2588C3E200F119DA /* PartyService.swift */; };
 		BF73BD942588F9AE00F119DA /* PartyRepresentativeListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF73BD932588F9AE00F119DA /* PartyRepresentativeListController.swift */; };
 		BF73BD9A2588FA1E00F119DA /* PartyRepresentativeListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF73BD992588FA1E00F119DA /* PartyRepresentativeListModel.swift */; };
+		BF73BDA02589041B00F119DA /* PartyInfoController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF73BD9E2589041B00F119DA /* PartyInfoController.swift */; };
+		BF73BDA12589041B00F119DA /* PartyInfoController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BF73BD9F2589041B00F119DA /* PartyInfoController.xib */; };
 		BF7B6C9F255C298600AD70B3 /* NewsItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF7B6C9D255C298600AD70B3 /* NewsItemTableViewCell.swift */; };
 		BF7B6CA0255C298600AD70B3 /* NewsItemTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BF7B6C9E255C298600AD70B3 /* NewsItemTableViewCell.xib */; };
 		BF7B6CAA255D4DE400AD70B3 /* SettingsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF7B6CA9255D4DE400AD70B3 /* SettingsController.swift */; };
@@ -210,6 +212,8 @@
 		BF73BD8C2588C3E200F119DA /* PartyService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PartyService.swift; sourceTree = "<group>"; };
 		BF73BD932588F9AE00F119DA /* PartyRepresentativeListController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PartyRepresentativeListController.swift; sourceTree = "<group>"; };
 		BF73BD992588FA1E00F119DA /* PartyRepresentativeListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PartyRepresentativeListModel.swift; sourceTree = "<group>"; };
+		BF73BD9E2589041B00F119DA /* PartyInfoController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PartyInfoController.swift; sourceTree = "<group>"; };
+		BF73BD9F2589041B00F119DA /* PartyInfoController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PartyInfoController.xib; sourceTree = "<group>"; };
 		BF7B6C9D255C298600AD70B3 /* NewsItemTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsItemTableViewCell.swift; sourceTree = "<group>"; };
 		BF7B6C9E255C298600AD70B3 /* NewsItemTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NewsItemTableViewCell.xib; sourceTree = "<group>"; };
 		BF7B6CA9255D4DE400AD70B3 /* SettingsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsController.swift; sourceTree = "<group>"; };
@@ -522,6 +526,7 @@
 		BF73BD7C2588A78000F119DA /* party */ = {
 			isa = PBXGroup;
 			children = (
+				BF73BD9D2589040500F119DA /* info */,
 				BF73BD922588F98900F119DA /* representatives */,
 				BF73BD7D2588A83900F119DA /* PartyViewController.swift */,
 				BF73BD7E2588A83900F119DA /* PartyViewController.xib */,
@@ -544,6 +549,15 @@
 				BF73BD992588FA1E00F119DA /* PartyRepresentativeListModel.swift */,
 			);
 			path = representatives;
+			sourceTree = "<group>";
+		};
+		BF73BD9D2589040500F119DA /* info */ = {
+			isa = PBXGroup;
+			children = (
+				BF73BD9E2589041B00F119DA /* PartyInfoController.swift */,
+				BF73BD9F2589041B00F119DA /* PartyInfoController.xib */,
+			);
+			path = info;
 			sourceTree = "<group>";
 		};
 		BF7B6CA8255D4DC700AD70B3 /* settings */ = {
@@ -825,6 +839,7 @@
 				BF73BD792587AAB400F119DA /* ProtocolReaderController.xib in Resources */,
 				BF73BD3A25874E9500F119DA /* RepresentativeAboutViewController.xib in Resources */,
 				BF71DC88257E65EA00011307 /* RepresentativeTableViewCell.xib in Resources */,
+				BF73BDA12589041B00F119DA /* PartyInfoController.xib in Resources */,
 				BF73BD802588A83900F119DA /* PartyViewController.xib in Resources */,
 				BFA6800A2583A77900ACFAB2 /* PartyDocumentTableViewCell.xib in Resources */,
 				BF73BD692587A4DB00F119DA /* ProtocolTableViewCell.xib in Resources */,
@@ -918,6 +933,7 @@
 				BF73BD872588C0F400F119DA /* DocumentFeedController.swift in Sources */,
 				BF7B6CAA255D4DE400AD70B3 /* SettingsController.swift in Sources */,
 				BF88BA5A256F976F0028BF66 /* Toast.swift in Sources */,
+				BF73BDA02589041B00F119DA /* PartyInfoController.swift in Sources */,
 				BF7B6C9F255C298600AD70B3 /* NewsItemTableViewCell.swift in Sources */,
 				BF3FAD512563C6FE00261E5C /* DebateFeedTableViewCell.swift in Sources */,
 				BF3FAD662564070900261E5C /* Representative.swift in Sources */,

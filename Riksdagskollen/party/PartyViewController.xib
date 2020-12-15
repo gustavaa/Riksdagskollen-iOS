@@ -31,9 +31,12 @@
                             </constraints>
                             <segments>
                                 <segment title="Flöde"/>
-                                <segment title="Parti"/>
+                                <segment title="Om partiet"/>
                                 <segment title="Ledamöter"/>
                             </segments>
+                            <connections>
+                                <action selector="tabSelected" destination="-1" eventType="valueChanged" id="HIT-7k-ZFK"/>
+                            </connections>
                         </segmentedControl>
                     </subviews>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>

@@ -11,7 +11,7 @@ class PartyViewController: UIViewController {
     
     @IBOutlet weak var tabController: TabBar!
     var pageViewController: UIPageViewController!
-    var orderedViewControllers: [UIViewController]!
+    var orderedViewControllers = [UIViewController]()
     var currentPageIndex = 0
     @IBOutlet weak var navbarExtensionView: NavBarExtensionView!
     
@@ -19,8 +19,8 @@ class PartyViewController: UIViewController {
     init(party: Party) {
         super.init(nibName: nil, bundle: nil)
         self.party = party
-        orderedViewControllers = [UIViewController]()
         orderedViewControllers.append(DocumentFeedController(party: party))
+        orderedViewControllers.append(PartyInfoController(party: party))
         orderedViewControllers.append(PartyRepresentativeListController(party: party))
     }
     
@@ -31,10 +31,6 @@ class PartyViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupPagingViewController()
-//        tabController.layer.backgroundColor = UIColor.red.cgColor
-        tabController.subviews.forEach( { view in
-            view.backgroundColor = tabController.backgroundColor
-        })
         // Do any additional setup after loading the view.
     }
     
@@ -59,6 +55,21 @@ class PartyViewController: UIViewController {
         
         pageViewController.setViewControllers([orderedViewControllers[0]], direction: .forward, animated: false, completion: nil)
         
+    }
+    
+    @IBAction func tabSelected() {
+        var direction: UIPageViewController.NavigationDirection
+        if tabController.selectedSegmentIndex < currentPageIndex {
+            direction = .reverse
+        } else {
+            direction = .forward
+        }
+        currentPageIndex = tabController.selectedSegmentIndex
+        pageViewController.setViewControllers([orderedViewControllers[currentPageIndex]], direction: direction, animated: true, completion: nil)
+    }
+    
+    func setCurrentTab(tabIndex: Int){
+        tabController.selectedSegmentIndex = tabIndex
     }
 
 }
@@ -98,6 +109,8 @@ extension PartyViewController: UIPageViewControllerDelegate {
         guard completed else { return }
         guard let currentVC = pageViewController.viewControllers?.first else { return }
         currentPageIndex = orderedViewControllers.firstIndex(of: currentVC)!
+        print("Current tab", currentPageIndex)
+        setCurrentTab(tabIndex: currentPageIndex)
     }
 }
 

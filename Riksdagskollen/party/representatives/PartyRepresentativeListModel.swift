@@ -29,13 +29,13 @@ class PartyRepresentativeListModel: RepresentativeDownloadedListener  {
     
     
     func onRepresentativesDownloaded(_ representatives: [Representative]) {
-       updateData()
+        updateData()
+        onDataChange()
     }
     
     func updateData(){
         self.representatives = manager.getCurrentRepresentativesForParty(party: party)
         self.representatives.sort(by: {$0.tilltalsnamn < $1.tilltalsnamn})
-        self.onDataChange()
     }
     
     
