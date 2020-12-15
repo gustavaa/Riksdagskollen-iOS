@@ -74,8 +74,11 @@ class ThemeManager {
         TabBarCollectionViewCell.appearance().backgroundColor = theme.primaryColor
         CurrentTabIndicatorView.appearance().backgroundColor = theme.statusBarTitleTextColor
         NavBarExtensionView.appearance().backgroundColor = theme.primaryColor
-        
-        
+        TabBar.appearance().tintColor = theme.statusBarTitleTextColor
+        TabBar.appearance().backgroundColor = theme.primaryColor
+        TabBar.appearance().selectedSegmentTintColor = theme.statusBarTitleTextColor
+        TabBar.appearance().setTitleTextAttributes([NSAttributedString.Key.foregroundColor: theme.primaryColor], for: .selected)
+        TabBar.appearance().setTitleTextAttributes([NSAttributedString.Key.foregroundColor: theme.statusBarTitleTextColor], for: .normal)
         refreshAllView()
     }
     

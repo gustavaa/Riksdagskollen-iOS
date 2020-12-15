@@ -17,17 +17,23 @@ class RepresentativeAboutViewController: UIViewController {
 
     @IBOutlet weak var bioContainer: UIStackView!
     @IBOutlet weak var scrollView: UIScrollView!
-    var representative: Representative!
     
+    var representative: Representative!
+    init(representative: Representative, innerTableViewScrollDelegate: InnerTableViewScrollDelegate) {
+        self.representative = representative
+        self.innerTableViewScrollDelegate = innerTableViewScrollDelegate
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        super.init(coder: coder)
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         createBiographyViews()
-
-        // Do any additional setup after loading the view.
     }
     
-
     private func createBiographyViews() {
         
         for bio in representative.biography {

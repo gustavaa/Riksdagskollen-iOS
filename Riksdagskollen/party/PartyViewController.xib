@@ -11,6 +11,8 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PartyViewController" customModule="Riksdagskollen" customModuleProvider="target">
             <connections>
+                <outlet property="navbarExtensionView" destination="Vnk-we-LsT" id="Tcr-jR-OpA"/>
+                <outlet property="tabController" destination="7gZ-v4-1kg" id="8rC-b0-OTH"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -19,24 +21,36 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="7gZ-v4-1kg">
-                    <rect key="frame" x="20" y="52" width="374" height="36"/>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Vnk-we-LsT" customClass="NavBarExtensionView" customModule="Riksdagskollen" customModuleProvider="target">
+                    <rect key="frame" x="0.0" y="44" width="414" height="45"/>
+                    <subviews>
+                        <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="7gZ-v4-1kg" customClass="TabBar" customModule="Riksdagskollen" customModuleProvider="target">
+                            <rect key="frame" x="8" y="4" width="398" height="38"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="37" id="yfU-BF-CnA"/>
+                            </constraints>
+                            <segments>
+                                <segment title="Flöde"/>
+                                <segment title="Parti"/>
+                                <segment title="Ledamöter"/>
+                            </segments>
+                        </segmentedControl>
+                    </subviews>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="35" id="IIN-yc-gR7"/>
+                        <constraint firstAttribute="height" constant="45" id="M9z-25-i3X"/>
+                        <constraint firstAttribute="trailing" secondItem="7gZ-v4-1kg" secondAttribute="trailing" constant="8" id="R5u-ux-rwY"/>
+                        <constraint firstItem="7gZ-v4-1kg" firstAttribute="centerY" secondItem="Vnk-we-LsT" secondAttribute="centerY" id="a3R-Tc-VfB"/>
+                        <constraint firstItem="7gZ-v4-1kg" firstAttribute="leading" secondItem="Vnk-we-LsT" secondAttribute="leading" constant="8" id="eIY-HL-YsF"/>
                     </constraints>
-                    <segments>
-                        <segment title="Flöde"/>
-                        <segment title="Parti"/>
-                        <segment title="Ledamöter"/>
-                    </segments>
-                </segmentedControl>
+                </view>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="7gZ-v4-1kg" secondAttribute="trailing" constant="20" id="CG3-JF-gZI"/>
-                <constraint firstItem="7gZ-v4-1kg" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="VrX-In-ahJ"/>
-                <constraint firstItem="7gZ-v4-1kg" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="8" id="glO-1U-Qmw"/>
+                <constraint firstItem="Vnk-we-LsT" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="B1d-OU-81N"/>
+                <constraint firstItem="Vnk-we-LsT" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="CAL-zH-YXB"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="Vnk-we-LsT" secondAttribute="trailing" id="pD4-qX-HzK"/>
             </constraints>
             <point key="canvasLocation" x="111.59420289855073" y="100.44642857142857"/>
         </view>

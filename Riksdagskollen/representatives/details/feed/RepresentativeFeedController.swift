@@ -13,7 +13,7 @@ enum DragDirection {
     case Down
 }
 
-class RepresentativeFeedController: UITableViewController {
+class RepresentativeFeedController: DocumentFeedController {
     
   
     weak var innerTableViewScrollDelegate: InnerTableViewScrollDelegate?
@@ -21,56 +21,12 @@ class RepresentativeFeedController: UITableViewController {
     private var oldContentOffset = CGPoint.zero
     
     private var model: RepresentativeFeedModel!
-    var representative: Representative! {
-        didSet {
-            model = RepresentativeFeedModel(representative: representative)
-            requestMoreData()
-            LoadingOverlay.shared.showOverlay(in: view)
-        }
-    }
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        tableView.separatorStyle = .none
-        tableView.estimatedRowHeight = 140
-        tableView.register(PartyDocumentTableViewCell.nib(), forCellReuseIdentifier: PartyDocumentTableViewCell.identifier)
-    }
-
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        guard let m = model else { return 0 }
-        return m.representativeDocuments.count
+    
+    convenience init(representative: Representative, innerTableViewScrollDelegate: InnerTableViewScrollDelegate) {
+        self.init(representative: representative)
+        self.innerTableViewScrollDelegate = innerTableViewScrollDelegate
     }
     
-    func requestMoreData () {
-        model.loadNextPage(){
-            self.tableView.reloadData()
-            LoadingOverlay.shared.hideOverlayView()
-        } onError: {error in
-            print("error \(error)")
-        }
-    }
-    
-    override func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-        if indexPath.row + 1 == model.representativeDocuments.count {
-           requestMoreData()
-        }
-    }
-
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: PartyDocumentTableViewCell.identifier, for: indexPath) as! PartyDocumentTableViewCell
-
-        cell.configure(with: model.representativeDocuments[indexPath.row])
-        return cell
-    }
-    
-    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let partyDocVC = DocumentReaderController()
-        partyDocVC.partyDocument = model.representativeDocuments[indexPath.row]
-        show(partyDocVC, sender: self)
-    }
-    
-
-
 }
 
 extension RepresentativeFeedController {
@@ -99,6 +55,5 @@ extension RepresentativeFeedController {
         
         oldContentOffset = scrollView.contentOffset
     }
-    
  
 }

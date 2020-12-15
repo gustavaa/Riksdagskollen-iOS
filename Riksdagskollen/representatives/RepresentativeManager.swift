@@ -42,6 +42,10 @@ class RepresentativeManager {
         notifyDownloaded()
     }
     
+    public func getCurrentRepresentativesForParty(party: Party) -> [Representative]{
+        return currentRepresentatives.filter({ return $0.parti.lowercased() == party.id.lowercased()})
+    }
+    
     public func getRepresentative(iid: String, party: String?) -> Representative?{
         if party != nil {
             return representatives[party!.lowercased()]?[iid]

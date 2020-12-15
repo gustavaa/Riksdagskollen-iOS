@@ -13,7 +13,7 @@ class DocumentReaderController: UIViewController, WKUIDelegate {
     
     @IBOutlet weak var titleLabel: TitleLabel!
     @IBOutlet weak var authorLabel: TitleLabel!
-    @IBOutlet weak var separator: SeparatorView!
+    @IBOutlet weak var separator: UIView!
     @IBOutlet weak var webView: DocumentHtmlView!
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var senderContainer: UIStackView!
@@ -64,6 +64,7 @@ class DocumentReaderController: UIViewController, WKUIDelegate {
         portraitView.translatesAutoresizingMaskIntoConstraints = false
         portraitView.widthAnchor.constraint(equalToConstant: 90).isActive = true
         portraitView.clickable = true
+        portraitView.showPartyIcon = false
         
         let nameLabel = TitleLabel()
         nameLabel.numberOfLines = 0

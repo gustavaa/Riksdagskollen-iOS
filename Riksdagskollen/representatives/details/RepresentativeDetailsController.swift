@@ -23,10 +23,7 @@ class RepresentativeDetailsController: UIViewController {
     var selectedTabView = CurrentTabIndicatorView()
     private var currentpageIndex = 0
     
-    private let orderedViewControllers: [UIViewController] = {
-        return [RepresentativeFeedController(),
-                RepresentativeAboutViewController()]
-    }()
+    private var orderedViewControllers: [UIViewController]!
     
     private var tabLabels: [String] = ["LEDAMOTSFLÖDE", "OM"]
     
@@ -38,20 +35,25 @@ class RepresentativeDetailsController: UIViewController {
     @IBOutlet weak var ageLabel: AccentLabel!
     
     var representative: Representative!
+    init(representative: Representative) {
+        super.init(nibName: nil, bundle: nil)
+        self.representative = representative
+        self.orderedViewControllers = [
+            RepresentativeFeedController(representative: representative, innerTableViewScrollDelegate: self),
+            RepresentativeAboutViewController(representative: representative, innerTableViewScrollDelegate: self)
+        ]
+    }
     
+    required init?(coder: NSCoder) {
+        super.init(coder: coder)
+    }
+
     override func viewDidLoad() {
         super.viewDidLoad()
         tabLabels[1] = "OM \(representative.tilltalsnamn.uppercased())"
         setupPagingViewController()
         setupCollectionView()
         setupRepresentativeView()
-        
-        (orderedViewControllers[0] as! RepresentativeFeedController).representative = representative
-        (orderedViewControllers[1] as! RepresentativeAboutViewController).representative = representative
-        
-        (orderedViewControllers[0] as! RepresentativeFeedController).innerTableViewScrollDelegate = self
-        (orderedViewControllers[1] as! RepresentativeAboutViewController).innerTableViewScrollDelegate = self
-
     }
     
     override func viewWillAppear(_ animated: Bool) {

@@ -58,7 +58,7 @@ struct DrawerMenuItems {
     static let decisions = DrawerMenuItem(title: "Riksdagsbeslut", imageName: "betlogo")
     static let debate = DrawerMenuItem(title: "Debatter", imageName: "debatelogo")
     static let votes = DrawerMenuItem(title: "Voteringar", imageName: "votlogo")
-    static let representatives = DrawerMenuItem(title: "Voteringar", imageName: "replogo")
+    static let representatives = DrawerMenuItem(title: "Ledamöter", imageName: "replogo")
     static let protocols = DrawerMenuItem(title: "Kammarprotokoll", imageName: "replogo")
     static let M = DrawerMenuItem(title: CurrentParties.M.name, image: CurrentParties.M.logo)
     static let S = DrawerMenuItem(title: CurrentParties.S.name, image: CurrentParties.S.logo)

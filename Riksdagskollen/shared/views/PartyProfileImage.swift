@@ -17,6 +17,7 @@ class PartyProfileImage: UIView {
     }
     
     var clickable = false
+    var showPartyIcon = true
     var profileImageView: UIImageView
     private var partyLogoView: UIImageView
     var partyIndicatorSize: Int = 25
@@ -71,7 +72,9 @@ class PartyProfileImage: UIView {
         self.representative = rep
 
         self.profileImageView.kf.setImage(with: URL(string: imageUrlString)!, completionHandler: { _ in
-            self.setParty(partyId: rep.parti)
+            if self.showPartyIcon == true {
+                self.setParty(partyId: rep.parti)
+            }
             self.sizeToFit()
             self.setNeedsLayout()
             self.layoutIfNeeded()
@@ -95,7 +98,9 @@ class PartyProfileImage: UIView {
             self.representative = rep
 
             self.profileImageView.kf.setImage(with: URL(string: imageUrlString)!, completionHandler: { _ in
-                self.setParty(partyId: rep.parti)
+                if self.showPartyIcon == true {
+                    self.setParty(partyId: rep.parti)
+                }
                 self.isHidden = false
             })
         }, failure: {_ in })
@@ -106,14 +111,13 @@ class PartyProfileImage: UIView {
         let partyLogo = CurrentParties.getParty(id: partyId)?.logo
         partyLogoView.image = partyLogo 
         let size = CGFloat(partyIndicatorSize)
-        partyLogoView.frame = CGRect(x: frame.width-size, y: frame.height-size, width: size, height: size)
+        partyLogoView.frame = CGRect(x: profileImageView.frame.width-size, y: profileImageView.frame.height-size, width: size, height: size)
         addSubview(partyLogoView)
     }
     
     @objc func onViewClick(sender: UITapGestureRecognizer) {
         if clickable, let rep = representative, let currentVC = self.parentViewController {
-            let vc = RepresentativeDetailsController()
-            vc.representative = rep
+            let vc = RepresentativeDetailsController(representative: rep)
             currentVC.show(vc, sender: nil)
         }
     }

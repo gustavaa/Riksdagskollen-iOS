@@ -21,7 +21,7 @@ class RepresentativesListController: UITableViewController, UIActionSheetDelegat
         super.viewDidLoad()
         model = RepresentativesListModel(onDataChange: {
             LoadingOverlay.shared.hideOverlayView()
-            self.tableView.reloadData()            
+            self.tableView.reloadData()
         })
         currentPartyFilter = model.filteredParties
         setupTableview()
@@ -137,8 +137,7 @@ class RepresentativesListController: UITableViewController, UIActionSheetDelegat
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let vc = RepresentativeDetailsController()
-        vc.representative = model.currentRepresentatives[indexPath.row]
+        let vc = RepresentativeDetailsController(representative: model.currentRepresentatives[indexPath.row])
         show(vc, sender: nil)
     }
 
