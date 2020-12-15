@@ -32,12 +32,17 @@ struct CurrentParties {
     static let L = Party(id: "l", name: "Liberalerna", website: "www.liberalerna.se", ideology: "", logo: UIImage(named: "llogo")!, wikiUrl: "https://sv.wikipedia.org/wiki/Liberalerna")
     static let noParty = Party(id: "-", name: "Politiska Vildar", website: "", ideology: "", logo: UIImage(), wikiUrl: "")
     static let values = [M, S, SD, C, V, KD, MP, L, noParty]
-    
+    static let valuesExceptNoParty = [M, S, SD, C, V, KD, MP, L]
+
     static func getParty(id: String) -> Party?{
         if let party = values.first(where: { $0.id == id.lowercased() }) {
             return party
         }
         return OtherParties.getParty(id: id)
+    }
+    
+    static func getParty(name: String) -> Party?{
+        return values.first(where: { $0.name.lowercased() == name.lowercased() })
     }
 }
 

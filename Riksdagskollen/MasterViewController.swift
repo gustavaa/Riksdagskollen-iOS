@@ -11,12 +11,8 @@ import SideMenu
 
 class MasterViewController: UIViewController, SideMenuDelegate{
     
-    var votesViewController: VotingFeedController?
-    var newsViewController: NewsController?
-    var decisionsViewController: DecisionsController?
-    var debateViewController: DebateFeedController?
-    var representativesViewController: RepresentativesListController?
-    var protocolsViewController: ProtocolsFeedController?
+    
+    var viewControllers = [String : UIViewController]()
     
     @IBOutlet weak var optionsBarButton: UIBarButtonItem!
     
@@ -28,13 +24,16 @@ class MasterViewController: UIViewController, SideMenuDelegate{
     override func viewDidLoad() {
         super.viewDidLoad()
         setupSideMenu()
-        newsViewController = NewsController()
-        setupViewController(viewController: newsViewController!)
-        currentViewController = newsViewController
-        switchToViewController(viewController: newsViewController!)
-        navigationItem.title = "Aktuellt"
+        setInitialVC()
         RepresentativeService.fetchAllCurrentRepresentatives(success: {_ in}, failure: {_ in})
         setOptionsButtonHidden(hidden: true)
+    }
+    
+    func setInitialVC(){
+        viewControllers[DrawerMenuItems.news.title] = NewsController()
+        setupViewController(viewController: viewControllers[DrawerMenuItems.news.title]!)
+        switchToViewController(viewController: viewControllers[DrawerMenuItems.news.title]!)
+        navigationItem.title = DrawerMenuItems.news.title
     }
     
     func setupSideMenu() {
@@ -54,55 +53,31 @@ class MasterViewController: UIViewController, SideMenuDelegate{
         present(menu!, animated: true)
     }
     
-    func didSelectMenuItem(menuItem: DrawerMenuItem) {
+    func didSelectMenuItem(menuEntry: DrawerMenuItem) {
         setOptionsButtonHidden(hidden: true)
-        switch menuItem.title {
-        case MenuItems.news.rawValue:
-            if newsViewController == nil {
-                newsViewController = NewsController()
-                setupViewController(viewController: newsViewController!)
+        if viewControllers[menuEntry.title] == nil {
+            switch menuEntry.title {
+            case DrawerMenuItems.news.title:
+                viewControllers[menuEntry.title] = NewsController()
+            case DrawerMenuItems.decisions.title:
+                viewControllers[menuEntry.title] = DecisionsController()
+            case DrawerMenuItems.debate.title:
+                viewControllers[menuEntry.title] = DebateFeedController()
+            case DrawerMenuItems.votes.title:
+                viewControllers[menuEntry.title] = VotingFeedController()
+            case DrawerMenuItems.representatives.title:
+                viewControllers[menuEntry.title] = RepresentativesListController()
+            case DrawerMenuItems.protocols.title:
+                viewControllers[menuEntry.title] = ProtocolsFeedController()
+            case DrawerMenuItems.M.title, DrawerMenuItems.S.title, DrawerMenuItems.SD.title, DrawerMenuItems.C.title, DrawerMenuItems.V.title, DrawerMenuItems.KD.title, DrawerMenuItems.MP.title, DrawerMenuItems.L.title:
+                viewControllers[menuEntry.title] = PartyViewController(party: CurrentParties.getParty(name: menuEntry.title)!)
+            default:
+                return
             }
-            switchToViewController(viewController: newsViewController!)
-            break
-        case MenuItems.decisions.rawValue:
-            if decisionsViewController == nil {
-                decisionsViewController = DecisionsController()
-                setupViewController(viewController: decisionsViewController!)
-            }
-            switchToViewController(viewController: decisionsViewController!)
-            break
-        case MenuItems.debate.rawValue:
-            if debateViewController == nil {
-                debateViewController = DebateFeedController()
-                setupViewController(viewController: debateViewController!)
-            }
-            switchToViewController(viewController: debateViewController!)
-            break
-        case MenuItems.votes.rawValue:
-            if votesViewController == nil {
-                votesViewController = VotingFeedController()
-                setupViewController(viewController: votesViewController!)
-            }
-            switchToViewController(viewController: votesViewController!)
-            break
-        case MenuItems.representatives.rawValue:
-            setOptionsButtonHidden(hidden: false)
-            if representativesViewController == nil {
-                representativesViewController = RepresentativesListController()
-                setupViewController(viewController: representativesViewController!)
-            }
-            switchToViewController(viewController: representativesViewController!)
-            break
-        case MenuItems.protocols.rawValue:
-            if protocolsViewController == nil {
-                protocolsViewController = ProtocolsFeedController()
-                setupViewController(viewController: protocolsViewController!)
-            }
-            switchToViewController(viewController: protocolsViewController!)
-            break
-        default: break
         }
-        navigationItem.title = menuItem.title
+        setupViewController(viewController: viewControllers[menuEntry.title]!)
+        switchToViewController(viewController: viewControllers[menuEntry.title]!)
+        navigationItem.title = menuEntry.title
     }
     
     func setOptionsButtonHidden(hidden: Bool){
