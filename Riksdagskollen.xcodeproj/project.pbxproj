@@ -410,8 +410,6 @@
 				BF88BA59256F976F0028BF66 /* Toast.swift */,
 				BF62863F2577D00700BBBEB7 /* LoadingAnimation.swift */,
 				BF62864D25790CE300BBBEB7 /* LoadingOverlay.swift */,
-				BFA680072583A77900ACFAB2 /* PartyDocumentTableViewCell.swift */,
-				BFA680082583A77900ACFAB2 /* PartyDocumentTableViewCell.xib */,
 			);
 			path = views;
 			sourceTree = "<group>";
@@ -539,6 +537,8 @@
 			isa = PBXGroup;
 			children = (
 				BF73BD862588C0F400F119DA /* DocumentFeedController.swift */,
+				BFA680072583A77900ACFAB2 /* PartyDocumentTableViewCell.swift */,
+				BFA680082583A77900ACFAB2 /* PartyDocumentTableViewCell.xib */,
 			);
 			path = documentFeed;
 			sourceTree = "<group>";
