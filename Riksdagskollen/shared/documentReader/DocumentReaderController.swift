@@ -69,6 +69,7 @@ class DocumentReaderController: UIViewController, WKUIDelegate {
         let nameLabel = TitleLabel()
         nameLabel.numberOfLines = 0
         nameLabel.textAlignment = .center
+        nameLabel.font = nameLabel.font.withSize(14)
         
         nameLabel.translatesAutoresizingMaskIntoConstraints = false
         
