@@ -73,9 +73,8 @@ class NewsController: UITableViewController {
         let url = URL(string: newsItem.getNewsUrl())
         let vc = SFSafariViewController(url: url!)
         vc.preferredBarTintColor = ThemeManager.shared.theme?.primaryColor
-        vc.preferredControlTintColor = UIColor.white
-        vc.modalPresentationCapturesStatusBarAppearance = false
-        navigationController?.present(vc, animated: true)
+        vc.preferredControlTintColor = ThemeManager.shared.theme?.statusBarTitleTextColor
+        present(vc, animated: true, completion: nil)
     }
     
 }
