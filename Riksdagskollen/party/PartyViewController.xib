@@ -12,7 +12,8 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PartyViewController" customModule="Riksdagskollen" customModuleProvider="target">
             <connections>
                 <outlet property="navbarExtensionView" destination="Vnk-we-LsT" id="Tcr-jR-OpA"/>
-                <outlet property="tabController" destination="7gZ-v4-1kg" id="8rC-b0-OTH"/>
+                <outlet property="tabBarCollectionView" destination="Bo0-rV-sy1" id="R7d-CY-lEp"/>
+                <outlet property="topView" destination="Vnk-we-LsT" id="IdM-Ko-pp8"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -22,29 +23,28 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Vnk-we-LsT" customClass="NavBarExtensionView" customModule="Riksdagskollen" customModuleProvider="target">
-                    <rect key="frame" x="0.0" y="44" width="414" height="45"/>
+                    <rect key="frame" x="0.0" y="44" width="414" height="58"/>
                     <subviews>
-                        <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="7gZ-v4-1kg" customClass="TabBar" customModule="Riksdagskollen" customModuleProvider="target">
-                            <rect key="frame" x="8" y="4" width="398" height="38"/>
+                        <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="Bo0-rV-sy1">
+                            <rect key="frame" x="20" y="8" width="374" height="50"/>
+                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             <constraints>
-                                <constraint firstAttribute="height" constant="37" id="yfU-BF-CnA"/>
+                                <constraint firstAttribute="height" constant="50" id="DYS-oZ-oxt"/>
                             </constraints>
-                            <segments>
-                                <segment title="Flöde"/>
-                                <segment title="Om partiet"/>
-                                <segment title="Ledamöter"/>
-                            </segments>
-                            <connections>
-                                <action selector="tabSelected" destination="-1" eventType="valueChanged" id="HIT-7k-ZFK"/>
-                            </connections>
-                        </segmentedControl>
+                            <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="1Ch-FQ-ATx">
+                                <size key="itemSize" width="128" height="128"/>
+                                <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                            </collectionViewFlowLayout>
+                        </collectionView>
                     </subviews>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="45" id="M9z-25-i3X"/>
-                        <constraint firstAttribute="trailing" secondItem="7gZ-v4-1kg" secondAttribute="trailing" constant="8" id="R5u-ux-rwY"/>
-                        <constraint firstItem="7gZ-v4-1kg" firstAttribute="centerY" secondItem="Vnk-we-LsT" secondAttribute="centerY" id="a3R-Tc-VfB"/>
-                        <constraint firstItem="7gZ-v4-1kg" firstAttribute="leading" secondItem="Vnk-we-LsT" secondAttribute="leading" constant="8" id="eIY-HL-YsF"/>
+                        <constraint firstAttribute="bottom" secondItem="Bo0-rV-sy1" secondAttribute="bottom" id="gc2-3M-jDR"/>
+                        <constraint firstItem="Bo0-rV-sy1" firstAttribute="leading" secondItem="Vnk-we-LsT" secondAttribute="leading" constant="20" id="pD7-vt-Osp"/>
+                        <constraint firstItem="Bo0-rV-sy1" firstAttribute="top" secondItem="Vnk-we-LsT" secondAttribute="top" constant="8" id="tOK-us-dEv"/>
+                        <constraint firstAttribute="trailing" secondItem="Bo0-rV-sy1" secondAttribute="trailing" constant="20" id="xHq-yk-h9R"/>
                     </constraints>
                 </view>
             </subviews>
