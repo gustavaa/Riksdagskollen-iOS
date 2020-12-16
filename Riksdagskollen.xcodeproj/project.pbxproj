@@ -84,6 +84,7 @@
 		BF73BD9A2588FA1E00F119DA /* PartyRepresentativeListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF73BD992588FA1E00F119DA /* PartyRepresentativeListModel.swift */; };
 		BF73BDA02589041B00F119DA /* PartyInfoController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF73BD9E2589041B00F119DA /* PartyInfoController.swift */; };
 		BF73BDA12589041B00F119DA /* PartyInfoController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BF73BD9F2589041B00F119DA /* PartyInfoController.xib */; };
+		BF73BDA82589F89300F119DA /* TabbedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF73BDA72589F89300F119DA /* TabbedViewController.swift */; };
 		BF7B6C9F255C298600AD70B3 /* NewsItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF7B6C9D255C298600AD70B3 /* NewsItemTableViewCell.swift */; };
 		BF7B6CA0255C298600AD70B3 /* NewsItemTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BF7B6C9E255C298600AD70B3 /* NewsItemTableViewCell.xib */; };
 		BF7B6CAA255D4DE400AD70B3 /* SettingsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF7B6CA9255D4DE400AD70B3 /* SettingsController.swift */; };
@@ -214,6 +215,7 @@
 		BF73BD992588FA1E00F119DA /* PartyRepresentativeListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PartyRepresentativeListModel.swift; sourceTree = "<group>"; };
 		BF73BD9E2589041B00F119DA /* PartyInfoController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PartyInfoController.swift; sourceTree = "<group>"; };
 		BF73BD9F2589041B00F119DA /* PartyInfoController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PartyInfoController.xib; sourceTree = "<group>"; };
+		BF73BDA72589F89300F119DA /* TabbedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabbedViewController.swift; sourceTree = "<group>"; };
 		BF7B6C9D255C298600AD70B3 /* NewsItemTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsItemTableViewCell.swift; sourceTree = "<group>"; };
 		BF7B6C9E255C298600AD70B3 /* NewsItemTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NewsItemTableViewCell.xib; sourceTree = "<group>"; };
 		BF7B6CA9255D4DE400AD70B3 /* SettingsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsController.swift; sourceTree = "<group>"; };
@@ -354,6 +356,7 @@
 		BF3FAD3E2563C34800261E5C /* shared */ = {
 			isa = PBXGroup;
 			children = (
+				BF73BDA62589F87600F119DA /* tabbedViewController */,
 				BF73BD852588C02A00F119DA /* documentFeed */,
 				BF99F22A257A6850001CD2BF /* documentReader */,
 				BF3FAD682565066500261E5C /* views */,
@@ -504,8 +507,6 @@
 				BFA680012583A55400ACFAB2 /* feed */,
 				BF71DCCE2580F56E00011307 /* RepresentativeDetailsController.swift */,
 				BF71DCCF2580F56E00011307 /* RepresentativeDetailsController.xib */,
-				BFA67FE02582669600ACFAB2 /* TabBarCollectionViewCell.swift */,
-				BFA67FE12582669600ACFAB2 /* TabBarCollectionViewCell.xib */,
 			);
 			path = details;
 			sourceTree = "<group>";
@@ -558,6 +559,16 @@
 				BF73BD9F2589041B00F119DA /* PartyInfoController.xib */,
 			);
 			path = info;
+			sourceTree = "<group>";
+		};
+		BF73BDA62589F87600F119DA /* tabbedViewController */ = {
+			isa = PBXGroup;
+			children = (
+				BF73BDA72589F89300F119DA /* TabbedViewController.swift */,
+				BFA67FE02582669600ACFAB2 /* TabBarCollectionViewCell.swift */,
+				BFA67FE12582669600ACFAB2 /* TabBarCollectionViewCell.xib */,
+			);
+			path = tabbedViewController;
 			sourceTree = "<group>";
 		};
 		BF7B6CA8255D4DC700AD70B3 /* settings */ = {
@@ -964,6 +975,7 @@
 				BF40397E25504E7D00D766F4 /* NewsController.swift in Sources */,
 				BF3FAD5C2563DE4800261E5C /* StackView.swift in Sources */,
 				BF7B6CBC255D802700AD70B3 /* ThemeComponents.swift in Sources */,
+				BF73BDA82589F89300F119DA /* TabbedViewController.swift in Sources */,
 				BF71DCD02580F56E00011307 /* RepresentativeDetailsController.swift in Sources */,
 				BF3DA205255E6C260094F463 /* DecisionsService.swift in Sources */,
 				BF3FAD562563CA9A00261E5C /* DocumentType.swift in Sources */,
