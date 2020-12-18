@@ -4,12 +4,11 @@
 //
 //  Created by Gustav Aaro on 2020-11-17.
 //
-/*
 import Foundation
 
 private let VIPRoles = ["Statsminister"]
 
-class RepresentativeOld: Codable {
+class Representative: Codable {
     public var intressent_id: String
     public var sourceid: String
     public var fodd_ar: String
@@ -116,7 +115,7 @@ class RepresentativeOld: Codable {
 
 }
 
-class RepresentativeInfoListOld: Codable {
+class RepresentativeInfoList: Codable {
     public var uppgift: [RepresentativeInfo]?
     
     enum CodingKeys: String, CodingKey {
@@ -136,7 +135,7 @@ class RepresentativeInfoListOld: Codable {
 }
 
 
-class RepresentativeMissionListOld: Codable {
+class RepresentativeMissionList: Codable {
     public var uppdrag: [RepresentativeMission]?
     
     enum CodingKeys: String, CodingKey {
@@ -154,7 +153,7 @@ class RepresentativeMissionListOld: Codable {
     }
 }
 
-class RepresentativeMissionOld: Codable {
+class RepresentativeMission: Codable {
     public var organ_kod: String
     public var roll_kod: String
     public var status: String?
@@ -163,7 +162,7 @@ class RepresentativeMissionOld: Codable {
     public var tom: String?
 }
 
-class RepresentativeInfoOld: Codable {
+class RepresentativeInfo: Codable {
     public var kod: String?
     public var uppgift: [String]?
     public var typ: String?
@@ -187,4 +186,3 @@ class RepresentativeInfoOld: Codable {
         uppgift = try? container.decodeIfPresent(Array<String>.self, forKey: .uppgift)
     }
 }
-*/

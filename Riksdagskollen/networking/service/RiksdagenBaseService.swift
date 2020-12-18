@@ -9,10 +9,19 @@ import Foundation
 import Alamofire
 import XMLParsing
 import CoreData
+import Cache
 
 class RiksdagenBaseService {
     
     public static let HOST = "https://data.riksdagen.se"
+    
+    static let representativeCacheExpiryTime = 3600 * 24 * 2 // 2 days
+
+    static let representativeCacheStorage = try? Storage<String, [Representative]>(
+      diskConfig: DiskConfig(name: "RepresentativeCache", maxSize: 1024*1024*20), // 20MB
+      memoryConfig: MemoryConfig(),
+      transformer: TransformerFactory.forCodable(ofType: [Representative].self)
+    )
     
     struct DocumentListResponse<T:Codable>: Codable {
         public var dokumentlista: DocumentList<T>
@@ -89,9 +98,20 @@ class RiksdagenBaseService {
             failure("Could not parse URL")
             return
         }
-        print("Getting decoder...")
-        let decoder = RepresentativeManager.shared.decoder
-        makeJSONRequest(url: url!, responseType: RepresentativeListResponse.self, decoder: decoder, success: {response in success(response.personlista.person)}, failure: failure)
+        if (try? representativeCacheStorage?.existsObject(forKey: subUrl)) == true {
+            if let cacheHit = try? representativeCacheStorage?.object(forKey: subUrl) {
+                success(cacheHit)
+                return
+            }
+        }
+
+        makeJSONRequest(url: url!, responseType: RepresentativeListResponse.self, success: {response in
+            success(response.personlista.person)
+            if let representatives = response.personlista.person {
+                let expiryDate = Expiry.date(Date().addingTimeInterval(TimeInterval(representativeCacheExpiryTime)))
+                representativeCacheStorage?.async.setObject(representatives, forKey: subUrl, expiry: expiryDate, completion: {_ in})
+            }
+        }, failure: failure)
     }
     
     let cacher = ResponseCacher(behavior: .modify({sessionTask, cachedResponse in
@@ -141,7 +161,7 @@ class RiksdagenBaseService {
         }
     }
     
-    private static func makeJSONRequest<T>(url: URL, responseType: T.Type, decoder: JSONDecoder, success: @escaping((T) -> Void), failure: @escaping((String) -> Void)) where T : Codable{
+    private static func makeJSONRequest<T>(url: URL, responseType: T.Type, decoder: JSONDecoder = JSONDecoder(), success: @escaping((T) -> Void), failure: @escaping((String) -> Void)) where T : Codable{
         print("Making json request to: \(String(describing: url.absoluteString))")
         AF.request(url)
             .validate(statusCode: 200..<300)

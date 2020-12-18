@@ -13,5 +13,6 @@ target 'Riksdagskollen' do
   pod 'Charts'
   pod "Sheeeeeeeeet"
   pod 'XMLParsing', :git => 'https://github.com/ShawnMoore/XMLParsing.git'
+  pod 'Cache'
   
 end
