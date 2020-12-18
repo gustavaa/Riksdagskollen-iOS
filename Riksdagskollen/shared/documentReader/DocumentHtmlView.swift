@@ -41,7 +41,7 @@ class DocumentHtmlView: WKWebView, WKNavigationDelegate {
                 
                 let doc = try SwiftSoup.parse(response)
                 try doc.head()?.append("<meta name=\"viewport\" content=\"width=device-width, initial-scale=1, maximum-scale=1 text/html, charset='utf-8'\">\n")
-                if let cssPath = Bundle.main.path(forResource: "motion_style", ofType: "css") {
+                if let cssPath = Bundle.main.path(forResource: ThemeManager.shared.theme!.cssFileName, ofType: "css") {
                     try doc.head()?.appendElement("link").attr("rel", "stylesheet").attr("type", "text/css").attr("href", cssPath)
                 }
                 try doc.select("div>span.sidhuvud_publikation").remove();

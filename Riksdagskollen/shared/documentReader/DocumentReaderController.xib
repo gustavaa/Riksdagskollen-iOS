@@ -62,7 +62,7 @@
                                         <constraint firstItem="fy3-Sf-Jts" firstAttribute="leading" secondItem="4fn-Xp-Kw6" secondAttribute="leading" id="xdi-dB-kim"/>
                                     </constraints>
                                 </view>
-                                <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="v5A-Hu-dYa">
+                                <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="v5A-Hu-dYa" customClass="ThemedView" customModule="Riksdagskollen" customModuleProvider="target">
                                     <rect key="frame" x="0.0" y="90" width="390" height="313.5"/>
                                     <subviews>
                                         <wkWebView contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="y6m-lT-3zR" customClass="DocumentHtmlView" customModule="Riksdagskollen" customModuleProvider="target">

@@ -1,7 +1,4 @@
-@font-face {
-    font-family: 'CabinRegular';
-    src: url('file:///android_asset/fonts/cabin_regular_edited.ttf');
-}
+
 
 h1 {
     font-size: 1.2em;
@@ -66,18 +63,18 @@ p {
     margin-bottom: 0.3em;
     margin-left: 0;
     margin-right: 0;
-    font-family: 'CabinRegular';
+    font-family: '.AppleSystemUIFont';
 }
 
 li {
     font-size: 1.0em;
-    font-family: 'CabinRegular';
+    font-family: '.AppleSystemUIFont';
 
 }
 
 span {
     font-size: 1.0em;
-    font-family: 'CabinRegular';
+    font-family: '.AppleSystemUIFont';
 }
 
 td {
@@ -91,7 +88,7 @@ body {
     padding: 0;
     overflow-x:hidden;
     word-wrap: break-word;
-    font-family: 'CabinRegular';
+    font-family: '.AppleSystemUIFont';
 }
 
 a:link {

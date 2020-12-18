@@ -33,6 +33,8 @@ protocol Theme {
     var noIndicatorColor: UIColor { get }
     var absentColor: UIColor { get }
     var refrainColor: UIColor { get }
+    
+    var cssFileName: String { get }
 }
 
 protocol Themable {
@@ -64,6 +66,8 @@ struct StandardTheme: Theme {
     var noIndicatorColor: UIColor = UIColor(named: "NoVoteColorLight")!
     var absentColor: UIColor = UIColor.black
     var refrainColor: UIColor = UIColor(named: "RefrainVoteColor")!
+    
+    var cssFileName: String = "motion_style"
 }
 
 
@@ -93,6 +97,8 @@ struct DarkTheme: Theme {
     var noIndicatorColor: UIColor = UIColor(named: "DarkResultIndicator")!
     var absentColor: UIColor = UIColor(named: "RefrainVoteColor")!
     var refrainColor: UIColor = UIColor.white
+    
+    var cssFileName: String = "motion_style_black"
 }
 
 
@@ -121,6 +127,8 @@ struct LightTheme: Theme {
     var noIndicatorColor: UIColor = UIColor(named: "RiksdagBlueLightest")!
     var absentColor: UIColor = UIColor.black
     var refrainColor: UIColor = UIColor(named: "RefrainVoteColor")!
+    
+    var cssFileName: String = "motion_style_white"
 }
 
 
