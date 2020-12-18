@@ -12,7 +12,7 @@ protocol RepresentativeDownloadedListener {
 }
 
 let LAST_DOWNLOAD_KEY = "LAST_DOWNLOAD"
-let downloadExpireTimeSeconds = 3600.03600 * 24 * 2 * 24.0 * 2.0 // 2 days
+let downloadExpireTimeSeconds = 3600.0 * 24 * 2 * 24.0 * 2.0 // 2 days
 
 class RepresentativeManager {
     
