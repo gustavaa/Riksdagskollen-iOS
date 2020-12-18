@@ -4,12 +4,12 @@
 //
 //  Created by Gustav Aaro on 2020-11-17.
 //
-
+/*
 import Foundation
 
 private let VIPRoles = ["Statsminister"]
 
-class Representative: Codable {
+class RepresentativeOld: Codable {
     public var intressent_id: String
     public var sourceid: String
     public var fodd_ar: String
@@ -54,7 +54,7 @@ class Representative: Codable {
     private var currentPartyRole: String? {
         guard let missions = personuppdrag?.uppdrag else { return nil}
         for mission in missions {
-            if mission.typ == "partiuppdrag" && mission.tom == nil {
+            if mission.typ == "partiuppdrag" && (mission.tom == nil || mission.tom?.isEmpty == true) {
                 if let status = mission.status {
                     return "\(status) \(mission.roll_kod)"
                 } else {
@@ -116,7 +116,7 @@ class Representative: Codable {
 
 }
 
-class RepresentativeInfoList: Codable {
+class RepresentativeInfoListOld: Codable {
     public var uppgift: [RepresentativeInfo]?
     
     enum CodingKeys: String, CodingKey {
@@ -136,7 +136,7 @@ class RepresentativeInfoList: Codable {
 }
 
 
-class RepresentativeMissionList: Codable {
+class RepresentativeMissionListOld: Codable {
     public var uppdrag: [RepresentativeMission]?
     
     enum CodingKeys: String, CodingKey {
@@ -154,7 +154,7 @@ class RepresentativeMissionList: Codable {
     }
 }
 
-class RepresentativeMission: Codable {
+class RepresentativeMissionOld: Codable {
     public var organ_kod: String
     public var roll_kod: String
     public var status: String?
@@ -163,7 +163,7 @@ class RepresentativeMission: Codable {
     public var tom: String?
 }
 
-class RepresentativeInfo: Codable {
+class RepresentativeInfoOld: Codable {
     public var kod: String?
     public var uppgift: [String]?
     public var typ: String?
@@ -187,3 +187,4 @@ class RepresentativeInfo: Codable {
         uppgift = try? container.decodeIfPresent(Array<String>.self, forKey: .uppgift)
     }
 }
+*/

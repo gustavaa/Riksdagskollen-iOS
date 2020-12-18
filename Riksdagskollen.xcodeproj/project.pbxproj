@@ -44,6 +44,7 @@
 		BF403993255056A200D766F4 /* ThemeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF403992255056A200D766F4 /* ThemeManager.swift */; };
 		BF40399725505CD500D766F4 /* PushUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF40399625505CD500D766F4 /* PushUp.swift */; };
 		BF40399B25505E6800D766F4 /* SplashController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF40399A25505E6800D766F4 /* SplashController.swift */; };
+		BF4FC6CC258B4A6400D20B78 /* Representative.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = BF4FC6CA258B4A6400D20B78 /* Representative.xcdatamodeld */; };
 		BF5C86E8256C0547003CC1E9 /* DebateReplayTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF5C86E6256C0547003CC1E9 /* DebateReplayTableViewCell.swift */; };
 		BF5C86E9256C0547003CC1E9 /* DebateReplayOutgoingCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BF5C86E7256C0547003CC1E9 /* DebateReplayOutgoingCell.xib */; };
 		BF5C86EC256C0E09003CC1E9 /* DebateReplayModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF5C86EB256C0E09003CC1E9 /* DebateReplayModel.swift */; };
@@ -121,6 +122,16 @@
 		BFC2CFE62570080E00A24DF0 /* VotingDetailsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BFC2CFE42570080E00A24DF0 /* VotingDetailsViewController.xib */; };
 		BFC2CFF22574E1F300A24DF0 /* RiksdagskollenTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFC2CFF12574E1F300A24DF0 /* RiksdagskollenTests.swift */; };
 		BFD8B1E225554D20001CEFB2 /* MasterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFD8B1E125554D20001CEFB2 /* MasterViewController.swift */; };
+		BFFA41DB258B4D9700643661 /* Representative+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFFA41D5258B4D9700643661 /* Representative+CoreDataClass.swift */; };
+		BFFA41DC258B4D9700643661 /* RepresentativeMission+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFFA41D8258B4D9700643661 /* RepresentativeMission+CoreDataClass.swift */; };
+		BFFA41DD258B4D9700643661 /* RepresentativeInfoList+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFFA41D7258B4D9700643661 /* RepresentativeInfoList+CoreDataProperties.swift */; };
+		BFFA41DE258B4D9700643661 /* Representative+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFFA41D2258B4D9700643661 /* Representative+CoreDataProperties.swift */; };
+		BFFA41DF258B4D9700643661 /* RepresentativeInfoList+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFFA41D1258B4D9600643661 /* RepresentativeInfoList+CoreDataClass.swift */; };
+		BFFA41E0258B4D9700643661 /* RepresentativeMission+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFFA41D9258B4D9700643661 /* RepresentativeMission+CoreDataProperties.swift */; };
+		BFFA41E1258B4D9700643661 /* RepresentativeMissionList+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFFA41D4258B4D9700643661 /* RepresentativeMissionList+CoreDataProperties.swift */; };
+		BFFA41E2258B4D9700643661 /* RepresentativeInfo+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFFA41DA258B4D9700643661 /* RepresentativeInfo+CoreDataProperties.swift */; };
+		BFFA41E3258B4D9700643661 /* RepresentativeInfo+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFFA41D6258B4D9700643661 /* RepresentativeInfo+CoreDataClass.swift */; };
+		BFFA41E4258B4D9700643661 /* RepresentativeMissionList+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFFA41D3258B4D9700643661 /* RepresentativeMissionList+CoreDataClass.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -174,6 +185,7 @@
 		BF403992255056A200D766F4 /* ThemeManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeManager.swift; sourceTree = "<group>"; };
 		BF40399625505CD500D766F4 /* PushUp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PushUp.swift; sourceTree = "<group>"; };
 		BF40399A25505E6800D766F4 /* SplashController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashController.swift; sourceTree = "<group>"; };
+		BF4FC6CB258B4A6400D20B78 /* Representative.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Representative.xcdatamodel; sourceTree = "<group>"; };
 		BF5964062C3BFA7F2583EB4D /* Pods_Riksdagskollen.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Riksdagskollen.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BF5C86E6256C0547003CC1E9 /* DebateReplayTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DebateReplayTableViewCell.swift; sourceTree = "<group>"; };
 		BF5C86E7256C0547003CC1E9 /* DebateReplayOutgoingCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DebateReplayOutgoingCell.xib; sourceTree = "<group>"; };
@@ -254,6 +266,16 @@
 		BFC2CFF12574E1F300A24DF0 /* RiksdagskollenTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RiksdagskollenTests.swift; sourceTree = "<group>"; };
 		BFC2CFF32574E1F300A24DF0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BFD8B1E125554D20001CEFB2 /* MasterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MasterViewController.swift; sourceTree = "<group>"; };
+		BFFA41D1258B4D9600643661 /* RepresentativeInfoList+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "RepresentativeInfoList+CoreDataClass.swift"; path = "/Users/gustavaaro/Projects/Riksdagskollen/Riksdagskollen/representatives/data/RepresentativeInfoList+CoreDataClass.swift"; sourceTree = "<absolute>"; };
+		BFFA41D2258B4D9700643661 /* Representative+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Representative+CoreDataProperties.swift"; path = "/Users/gustavaaro/Projects/Riksdagskollen/Riksdagskollen/representatives/data/Representative+CoreDataProperties.swift"; sourceTree = "<absolute>"; };
+		BFFA41D3258B4D9700643661 /* RepresentativeMissionList+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "RepresentativeMissionList+CoreDataClass.swift"; path = "/Users/gustavaaro/Projects/Riksdagskollen/Riksdagskollen/representatives/data/RepresentativeMissionList+CoreDataClass.swift"; sourceTree = "<absolute>"; };
+		BFFA41D4258B4D9700643661 /* RepresentativeMissionList+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "RepresentativeMissionList+CoreDataProperties.swift"; path = "/Users/gustavaaro/Projects/Riksdagskollen/Riksdagskollen/representatives/data/RepresentativeMissionList+CoreDataProperties.swift"; sourceTree = "<absolute>"; };
+		BFFA41D5258B4D9700643661 /* Representative+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Representative+CoreDataClass.swift"; path = "/Users/gustavaaro/Projects/Riksdagskollen/Riksdagskollen/representatives/data/Representative+CoreDataClass.swift"; sourceTree = "<absolute>"; };
+		BFFA41D6258B4D9700643661 /* RepresentativeInfo+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "RepresentativeInfo+CoreDataClass.swift"; path = "/Users/gustavaaro/Projects/Riksdagskollen/Riksdagskollen/representatives/data/RepresentativeInfo+CoreDataClass.swift"; sourceTree = "<absolute>"; };
+		BFFA41D7258B4D9700643661 /* RepresentativeInfoList+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "RepresentativeInfoList+CoreDataProperties.swift"; path = "/Users/gustavaaro/Projects/Riksdagskollen/Riksdagskollen/representatives/data/RepresentativeInfoList+CoreDataProperties.swift"; sourceTree = "<absolute>"; };
+		BFFA41D8258B4D9700643661 /* RepresentativeMission+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "RepresentativeMission+CoreDataClass.swift"; path = "/Users/gustavaaro/Projects/Riksdagskollen/Riksdagskollen/representatives/data/RepresentativeMission+CoreDataClass.swift"; sourceTree = "<absolute>"; };
+		BFFA41D9258B4D9700643661 /* RepresentativeMission+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "RepresentativeMission+CoreDataProperties.swift"; path = "/Users/gustavaaro/Projects/Riksdagskollen/Riksdagskollen/representatives/data/RepresentativeMission+CoreDataProperties.swift"; sourceTree = "<absolute>"; };
+		BFFA41DA258B4D9700643661 /* RepresentativeInfo+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "RepresentativeInfo+CoreDataProperties.swift"; path = "/Users/gustavaaro/Projects/Riksdagskollen/Riksdagskollen/representatives/data/RepresentativeInfo+CoreDataProperties.swift"; sourceTree = "<absolute>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -397,8 +419,19 @@
 		BF3FAD64256406FD00261E5C /* data */ = {
 			isa = PBXGroup;
 			children = (
+				BFFA41D6258B4D9700643661 /* RepresentativeInfo+CoreDataClass.swift */,
+				BFFA41DA258B4D9700643661 /* RepresentativeInfo+CoreDataProperties.swift */,
+				BFFA41D1258B4D9600643661 /* RepresentativeInfoList+CoreDataClass.swift */,
+				BFFA41D7258B4D9700643661 /* RepresentativeInfoList+CoreDataProperties.swift */,
+				BFFA41D3258B4D9700643661 /* RepresentativeMissionList+CoreDataClass.swift */,
+				BFFA41D4258B4D9700643661 /* RepresentativeMissionList+CoreDataProperties.swift */,
+				BFFA41D8258B4D9700643661 /* RepresentativeMission+CoreDataClass.swift */,
+				BFFA41D9258B4D9700643661 /* RepresentativeMission+CoreDataProperties.swift */,
+				BFFA41D5258B4D9700643661 /* Representative+CoreDataClass.swift */,
+				BFFA41D2258B4D9700643661 /* Representative+CoreDataProperties.swift */,
 				BF3FAD652564070900261E5C /* Representative.swift */,
 				BFA67FFD25839C0000ACFAB2 /* RepresentativeVoteStatistics.swift */,
+				BF4FC6CA258B4A6400D20B78 /* Representative.xcdatamodeld */,
 			);
 			path = data;
 			sourceTree = "<group>";
@@ -929,6 +962,7 @@
 			files = (
 				BF40399725505CD500D766F4 /* PushUp.swift in Sources */,
 				BF71DC80257E63F100011307 /* RepresentativesListController.swift in Sources */,
+				BFFA41DF258B4D9700643661 /* RepresentativeInfoList+CoreDataClass.swift in Sources */,
 				BFA680092583A77900ACFAB2 /* PartyDocumentTableViewCell.swift in Sources */,
 				BF73BD5F2587A3D600F119DA /* ProtocolService.swift in Sources */,
 				BF73BD7F2588A83900F119DA /* PartyViewController.swift in Sources */,
@@ -944,6 +978,8 @@
 				BF73BD872588C0F400F119DA /* DocumentFeedController.swift in Sources */,
 				BF7B6CAA255D4DE400AD70B3 /* SettingsController.swift in Sources */,
 				BF88BA5A256F976F0028BF66 /* Toast.swift in Sources */,
+				BFFA41DE258B4D9700643661 /* Representative+CoreDataProperties.swift in Sources */,
+				BFFA41E2258B4D9700643661 /* RepresentativeInfo+CoreDataProperties.swift in Sources */,
 				BF73BDA02589041B00F119DA /* PartyInfoController.swift in Sources */,
 				BF7B6C9F255C298600AD70B3 /* NewsItemTableViewCell.swift in Sources */,
 				BF3FAD512563C6FE00261E5C /* DebateFeedTableViewCell.swift in Sources */,
@@ -951,6 +987,7 @@
 				BF3FAD412563C35F00261E5C /* PartyDocument.swift in Sources */,
 				BFA67FE22582669600ACFAB2 /* TabBarCollectionViewCell.swift in Sources */,
 				BF3FAD4D2563C5CF00261E5C /* DebateService.swift in Sources */,
+				BFFA41E4258B4D9700643661 /* RepresentativeMissionList+CoreDataClass.swift in Sources */,
 				BF3FAD592563CDA600261E5C /* Parties.swift in Sources */,
 				BF5C9AB925750199009F22BC /* VotingUtil.swift in Sources */,
 				BF3DA1FA255E6A230094F463 /* DecisionModel.swift in Sources */,
@@ -976,7 +1013,9 @@
 				BF3FAD5C2563DE4800261E5C /* StackView.swift in Sources */,
 				BF7B6CBC255D802700AD70B3 /* ThemeComponents.swift in Sources */,
 				BF73BDA82589F89300F119DA /* TabbedViewController.swift in Sources */,
+				BFFA41E0258B4D9700643661 /* RepresentativeMission+CoreDataProperties.swift in Sources */,
 				BF71DCD02580F56E00011307 /* RepresentativeDetailsController.swift in Sources */,
+				BFFA41DB258B4D9700643661 /* Representative+CoreDataClass.swift in Sources */,
 				BF3DA205255E6C260094F463 /* DecisionsService.swift in Sources */,
 				BF3FAD562563CA9A00261E5C /* DocumentType.swift in Sources */,
 				BF73BD682587A4DB00F119DA /* ProtocolTableViewCell.swift in Sources */,
@@ -988,11 +1027,14 @@
 				BF5C86EC256C0E09003CC1E9 /* DebateReplayModel.swift in Sources */,
 				BF73BD3925874E9500F119DA /* RepresentativeAboutViewController.swift in Sources */,
 				BF4039902550536000D766F4 /* Theme.swift in Sources */,
+				BFFA41E3258B4D9700643661 /* RepresentativeInfo+CoreDataClass.swift in Sources */,
 				BF7F6044255963E100D2959F /* NewsModel.swift in Sources */,
+				BF4FC6CC258B4A6400D20B78 /* Representative.xcdatamodeld in Sources */,
 				BF3FAD362563C26400261E5C /* DebateFeedController.swift in Sources */,
 				BF3FAD4A2563C4A500261E5C /* Speech.swift in Sources */,
 				BF3FE28325555B160036AF2F /* MenuController.swift in Sources */,
 				BF403993255056A200D766F4 /* ThemeManager.swift in Sources */,
+				BFFA41E1258B4D9700643661 /* RepresentativeMissionList+CoreDataProperties.swift in Sources */,
 				BF88BA5E256FA4060028BF66 /* VotingFeedController.swift in Sources */,
 				BF71DC87257E65EA00011307 /* RepresentativeTableViewCell.swift in Sources */,
 				BF3FE28A25555EAC0036AF2F /* MenuItemCell.swift in Sources */,
@@ -1007,6 +1049,8 @@
 				BF3FAD392563C29B00261E5C /* DebateFeedModel.swift in Sources */,
 				BF40399B25505E6800D766F4 /* SplashController.swift in Sources */,
 				BF3FAD442563C48C00261E5C /* Debate.swift in Sources */,
+				BFFA41DD258B4D9700643661 /* RepresentativeInfoList+CoreDataProperties.swift in Sources */,
+				BFFA41DC258B4D9700643661 /* RepresentativeMission+CoreDataClass.swift in Sources */,
 				BF7F605425597FF300D2959F /* RiksdagenBaseService.swift in Sources */,
 				BF40397A25504E7D00D766F4 /* AppDelegate.swift in Sources */,
 				BF62861E2575421B00BBBEB7 /* Label.swift in Sources */,
@@ -1278,6 +1322,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		BF4FC6CA258B4A6400D20B78 /* Representative.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				BF4FC6CB258B4A6400D20B78 /* Representative.xcdatamodel */,
+			);
+			currentVersion = BF4FC6CB258B4A6400D20B78 /* Representative.xcdatamodel */;
+			path = Representative.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = BF40396E25504E7D00D766F4 /* Project object */;
 }

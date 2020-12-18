@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="17192" systemVersion="19H2" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="Representative" representedClassName="Representative" syncable="YES">
+        <attribute name="bild_url_80" attributeType="String"/>
+        <attribute name="bild_url_192" attributeType="String"/>
+        <attribute name="bild_url_max" attributeType="String"/>
+        <attribute name="efternamn" attributeType="String"/>
+        <attribute name="fodd_ar" attributeType="String"/>
+        <attribute name="intressent_id" attributeType="String"/>
+        <attribute name="kon" optional="YES" attributeType="String"/>
+        <attribute name="parti" attributeType="String"/>
+        <attribute name="sourceid" optional="YES" attributeType="String"/>
+        <attribute name="status" optional="YES" attributeType="String"/>
+        <attribute name="tilltalsnamn" attributeType="String"/>
+        <attribute name="valkrets" optional="YES" attributeType="String"/>
+        <relationship name="personuppdrag" optional="YES" maxCount="1" deletionRule="Cascade" destinationEntity="RepresentativeMissionList"/>
+        <relationship name="personuppgift" optional="YES" maxCount="1" deletionRule="Cascade" destinationEntity="RepresentativeInfoList"/>
+        <uniquenessConstraints>
+            <uniquenessConstraint>
+                <constraint value="intressent_id"/>
+            </uniquenessConstraint>
+        </uniquenessConstraints>
+    </entity>
+    <entity name="RepresentativeInfo" representedClassName="RepresentativeInfo" syncable="YES">
+        <attribute name="hangar_id" optional="YES" attributeType="String"/>
+        <attribute name="intressent_id" optional="YES" attributeType="String"/>
+        <attribute name="kod" optional="YES" attributeType="String"/>
+        <attribute name="typ" optional="YES" attributeType="String"/>
+        <attribute name="uppgift" optional="YES" attributeType="Transformable" valueTransformerName="NSSecureUnarchiveFromData" customClassName="Array&lt;String&gt;"/>
+    </entity>
+    <entity name="RepresentativeInfoList" representedClassName="RepresentativeInfoList" syncable="YES">
+        <relationship name="uppgift" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="RepresentativeInfo"/>
+    </entity>
+    <entity name="RepresentativeMission" representedClassName="RepresentativeMission" syncable="YES">
+        <attribute name="from" optional="YES" attributeType="String"/>
+        <attribute name="organ_kod" optional="YES" attributeType="String"/>
+        <attribute name="roll_kod" optional="YES" attributeType="String"/>
+        <attribute name="status" optional="YES" attributeType="String"/>
+        <attribute name="tom" optional="YES" attributeType="String"/>
+        <attribute name="typ" optional="YES" attributeType="String"/>
+    </entity>
+    <entity name="RepresentativeMissionList" representedClassName="RepresentativeMissionList" syncable="YES">
+        <relationship name="uppdrag" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="RepresentativeMission"/>
+    </entity>
+    <elements>
+        <element name="Representative" positionX="-459.19921875" positionY="60.8203125" width="128" height="253"/>
+        <element name="RepresentativeInfo" positionX="134.51953125" positionY="367.10546875" width="128" height="118"/>
+        <element name="RepresentativeInfoList" positionX="-51.75" positionY="301.296875" width="128" height="58"/>
+        <element name="RepresentativeMission" positionX="130.89453125" positionY="147.359375" width="128" height="133"/>
+        <element name="RepresentativeMissionList" positionX="-52.2734375" positionY="236.5234375" width="128" height="58"/>
+    </elements>
+</model>

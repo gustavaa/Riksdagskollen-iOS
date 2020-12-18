@@ -8,6 +8,7 @@
 import Foundation
 import Alamofire
 import XMLParsing
+import CoreData
 
 class RiksdagenBaseService {
     
@@ -88,8 +89,14 @@ class RiksdagenBaseService {
             failure("Could not parse URL")
             return
         }
-        makeJSONRequest(url: url!, responseType: RepresentativeListResponse.self, success: {response in success(response.personlista.person)}, failure: failure)
+        print("Getting decoder...")
+        let decoder = RepresentativeManager.shared.decoder
+        makeJSONRequest(url: url!, responseType: RepresentativeListResponse.self, decoder: decoder, success: {response in success(response.personlista.person)}, failure: failure)
     }
+    
+    let cacher = ResponseCacher(behavior: .modify({sessionTask, cachedResponse in
+        return nil
+    }))
     
     static func makeSpeechJSONRequest(subUrl: String, success: @escaping((Speech?) -> Void), failure: @escaping((String) -> Void)){
         let url = URL(string: "\(HOST)/anforande/\(subUrl)")
@@ -120,6 +127,31 @@ class RiksdagenBaseService {
                     DispatchQueue(label: "parsing", qos: .userInitiated).async {
                         do {
                             let decodedResponse = try JSONDecoder().decode(T.self, from: json)
+                            DispatchQueue.main.async {
+                                success(decodedResponse)
+                            }
+                        } catch {
+                            print(error)
+                            failure(error.localizedDescription)
+                        }
+                    }
+                case .failure(let error):
+                    failure(error.errorDescription ?? "Something went wrong")
+            }
+        }
+    }
+    
+    private static func makeJSONRequest<T>(url: URL, responseType: T.Type, decoder: JSONDecoder, success: @escaping((T) -> Void), failure: @escaping((String) -> Void)) where T : Codable{
+        print("Making json request to: \(String(describing: url.absoluteString))")
+        AF.request(url)
+            .validate(statusCode: 200..<300)
+            .responseString { response in
+            switch response.result {
+                case .success(let value):
+                    let json = value.data(using: .utf8)!
+                    DispatchQueue(label: "parsing", qos: .userInitiated).async {
+                        do {
+                            let decodedResponse = try decoder.decode(T.self, from: json)
                             DispatchQueue.main.async {
                                 success(decodedResponse)
                             }

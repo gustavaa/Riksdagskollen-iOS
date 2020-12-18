@@ -25,7 +25,7 @@ class MasterViewController: UIViewController, SideMenuDelegate{
         super.viewDidLoad()
         setupSideMenu()
         setInitialVC()
-        RepresentativeService.fetchAllCurrentRepresentatives(success: {_ in}, failure: {_ in})
+        RepresentativeManager.shared.initialize()
         setOptionsButtonHidden(hidden: true)
     }
     
