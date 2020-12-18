@@ -54,7 +54,6 @@ class MasterViewController: UIViewController, SideMenuDelegate{
     }
     
     func didSelectMenuItem(menuEntry: DrawerMenuItem) {
-        setOptionsButtonHidden(hidden: true)
         if viewControllers[menuEntry.title] == nil {
             switch menuEntry.title {
             case DrawerMenuItems.news.title:
@@ -74,6 +73,11 @@ class MasterViewController: UIViewController, SideMenuDelegate{
             default:
                 return
             }
+        }
+        if menuEntry.title == DrawerMenuItems.representatives.title {
+            setOptionsButtonHidden(hidden: false)
+        } else {
+            setOptionsButtonHidden(hidden: true)
         }
         setupViewController(viewController: viewControllers[menuEntry.title]!)
         switchToViewController(viewController: viewControllers[menuEntry.title]!)
