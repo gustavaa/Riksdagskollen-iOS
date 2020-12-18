@@ -92,7 +92,7 @@ class RiksdagenBaseService {
         makeJSONRequest(url: url!, responseType: DocumentListResponse<T>.self, success: {response in success(response.dokumentlista.dokument, response.dokumentlista.traffar)}, failure: failure);
     }
     
-    static func makeRepresentativelistJSONRequest(subUrl: String, success: @escaping(([Representative]?) -> Void), failure: @escaping((String) -> Void)){
+    static func makeCachedRepresentativelistJSONRequest(subUrl: String, success: @escaping(([Representative]?) -> Void), failure: @escaping((String) -> Void)){
         let url = URL(string: "\(HOST)/personlista/\(subUrl)")
         if url == nil {
             failure("Could not parse URL")
@@ -101,6 +101,9 @@ class RiksdagenBaseService {
         if (try? representativeCacheStorage?.existsObject(forKey: subUrl)) == true {
             if let cacheHit = try? representativeCacheStorage?.object(forKey: subUrl) {
                 success(cacheHit)
+            }
+            // if entry is expired, download again after serving the old cache data
+            if (try? representativeCacheStorage?.isExpiredObject(forKey: subUrl)) == false {
                 return
             }
         }

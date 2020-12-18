@@ -20,7 +20,7 @@ class RepresentativeService {
             URLQueryItem(name: "utformat", value: "json"),
         ]
         urlComponents.queryItems = queryItems
-        RiksdagenBaseService.makeRepresentativelistJSONRequest(subUrl: urlComponents.string!, success: { result in
+        RiksdagenBaseService.makeCachedRepresentativelistJSONRequest(subUrl: urlComponents.string!, success: { result in
             success(result?.first)
             if let rep = result?.first {
                 RepresentativeManager.shared.addRepresentative(rep: rep)
@@ -34,7 +34,7 @@ class RepresentativeService {
             URLQueryItem(name: "utformat", value: "json"),
         ]
         urlComponents.queryItems = queryItems
-        RiksdagenBaseService.makeRepresentativelistJSONRequest(subUrl: urlComponents.string!, success: success , failure: failure)
+        RiksdagenBaseService.makeCachedRepresentativelistJSONRequest(subUrl: urlComponents.string!, success: success , failure: failure)
     }
     
     static func fetchDocumentsForRepresentative(iid: String, page: Int, success: @escaping((_ result: [PartyDocument]?,_ numberOfHits: String) -> () ), failure: @escaping((_ error: String) -> ())) {

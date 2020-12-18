@@ -22,12 +22,10 @@ class RepresentativeManager {
     var representativesAreDownloaded = false
     
     public func initialize() {
-        // load the database if it exists, if not create it.
         self.downloadCurrenRepresentativesInBackground()
     }
     
     private func downloadCurrenRepresentativesInBackground(){
-        print("No existing or old representative data, downloading...")
         RepresentativeService.fetchAllCurrentRepresentatives(success: {representatives in
             print("Representatives downloaded")
             self.addCurrentRepresentatives(representatives: representatives!)
