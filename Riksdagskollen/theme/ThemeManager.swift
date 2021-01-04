@@ -37,7 +37,7 @@ class ThemeManager {
         UINavigationBar.appearance().barTintColor = theme.primaryColor
         UINavigationBar.appearance().isTranslucent = false
         UINavigationBar.appearance().tintColor = theme.statusBarTitleTextColor
-        UINavigationBar.appearance().titleTextAttributes = [NSAttributedString.Key.foregroundColor: theme.statusBarTitleTextColor]
+        UINavigationBar.appearance().titleTextAttributes = [NSAttributedString.Key.foregroundColor: theme.statusBarTitleTextColor, NSAttributedString.Key.font: UIFont(name: "Cabin-Regular_Bold", size: 17)!]
         UIBarButtonItem.appearance().tintColor = theme.statusBarTitleTextColor
         // To remove separtor line between navigation controller and view
         UINavigationBar.appearance().setBackgroundImage(UIImage(), for: UIBarMetrics.default)

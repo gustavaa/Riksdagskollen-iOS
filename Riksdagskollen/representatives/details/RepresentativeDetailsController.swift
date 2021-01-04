@@ -28,6 +28,8 @@ class RepresentativeDetailsController: TabbedViewController {
     @IBOutlet weak var ageLabel: AccentLabel!
     
     var representative: Representative!
+    var initialNavBarAttributes: [NSAttributedString.Key : Any]!
+    
     init(representative: Representative) {
         super.init(nibName: nil, bundle: nil)
         self.representative = representative
@@ -47,12 +49,13 @@ class RepresentativeDetailsController: TabbedViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        initialNavBarAttributes = navigationController?.navigationBar.titleTextAttributes
         let navigationTitleAlpha = normalize(val: headerViewHeightConstraint.constant, min: headerViewMinHeight, max: headerViewMaxHeight, from: 1, to: 0)
         setNavBarTitleAlpha(navigationTitleAlpha)
     }
     
     override func viewWillDisappear(_ animated: Bool) {
-        setNavBarTitleAlpha(1)
+        navigationController?.navigationBar.titleTextAttributes = initialNavBarAttributes
     }
     
     func setupRepresentativeView() {
@@ -82,8 +85,6 @@ class RepresentativeDetailsController: TabbedViewController {
     func setNavBarTitleAlpha(_ alpha: CGFloat){
         navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: navigationController?.navigationBar.tintColor.withAlphaComponent(alpha) as Any]
     }
-    
-
     
     
     func normalize(val: CGFloat, min: CGFloat, max: CGFloat, from a: CGFloat = 0, to b: CGFloat = 1) -> CGFloat {
