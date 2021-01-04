@@ -1,3 +1,9 @@
+
+@font-face {
+    font-family: 'Cabin-Regular';
+    src: url('Cabin-VariableFont.ttf');
+}
+
 h1 {
     font-size: 1.2em;
     color: #4e7c9d;
@@ -61,18 +67,18 @@ p {
     margin-bottom: 0.3em;
     margin-left: 0;
     margin-right: 0;
-    font-family: '.AppleSystemUIFont';
+    font-family: 'Cabin-Regular';
 }
 
 li {
     font-size: 1.0em;
-    font-family: '.AppleSystemUIFont';
+    font-family: 'Cabin-Regular';
 
 }
 
 span {
     font-size: 1.0em;
-    font-family: '.AppleSystemUIFont';
+    font-family: 'Cabin-Regular';
 }
 
 td {
@@ -86,7 +92,7 @@ body {
     padding: 0;
     overflow-x:hidden;
     word-wrap: break-word;
-    font-family: '.AppleSystemUIFont';
+    font-family: 'Cabin-Regular';
 }
 
 a:link {

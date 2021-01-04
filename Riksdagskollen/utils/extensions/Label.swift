@@ -9,8 +9,27 @@ import Foundation
 import UIKit
 
 extension UILabel {
+    
+    @objc var substituteFontName : String {
+        get { return self.font.fontName }
+        set {
+            if self.font.fontName.range(of:"Bold") == nil {
+                self.font = UIFont(name: newValue, size: self.font.pointSize)
+            }
+        }
+    }
+    
+    @objc var substituteFontNameBold : String {
+        get { return self.font.fontName }
+        set {
+            if self.font.fontName.range(of:"Bold") != nil {
+                self.font = UIFont(name: newValue, size: self.font.pointSize)
+            }
+        }
+    }
+    
     func setHTMLFromString(htmlText: String) {
-        let modifiedFont = String(format:"<span style=\"font-family: '-apple-system', 'HelveticaNeue'; font-size: \(self.font!.pointSize)\">%@</span>", htmlText)
+        let modifiedFont = String(format:"<span style=\"font-family: 'Cabin', '-apple-system', 'HelveticaNeue'; font-size: \(self.font!.pointSize)\">%@</span>", htmlText)
 
         let attrStr = try! NSAttributedString(
             data: modifiedFont.data(using: .unicode, allowLossyConversion: true)!,

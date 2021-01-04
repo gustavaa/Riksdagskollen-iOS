@@ -51,6 +51,10 @@ class ThemeManager {
         UISegmentedControl.appearance().setTitleTextAttributes([NSAttributedString.Key.foregroundColor: theme.segmentedControlSelectedColor], for: .selected)
         UISegmentedControl.appearance().setTitleTextAttributes([NSAttributedString.Key.foregroundColor: theme.mainBodyTextColor], for: .normal)
         
+        UILabel.appearance().substituteFontName = "Cabin-Regular"
+        UILabel.appearance().substituteFontNameBold = "Cabin-Regular_Bold"
+
+        
         UIActivityIndicatorView.appearance().color = theme.debateTextColor
         UIActivityIndicatorView.appearance().style = .large
 
