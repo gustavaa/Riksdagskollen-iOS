@@ -85,9 +85,7 @@ class TabbedViewController: UIViewController {
     
     func setupSelectedTabView() {
         let tabBarWidth = tabBarCollectionView.bounds.width
-        print(tabBarCollectionView.contentSize)
         let initialTabWidth = (tabBarWidth)/CGFloat(orderedViewControllers.count)
-        print(initialTabWidth)
         let height = 4 as CGFloat
         let y = tabBarCollectionView.frame.height - height
         selectedTabView.frame = CGRect(x: 0, y: y, width: initialTabWidth, height: height)
@@ -96,9 +94,7 @@ class TabbedViewController: UIViewController {
     
     
     func scrollSelectedTabView(toPercentage: CGFloat) {
-        
         let tabBarWidth = tabBarCollectionView.bounds.width
-
         let tabWidth = (tabBarWidth)/CGFloat(orderedViewControllers.count)
         self.selectedTabView.frame.origin.x = toPercentage * tabWidth
     }
@@ -237,15 +233,6 @@ extension TabbedViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat{
         return 0
     }
-    
-    //MARK:- Get tab size
-//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-//        let width = tabBarCollectionView.frame.width
-//        let tabWidth = (width - 20)/CGFloat(orderedViewControllers.count)
-//        print(tabWidth)
-//        print(width)
-//        return CGSize(width: tabWidth, height: 40)
-//    }
     
 }
 

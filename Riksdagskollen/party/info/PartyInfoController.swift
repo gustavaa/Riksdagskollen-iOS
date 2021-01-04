@@ -10,11 +10,19 @@ import UIKit
 class PartyInfoController: UIViewController {
     
     var party: Party!
-
+    
+    @IBOutlet weak var partyImage: UIImageView!
+    @IBOutlet weak var partyNameLabel: TitleLabel!
+    @IBOutlet weak var websiteLabel: BodyLabel!
+    @IBOutlet weak var ideologyLabel: BodyLabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        partyImage.image = party.logo
+        partyNameLabel.text = party.name
+        websiteLabel.text = party.website
+        ideologyLabel.text = party.ideology
+     
     }
     
     init(party: Party) {

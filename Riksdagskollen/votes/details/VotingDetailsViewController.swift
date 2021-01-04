@@ -51,7 +51,6 @@ class VotingDetailsViewController: UIViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        print(votesExpandableContainer.arrangedSubviews.count)
         if (shouldShowLoadingView) {
             LoadingOverlay.shared.showOverlay(in: view)
         }
